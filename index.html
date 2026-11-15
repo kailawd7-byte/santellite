@@ -158,6 +158,50 @@
 
 <body class="bg-[#05070D] text-slate-100 antialiased selection:bg-blue-600/30 selection:text-cyan-300">
 
+	<!-- ============ FOND SPATIAL IMMERSIF ANIMÉ UNIFIÉ (TERRE -> ESPACE -> LUNE) ============ -->
+	<div id="space-background" class="fixed inset-0 w-full h-full pointer-events-none overflow-hidden" style="z-index: 0;" aria-hidden="true">
+		<!-- 1. Couche dégradé CSS dynamique pilotée par le défilement -->
+		<div id="space-gradient-layer" class="absolute inset-0 w-full h-full transition-colors duration-200 pointer-events-none"></div>
+
+		<!-- 2. Couche vectorielle SVG : Anneaux d'orbites fins et satellites en rotation continue -->
+		<svg id="space-orbits-layer" class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+			<defs>
+				<filter id="sat-glow" x="-50%" y="-50%" width="200%" height="200%">
+					<feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#00E5FF" flood-opacity="0.8"/>
+				</filter>
+			</defs>
+			<!-- Orbite 1 : Cyan NASA (Rotation sens horaire 85s) -->
+			<g class="space-orbit-group-1">
+				<ellipse cx="960" cy="540" rx="760" ry="360" fill="none" stroke="#00E5FF" stroke-width="1" stroke-dasharray="4 12" opacity="0.16" transform="rotate(-16 960 540)"/>
+				<!-- Satellite A sur Orbite 1 -->
+				<g transform="translate(1680, 540) rotate(-16)">
+					<rect x="-18" y="-3.5" width="10" height="7" rx="1" fill="#00E5FF" opacity="0.85" filter="url(#sat-glow)"/>
+					<rect x="8" y="-3.5" width="10" height="7" rx="1" fill="#00E5FF" opacity="0.85" filter="url(#sat-glow)"/>
+					<rect x="-6" y="-5" width="12" height="10" rx="2" fill="#FFFFFF"/>
+					<circle cx="0" cy="0" r="2" fill="#00E5FF"/>
+					<line x1="0" y1="-5" x2="0" y2="-9" stroke="#E2E8F0" stroke-width="1.2"/>
+					<circle cx="0" cy="-9" r="1.2" fill="#10B981"/>
+				</g>
+			</g>
+			<!-- Orbite 2 : Bleu NASA (Rotation sens anti-horaire 130s) -->
+			<g class="space-orbit-group-2">
+				<ellipse cx="960" cy="540" rx="920" ry="430" fill="none" stroke="#38BDF8" stroke-width="1.2" stroke-dasharray="6 16" opacity="0.14" transform="rotate(26 960 540)"/>
+				<!-- Satellite B sur Orbite 2 -->
+				<g transform="translate(80, 540) rotate(26)">
+					<rect x="-14" y="-3" width="8" height="6" rx="1" fill="#38BDF8" opacity="0.8"/>
+					<rect x="6" y="-3" width="8" height="6" rx="1" fill="#38BDF8" opacity="0.8"/>
+					<rect x="-5" y="-4" width="10" height="8" rx="1.5" fill="#F1F5F9"/>
+					<circle cx="0" cy="0" r="1.5" fill="#38BDF8"/>
+				</g>
+			</g>
+			<!-- Anneau 3 : Trace orbitale lointaine discrète -->
+			<ellipse cx="960" cy="540" rx="1080" ry="500" fill="none" stroke="rgba(255, 255, 255, 0.05)" stroke-width="0.8" stroke-dasharray="2 20" transform="rotate(-6 960 540)"/>
+		</svg>
+
+		<!-- 3. Canvas interactif pour étoiles en parallaxe, étoiles filantes & Lune -->
+		<canvas id="space-stars-canvas" class="absolute inset-0 w-full h-full pointer-events-none"></canvas>
+	</div>
+
 	<!-- ============ EN-TÊTE & NAVIGATION MINIMALISTE (STYLE KUBEVA) ============ -->
 	<header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#05070D]/90 backdrop-blur-md border-b border-white/10 py-4">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -1372,6 +1416,8 @@
 
 	<!-- Logique JavaScript unifiée -->
 	<script src="script.js" defer></script>
+	<!-- Fond spatial animé synchronisé au défilement -->
+	<script src="space-background.js" defer></script>
 
 	<script>
 		// Sécurité d'exécution Lucide

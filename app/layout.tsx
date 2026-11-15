@@ -41,6 +41,7 @@ export default function RootLayout({
       </head>
       <body suppressHydrationWarning className="bg-[#060911] text-slate-100 antialiased selection:bg-cyan-500/20 selection:text-cyan-300">
         {children}
+        <script src="/space-background.js" defer></script>
       </body>
     </html>
   );
