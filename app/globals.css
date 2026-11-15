@@ -13,11 +13,48 @@ html {
 }
 
 body {
-  background-color: #06080F;
+  background-color: #040710;
   color: #f1f5f9;
   font-family: var(--font-sans);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Ensure cosmic space background shines through main and all sections */
+main {
+  background-color: transparent !important;
+}
+
+main > section {
+  background-color: transparent !important;
+}
+
+/* Space orbits continuous SVG rotations */
+@keyframes spaceOrbitCW {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spaceOrbitCCW {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+.space-orbit-group-1 {
+  transform-origin: 960px 540px;
+  animation: spaceOrbitCW 85s linear infinite;
+}
+
+.space-orbit-group-2 {
+  transform-origin: 960px 540px;
+  animation: spaceOrbitCCW 130s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .space-orbit-group-1,
+  .space-orbit-group-2 {
+    animation: none !important;
+  }
 }
 
 /* Subtle luxury space grid pattern */
@@ -95,7 +132,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #06080F;
+  background: #040710;
 }
 
 ::-webkit-scrollbar-thumb {

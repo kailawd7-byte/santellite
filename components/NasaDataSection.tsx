@@ -33,7 +33,7 @@ export default function NasaDataSection() {
   ];
 
   return (
-    <section id="donnees" className="py-24 relative overflow-hidden bg-[#070A12] border-t border-white/[0.06]">
+    <section id="donnees" className="py-24 relative overflow-hidden bg-transparent border-t border-white/[0.06]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="reveal-on-scroll text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono font-medium bg-white/[0.05] border border-white/[0.1] text-slate-300 mb-4 backdrop-blur-md">

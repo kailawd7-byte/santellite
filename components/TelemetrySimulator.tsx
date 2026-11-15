@@ -86,7 +86,7 @@ export default function TelemetrySimulator() {
   }, []);
 
   return (
-    <section id="simulateur" className="py-24 relative overflow-hidden bg-[#06080F] border-b border-white/[0.06] space-grid-pattern">
+    <section id="simulateur" className="py-24 relative overflow-hidden bg-transparent border-b border-white/[0.06] space-grid-pattern">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Section Teaser */}

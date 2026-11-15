@@ -3,7 +3,7 @@ import { Orbit, ChevronRight, Globe, Award } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#05070D] border-t border-white/[0.06] pt-16 pb-12 text-slate-400 text-sm">
+    <footer className="bg-[#05070D]/80 backdrop-blur-xl border-t border-white/[0.06] pt-16 pb-12 text-slate-400 text-sm relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/[0.06]">
           

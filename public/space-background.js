@@ -155,9 +155,12 @@
 			"@media (prefers-reduced-motion: reduce) {" +
 				".space-orbit-group-1, .space-orbit-group-2 { animation: none !important; }" +
 			"}" +
-			"body > main { position: relative; z-index: 10; }" +
+			"body > main { position: relative; z-index: 10; background-color: transparent !important; }" +
+			"main { background-color: transparent !important; }" +
+			"main > section:not(#accueil) { background-color: transparent !important; }" +
 			"body > main > section:not(#accueil) { background-color: transparent !important; }" +
 			"body > main > section#simulateur { background-color: transparent !important; }" +
+			"footer { position: relative; z-index: 10; background-color: rgba(5, 7, 13, 0.65) !important; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }" +
 			"body > footer { position: relative; z-index: 10; background-color: rgba(5, 7, 13, 0.65) !important; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }";
 
 		document.head.appendChild(style);
@@ -446,6 +449,8 @@
 	   7. POINT D'ENTRÉE & BOUCLE PRINCIPALE
 	   ========================================================================== */
 	function initSpaceBackground() {
+		if (window.__SPACE_BG_INITIALIZED__) return;
+		window.__SPACE_BG_INITIALIZED__ = true;
 		injectSpaceStyles();
 		var container = ensureBackgroundStructure();
 		var gradientLayer = document.getElementById("space-gradient-layer");

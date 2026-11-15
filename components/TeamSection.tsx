@@ -20,7 +20,7 @@ export default function TeamSection() {
   ];
 
   return (
-    <section id="equipe" className="py-24 bg-[#06080F] relative border-b border-white/[0.06]">
+    <section id="equipe" className="py-24 bg-transparent relative border-b border-white/[0.06]">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         
         {/* Simple Badge */}

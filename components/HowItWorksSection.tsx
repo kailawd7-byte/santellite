@@ -36,7 +36,7 @@ export default function HowItWorksSection() {
   ];
 
   return (
-    <section id="architecture" className="py-24 bg-[#070A12] relative overflow-hidden border-b border-white/[0.06]">
+    <section id="architecture" className="py-24 bg-transparent relative overflow-hidden border-b border-white/[0.06]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

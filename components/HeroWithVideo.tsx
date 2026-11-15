@@ -23,7 +23,7 @@ export default function HeroWithVideo() {
           className="w-full h-full object-cover object-[center_35%] scale-105 transition-transform duration-1000 ease-out brightness-105 contrast-110"
         />
         {/* Soft, cinematic dark gradients for effortless WCAG AAA text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#06080F]/90 via-[#06080F]/55 to-[#06080F]"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#040710]/85 via-[#040710]/40 to-transparent"></div>
         {/* Subtle atmospheric glow */}
         <div 
           className="absolute inset-0 opacity-25 mix-blend-screen pointer-events-none"

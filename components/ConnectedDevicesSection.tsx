@@ -47,7 +47,7 @@ export default function ConnectedDevicesSection() {
   ];
 
   return (
-    <section id="equipements" className="py-24 bg-[#06080F] relative overflow-hidden border-b border-white/[0.06]">
+    <section id="equipements" className="py-24 bg-transparent relative overflow-hidden border-b border-white/[0.06]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

@@ -28,7 +28,7 @@ export default function NasaChallengeSection() {
   ];
 
   return (
-    <section id="defi" className="py-24 bg-[#070A12] relative border-b border-white/[0.06]">
+    <section id="defi" className="py-24 bg-transparent relative border-b border-white/[0.06]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
