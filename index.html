@@ -528,9 +528,20 @@
 							<span class="text-xs font-mono text-blue-400 font-bold uppercase tracking-widest">
 								Agence Spatiale Canadienne (ASC) • Carré Technologies
 							</span>
-							<h3 class="text-2xl sm:text-3xl font-mono font-bold text-white uppercase mt-1">
-								Maillot Biométrique Spatial Astroskin
-							</h3>
+							<div class="flex items-center justify-between gap-3 mt-1 relative">
+								<h3 class="text-2xl sm:text-3xl font-mono font-bold text-white uppercase">
+									Maillot Biométrique Spatial Astroskin
+								</h3>
+								<div class="relative">
+									<button type="button" onclick="toggleInfoPopover('pop-prod-astroskin', this)" aria-expanded="false" aria-label="Informations sur cet équipement" class="p-1 rounded-lg text-slate-400 hover:text-cyan-400 transition-colors">
+										<i data-lucide="info" class="w-5 h-5"></i>
+									</button>
+									<div id="pop-prod-astroskin" class="info-popover hidden absolute right-0 top-full mt-2 w-72 sm:w-80 p-3.5 rounded-2xl bg-[#0B0F1A]/95 border border-cyan-500/30 backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.7)] z-50 text-left text-xs font-mono">
+										<span class="text-cyan-400 font-bold uppercase block text-[10px] tracking-wider mb-1">Ce qui est analysé</span>
+										<span class="text-slate-200 leading-relaxed block">Pression artérielle (PTT), ECG 3 dérivations, respiration (pléthysmographie), SpO2, température cutanée et niveau d'activité, en continu.</span>
+									</div>
+								</div>
+							</div>
 							<p class="text-slate-300 text-sm sm:text-base leading-relaxed mt-3">
 								Conçu pour surveiller les astronautes 24h/24 sans entraver le sommeil ni les activités physiques. Il intègre des capteurs textiles brevetés pour mesurer en continu les fonctions vitales critiques.
 							</p>
@@ -612,9 +623,20 @@
 							<span class="text-xs font-mono text-cyan-400 font-bold uppercase tracking-widest">
 								Empatica • Certifié Recherche Spatiale NASA / TRISH
 							</span>
-							<h3 class="text-2xl sm:text-3xl font-mono font-bold text-white uppercase mt-1">
-								Montre Médicale Spatiale EmbracePlus
-							</h3>
+							<div class="flex items-center justify-between gap-3 mt-1 relative">
+								<h3 class="text-2xl sm:text-3xl font-mono font-bold text-white uppercase">
+									Montre Médicale Spatiale EmbracePlus
+								</h3>
+								<div class="relative">
+									<button type="button" onclick="toggleInfoPopover('pop-prod-embrace', this)" aria-expanded="false" aria-label="Informations sur cet équipement" class="p-1 rounded-lg text-slate-400 hover:text-cyan-400 transition-colors">
+										<i data-lucide="info" class="w-5 h-5"></i>
+									</button>
+									<div id="pop-prod-embrace" class="info-popover hidden absolute right-0 top-full mt-2 w-72 sm:w-80 p-3.5 rounded-2xl bg-[#0B0F1A]/95 border border-cyan-500/30 backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.7)] z-50 text-left text-xs font-mono">
+										<span class="text-cyan-400 font-bold uppercase block text-[10px] tracking-wider mb-1">Ce qui est analysé</span>
+										<span class="text-slate-200 leading-relaxed block">Fréquence cardiaque et variabilité cardiaque (PPG), activité électrodermale, température cutanée, SpO2 et mouvement (accéléromètre/gyroscope).</span>
+									</div>
+								</div>
+							</div>
 							<p class="text-slate-300 text-sm sm:text-base leading-relaxed mt-3">
 								Dispositif médical au poignet retenu pour les missions spatiales humaines (TRISH / NASA / Polaris Dawn). Conçue pour une surveillance physiologique continue de grade clinique en microgravité sans perturber les tâches de vol.
 							</p>
@@ -690,9 +712,20 @@
 							<span class="text-xs font-mono text-emerald-400 font-bold uppercase tracking-widest">
 								NASA · Echolight (Technologie REMS)
 							</span>
-							<h3 class="text-2xl sm:text-3xl font-mono font-bold text-white uppercase mt-1">
-								Échographe Osseux Portable
-							</h3>
+							<div class="flex items-center justify-between gap-3 mt-1 relative">
+								<h3 class="text-2xl sm:text-3xl font-mono font-bold text-white uppercase">
+									Échographe Osseux Portable
+								</h3>
+								<div class="relative">
+									<button type="button" onclick="toggleInfoPopover('pop-prod-echolight', this)" aria-expanded="false" aria-label="Informations sur cet équipement" class="p-1 rounded-lg text-slate-400 hover:text-cyan-400 transition-colors">
+										<i data-lucide="info" class="w-5 h-5"></i>
+									</button>
+									<div id="pop-prod-echolight" class="info-popover hidden absolute right-0 top-full mt-2 w-72 sm:w-80 p-3.5 rounded-2xl bg-[#0B0F1A]/95 border border-cyan-500/30 backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.7)] z-50 text-left text-xs font-mono">
+										<span class="text-cyan-400 font-bold uppercase block text-[10px] tracking-wider mb-1">Ce qui est analysé</span>
+										<span class="text-slate-200 leading-relaxed block">Densité et microarchitecture osseuses de la colonne et du fémur, par ultrasons, sans radiation.</span>
+									</div>
+								</div>
+							</div>
 							<p class="text-slate-300 text-sm sm:text-base leading-relaxed mt-3">
 								Appareil de la taille d'une petite valise, utilisé par la NASA pour suivre la perte osseuse en microgravité. Mesure la densité et la microarchitecture osseuses par ultrasons, sans aucune radiation, avec un scan de moins de 10 minutes sur la colonne et le fémur.
 							</p>
@@ -768,9 +801,20 @@
 							<span class="text-xs font-mono text-amber-400 font-bold uppercase tracking-widest">
 								Programme de Recherche Humaine de la NASA (HRP)
 							</span>
-							<h3 class="text-2xl sm:text-3xl font-mono font-bold text-white uppercase mt-1">
-								Dosimètre Personnel de Radiations
-							</h3>
+							<div class="flex items-center justify-between gap-3 mt-1 relative">
+								<h3 class="text-2xl sm:text-3xl font-mono font-bold text-white uppercase">
+									Dosimètre Personnel de Radiations
+								</h3>
+								<div class="relative">
+									<button type="button" onclick="toggleInfoPopover('pop-prod-dosimeter', this)" aria-expanded="false" aria-label="Informations sur cet équipement" class="p-1 rounded-lg text-slate-400 hover:text-cyan-400 transition-colors">
+										<i data-lucide="info" class="w-5 h-5"></i>
+									</button>
+									<div id="pop-prod-dosimeter" class="info-popover hidden absolute right-0 top-full mt-2 w-72 sm:w-80 p-3.5 rounded-2xl bg-[#0B0F1A]/95 border border-cyan-500/30 backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.7)] z-50 text-left text-xs font-mono">
+										<span class="text-cyan-400 font-bold uppercase block text-[10px] tracking-wider mb-1">Ce qui est analysé</span>
+										<span class="text-slate-200 leading-relaxed block">Dose de radiations cumulée, mesurée en continu.</span>
+									</div>
+								</div>
+							</div>
 							<p class="text-slate-300 text-sm sm:text-base leading-relaxed mt-3">
 								Appareil porté en continu pour mesurer la dose de radiations spatiales reçue par l'astronaute. Essentiel pour un risque qu'aucun autre capteur corporel ne peut détecter directement, puisque les radiations n'affectent les constantes vitales que lentement et indirectement.
 							</p>
@@ -846,9 +890,20 @@
 							<span class="text-xs font-mono text-purple-400 font-bold uppercase tracking-widest">
 								Agence Spatiale Italienne (ASI) · Université de Bologne
 							</span>
-							<h3 class="text-2xl sm:text-3xl font-mono font-bold text-white uppercase mt-1">
-								Biocapteur Salivaire de Stress et d'Immunité
-							</h3>
+							<div class="flex items-center justify-between gap-3 mt-1 relative">
+								<h3 class="text-2xl sm:text-3xl font-mono font-bold text-white uppercase">
+									Biocapteur Salivaire de Stress et d'Immunité
+								</h3>
+								<div class="relative">
+									<button type="button" onclick="toggleInfoPopover('pop-prod-saliva', this)" aria-expanded="false" aria-label="Informations sur cet équipement" class="p-1 rounded-lg text-slate-400 hover:text-cyan-400 transition-colors">
+										<i data-lucide="info" class="w-5 h-5"></i>
+									</button>
+									<div id="pop-prod-saliva" class="info-popover hidden absolute right-0 top-full mt-2 w-72 sm:w-80 p-3.5 rounded-2xl bg-[#0B0F1A]/95 border border-cyan-500/30 backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.7)] z-50 text-left text-xs font-mono">
+										<span class="text-cyan-400 font-bold uppercase block text-[10px] tracking-wider mb-1">Ce qui est analysé</span>
+										<span class="text-slate-200 leading-relaxed block">Cortisol et DHEA-S salivaires, biomarqueurs du stress et de l'équilibre immunitaire.</span>
+									</div>
+								</div>
+							</div>
 							<p class="text-slate-300 text-sm sm:text-base leading-relaxed mt-3">
 								Laboratoire miniaturisé permettant d'analyser en temps réel des biomarqueurs salivaires directement à bord. Déjà testé sur la Station spatiale internationale pour mesurer le cortisol, un marqueur du stress chronique, et la DHEA-S, liée à l'équilibre du système immunitaire.
 							</p>
@@ -924,9 +979,20 @@
 							<span class="text-xs font-mono text-indigo-400 font-bold uppercase tracking-widest">
 								NASA AMES RESEARCH CENTER · CONDOR INSTRUMENTS (BRÉSIL)
 							</span>
-							<h3 class="text-2xl sm:text-3xl font-mono font-bold text-white uppercase mt-1">
-								Actigraphie Spatiale : Du Laboratoire au Vol Artemis II
-							</h3>
+							<div class="flex items-center justify-between gap-3 mt-1 relative">
+								<h3 class="text-2xl sm:text-3xl font-mono font-bold text-white uppercase">
+									Actigraphie Spatiale : Du Laboratoire au Vol Artemis II
+								</h3>
+								<div class="relative">
+									<button type="button" onclick="toggleInfoPopover('pop-prod-actigraphy', this)" aria-expanded="false" aria-label="Informations sur cet équipement" class="p-1 rounded-lg text-slate-400 hover:text-cyan-400 transition-colors">
+										<i data-lucide="info" class="w-5 h-5"></i>
+									</button>
+									<div id="pop-prod-actigraphy" class="info-popover hidden absolute right-0 top-full mt-2 w-72 sm:w-80 p-3.5 rounded-2xl bg-[#0B0F1A]/95 border border-cyan-500/30 backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.7)] z-50 text-left text-xs font-mono">
+										<span class="text-cyan-400 font-bold uppercase block text-[10px] tracking-wider mb-1">Ce qui est analysé</span>
+										<span class="text-slate-200 leading-relaxed block">Mouvement du poignet (environ 32 Hz), spectre de lumière ambiante, et température cutanée sur les modèles récents.</span>
+									</div>
+								</div>
+							</div>
 							<p class="text-slate-300 text-sm sm:text-base leading-relaxed mt-3">
 								Ces appareils ressemblent à des montres numériques, mais n&apos;affichent pas toujours l&apos;heure, afin de ne pas biaiser les études sur la perception du temps en mission. Deux générations d&apos;actigraphes se succèdent dans le protocole ARCHeR (Artemis Research for Crew Health and Readiness) : l&apos;historique Actiwatch Spectrum Plus de Philips pour établir les données de référence au sol, et l&apos;ActLumus de la startup brésilienne Condor Instruments, embarqué en vol à bord de la capsule Orion depuis l&apos;arrêt de la gamme Philips.
 							</p>
@@ -1508,6 +1574,8 @@
 
 	<!-- Logique JavaScript unifiée -->
 	<script src="script.js" defer></script>
+	<!-- Composant d'explication pédagogique réutilisable -->
+	<script src="info-popover.js" defer></script>
 	<!-- Fond spatial animé synchronisé au défilement -->
 	<script src="space-background.js" defer></script>
 

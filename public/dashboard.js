@@ -113,7 +113,7 @@ var simData = {
 		moodBadge: "STABLE",
 		moodBadgeClass: "text-emerald-400",
 		moodDiag: "Stabilité thymique & concentration",
-		moodTrust: "Élevée (97.0%) • VFC & Analyse vocale",
+		moodTrust: "Indirecte • Déclaration + signal de stress physiologique",
 		moodSpark: [8.5, 8.6, 8.8, 8.7, 8.9, 8.8, 8.7, 8.8, 8.9, 8.8, 8.8, 8.8],
 
 		// Métriques spatiales
@@ -212,7 +212,7 @@ var simData = {
 		moodBadge: "ANXIÉTÉ",
 		moodBadgeClass: "text-amber-400 font-extrabold",
 		moodDiag: "Anxiété hypoxique & charge mentale",
-		moodTrust: "Moyenne (94.5%) • VFC & Conductance EDA",
+		moodTrust: "Indirecte • Déclaration + signal de stress physiologique",
 		moodSpark: [7.8, 7.5, 7.0, 6.5, 5.8, 5.2, 4.8, 4.5, 4.3, 4.2, 4.2, 4.2],
 
 		tScore: "-0.3",
@@ -309,7 +309,7 @@ var simData = {
 		moodBadge: "STABLE",
 		moodBadgeClass: "text-emerald-400",
 		moodDiag: "Vigilance et moral satisfaisants",
-		moodTrust: "Élevée (96.5%) • VFC & Analyse vocale",
+		moodTrust: "Indirecte • Déclaration + signal de stress physiologique",
 		moodSpark: [8.0, 7.9, 8.1, 7.8, 8.0, 7.9, 8.0, 7.9, 7.9, 7.9, 7.9, 7.9],
 
 		tScore: "-1.8",
@@ -406,7 +406,7 @@ var simData = {
 		moodBadge: "ALERTE",
 		moodBadgeClass: "text-orange-400",
 		moodDiag: "Stress de confinement d'urgence",
-		moodTrust: "Moyenne (95.0%) • VFC & Cortisol salivaire",
+		moodTrust: "Indirecte • Déclaration + signal de stress physiologique",
 		moodSpark: [7.5, 7.0, 6.5, 5.8, 5.2, 4.9, 4.6, 4.7, 4.8, 4.8, 4.8, 4.8],
 
 		tScore: "-0.4",
@@ -503,7 +503,7 @@ var simData = {
 		moodBadge: "BURNOUT",
 		moodBadgeClass: "text-purple-400 font-extrabold animate-pulse",
 		moodDiag: "Asthénie cognitive & irritabilité",
-		moodTrust: "Élevée (96.0%) • Ratio Cortisol/DHEA",
+		moodTrust: "Indirecte • Déclaration + signal de stress physiologique",
 		moodSpark: [6.5, 6.0, 5.4, 4.8, 4.2, 3.8, 3.3, 3.2, 3.1, 3.1, 3.1, 3.1],
 
 		tScore: "-0.5",
@@ -600,7 +600,7 @@ var simData = {
 		moodBadge: "VIGILANCE BASSE",
 		moodBadgeClass: "text-amber-400",
 		moodDiag: "Baisse de vigilance en transit lointain",
-		moodTrust: "Élevée (97.2%) • Actigraphie & VFC",
+		moodTrust: "Indirecte • Déclaration + signal de stress physiologique",
 		moodSpark: [7.2, 6.8, 6.4, 6.0, 5.8, 5.6, 5.5, 5.6, 5.7, 5.6, 5.6, 5.6],
 
 		tScore: "-0.2",

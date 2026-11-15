@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import {
   Activity,
@@ -36,6 +36,34 @@ export default function ConnectedDevicesSection() {
 
   const [astroskinImgMode, setAstroskinImgMode] = useState<"iss" | "diagram">("iss");
   const [embraceImgMode, setEmbraceImgMode] = useState<"front" | "sensors">("front");
+  const [openInfoId, setOpenInfoId] = useState<string | null>(null);
+
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") setOpenInfoId(null);
+    }
+    function handleClickOutside(e: MouseEvent) {
+      const target = e.target as HTMLElement | null;
+      if (target && !target.closest(".edu-info-container")) {
+        setOpenInfoId(null);
+      }
+    }
+    document.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
+  const deviceEducationalInfo: Record<string, string> = {
+    astroskin: "Pression artérielle (PTT), ECG 3 dérivations, respiration (pléthysmographie), SpO2, température cutanée et niveau d'activité, en continu.",
+    embraceplus: "Fréquence cardiaque et variabilité cardiaque (PPG), activité électrodermale, température cutanée, SpO2 et mouvement (accéléromètre/gyroscope).",
+    echolight: "Densité et microarchitecture osseuses de la colonne et du fémur, par ultrasons, sans radiation.",
+    dosimeter: "Dose de radiations cumulée, mesurée en continu.",
+    saliva: "Cortisol et DHEA-S salivaires, biomarqueurs du stress et de l'équilibre immunitaire.",
+    actigraphy: "Mouvement du poignet (environ 32 Hz), spectre de lumière ambiante, et température cutanée sur les modèles récents.",
+  };
 
   const products = [
     { id: "astroskin", label: "1. Maillot Astroskin", icon: Shield, color: "text-blue-500" },
@@ -146,9 +174,33 @@ export default function ConnectedDevicesSection() {
                 <span className="text-xs font-mono text-blue-400 font-bold uppercase tracking-widest">
                   Agence Spatiale Canadienne (ASC) • Carré Technologies
                 </span>
-                <h3 className="text-2xl sm:text-3xl font-mono font-bold text-white uppercase mt-1">
-                  Maillot Biométrique Spatial Astroskin
-                </h3>
+                <div className="flex items-center justify-between gap-3 mt-1 relative">
+                  <h3 className="text-2xl sm:text-3xl font-mono font-bold text-white uppercase">
+                    Maillot Biométrique Spatial Astroskin
+                  </h3>
+                  <div className="relative edu-info-container">
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setOpenInfoId(openInfoId === "astroskin" ? null : "astroskin");
+                      }}
+                      aria-expanded={openInfoId === "astroskin"}
+                      aria-label="Informations sur cet équipement"
+                      className={`p-1.5 rounded-lg transition-colors ${
+                        openInfoId === "astroskin" ? "text-cyan-400" : "text-slate-400 hover:text-cyan-400"
+                      }`}
+                    >
+                      <Info className="w-5 h-5" />
+                    </button>
+                    {openInfoId === "astroskin" && (
+                      <div className="absolute right-0 top-full mt-2 w-72 sm:w-80 p-3.5 rounded-2xl bg-[#0B0F1A]/95 border border-cyan-500/30 backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.7)] z-50 text-left text-xs font-mono">
+                        <span className="text-cyan-400 font-bold uppercase block text-[10px] tracking-wider mb-1">Ce qui est analysé</span>
+                        <span className="text-slate-200 leading-relaxed block">{deviceEducationalInfo.astroskin}</span>
+                      </div>
+                    )}
+                  </div>
+                </div>
                 <p className="text-slate-300 text-sm sm:text-base leading-relaxed mt-3">
                   Conçu pour surveiller les astronautes 24h/24 sans entraver le sommeil ni les activités physiques. Il intègre des capteurs textiles brevetés pour mesurer en continu les fonctions vitales critiques.
                 </p>
@@ -271,9 +323,33 @@ export default function ConnectedDevicesSection() {
                 <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-widest">
                   Empatica • Certifié Recherche Spatiale NASA / TRISH
                 </span>
-                <h3 className="text-2xl sm:text-3xl font-mono font-bold text-white uppercase mt-1">
-                  Montre Médicale Spatiale EmbracePlus
-                </h3>
+                <div className="flex items-center justify-between gap-3 mt-1 relative">
+                  <h3 className="text-2xl sm:text-3xl font-mono font-bold text-white uppercase">
+                    Montre Médicale Spatiale EmbracePlus
+                  </h3>
+                  <div className="relative edu-info-container">
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setOpenInfoId(openInfoId === "embraceplus" ? null : "embraceplus");
+                      }}
+                      aria-expanded={openInfoId === "embraceplus"}
+                      aria-label="Informations sur cet équipement"
+                      className={`p-1.5 rounded-lg transition-colors ${
+                        openInfoId === "embraceplus" ? "text-cyan-400" : "text-slate-400 hover:text-cyan-400"
+                      }`}
+                    >
+                      <Info className="w-5 h-5" />
+                    </button>
+                    {openInfoId === "embraceplus" && (
+                      <div className="absolute right-0 top-full mt-2 w-72 sm:w-80 p-3.5 rounded-2xl bg-[#0B0F1A]/95 border border-cyan-500/30 backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.7)] z-50 text-left text-xs font-mono">
+                        <span className="text-cyan-400 font-bold uppercase block text-[10px] tracking-wider mb-1">Ce qui est analysé</span>
+                        <span className="text-slate-200 leading-relaxed block">{deviceEducationalInfo.embraceplus}</span>
+                      </div>
+                    )}
+                  </div>
+                </div>
                 <p className="text-slate-300 text-sm sm:text-base leading-relaxed mt-3">
                   Dispositif médical au poignet retenu pour les missions spatiales humaines (TRISH / NASA / Polaris Dawn). Conçue pour une surveillance physiologique continue de grade clinique en microgravité sans perturber les tâches de vol.
                 </p>
@@ -368,9 +444,33 @@ export default function ConnectedDevicesSection() {
                 <span className="text-xs font-mono text-emerald-400 font-bold uppercase tracking-widest">
                   NASA · Echolight (Technologie REMS)
                 </span>
-                <h3 className="text-2xl sm:text-3xl font-mono font-bold text-white uppercase mt-1">
-                  Échographe Osseux Portable
-                </h3>
+                <div className="flex items-center justify-between gap-3 mt-1 relative">
+                  <h3 className="text-2xl sm:text-3xl font-mono font-bold text-white uppercase">
+                    Échographe Osseux Portable
+                  </h3>
+                  <div className="relative edu-info-container">
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setOpenInfoId(openInfoId === "echolight" ? null : "echolight");
+                      }}
+                      aria-expanded={openInfoId === "echolight"}
+                      aria-label="Informations sur cet équipement"
+                      className={`p-1.5 rounded-lg transition-colors ${
+                        openInfoId === "echolight" ? "text-cyan-400" : "text-slate-400 hover:text-cyan-400"
+                      }`}
+                    >
+                      <Info className="w-5 h-5" />
+                    </button>
+                    {openInfoId === "echolight" && (
+                      <div className="absolute right-0 top-full mt-2 w-72 sm:w-80 p-3.5 rounded-2xl bg-[#0B0F1A]/95 border border-cyan-500/30 backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.7)] z-50 text-left text-xs font-mono">
+                        <span className="text-cyan-400 font-bold uppercase block text-[10px] tracking-wider mb-1">Ce qui est analysé</span>
+                        <span className="text-slate-200 leading-relaxed block">{deviceEducationalInfo.echolight}</span>
+                      </div>
+                    )}
+                  </div>
+                </div>
                 <p className="text-slate-300 text-sm sm:text-base leading-relaxed mt-3">
                   Appareil de la taille d&apos;une petite valise, utilisé par la NASA pour suivre la perte osseuse en microgravité. Mesure la densité et la microarchitecture osseuses par ultrasons, sans aucune radiation, avec un scan de moins de 10 minutes sur la colonne et le fémur.
                 </p>
@@ -465,9 +565,33 @@ export default function ConnectedDevicesSection() {
                 <span className="text-xs font-mono text-amber-400 font-bold uppercase tracking-widest">
                   Programme de Recherche Humaine de la NASA (HRP)
                 </span>
-                <h3 className="text-2xl sm:text-3xl font-mono font-bold text-white uppercase mt-1">
-                  Dosimètre Personnel de Radiations
-                </h3>
+                <div className="flex items-center justify-between gap-3 mt-1 relative">
+                  <h3 className="text-2xl sm:text-3xl font-mono font-bold text-white uppercase">
+                    Dosimètre Personnel de Radiations
+                  </h3>
+                  <div className="relative edu-info-container">
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setOpenInfoId(openInfoId === "dosimeter" ? null : "dosimeter");
+                      }}
+                      aria-expanded={openInfoId === "dosimeter"}
+                      aria-label="Informations sur cet équipement"
+                      className={`p-1.5 rounded-lg transition-colors ${
+                        openInfoId === "dosimeter" ? "text-cyan-400" : "text-slate-400 hover:text-cyan-400"
+                      }`}
+                    >
+                      <Info className="w-5 h-5" />
+                    </button>
+                    {openInfoId === "dosimeter" && (
+                      <div className="absolute right-0 top-full mt-2 w-72 sm:w-80 p-3.5 rounded-2xl bg-[#0B0F1A]/95 border border-cyan-500/30 backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.7)] z-50 text-left text-xs font-mono">
+                        <span className="text-cyan-400 font-bold uppercase block text-[10px] tracking-wider mb-1">Ce qui est analysé</span>
+                        <span className="text-slate-200 leading-relaxed block">{deviceEducationalInfo.dosimeter}</span>
+                      </div>
+                    )}
+                  </div>
+                </div>
                 <p className="text-slate-300 text-sm sm:text-base leading-relaxed mt-3">
                   Appareil porté en continu pour mesurer la dose de radiations spatiales reçue par l&apos;astronaute. Essentiel pour un risque qu&apos;aucun autre capteur corporel ne peut détecter directement, puisque les radiations n&apos;affectent les constantes vitales que lentement et indirectement.
                 </p>
@@ -562,9 +686,33 @@ export default function ConnectedDevicesSection() {
                 <span className="text-xs font-mono text-purple-400 font-bold uppercase tracking-widest">
                   Agence Spatiale Italienne (ASI) · Université de Bologne
                 </span>
-                <h3 className="text-2xl sm:text-3xl font-mono font-bold text-white uppercase mt-1">
-                  Biocapteur Salivaire de Stress et d&apos;Immunité
-                </h3>
+                <div className="flex items-center justify-between gap-3 mt-1 relative">
+                  <h3 className="text-2xl sm:text-3xl font-mono font-bold text-white uppercase">
+                    Biocapteur Salivaire de Stress et d&apos;Immunité
+                  </h3>
+                  <div className="relative edu-info-container">
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setOpenInfoId(openInfoId === "saliva" ? null : "saliva");
+                      }}
+                      aria-expanded={openInfoId === "saliva"}
+                      aria-label="Informations sur cet équipement"
+                      className={`p-1.5 rounded-lg transition-colors ${
+                        openInfoId === "saliva" ? "text-cyan-400" : "text-slate-400 hover:text-cyan-400"
+                      }`}
+                    >
+                      <Info className="w-5 h-5" />
+                    </button>
+                    {openInfoId === "saliva" && (
+                      <div className="absolute right-0 top-full mt-2 w-72 sm:w-80 p-3.5 rounded-2xl bg-[#0B0F1A]/95 border border-cyan-500/30 backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.7)] z-50 text-left text-xs font-mono">
+                        <span className="text-cyan-400 font-bold uppercase block text-[10px] tracking-wider mb-1">Ce qui est analysé</span>
+                        <span className="text-slate-200 leading-relaxed block">{deviceEducationalInfo.saliva}</span>
+                      </div>
+                    )}
+                  </div>
+                </div>
                 <p className="text-slate-300 text-sm sm:text-base leading-relaxed mt-3">
                   Laboratoire miniaturisé permettant d&apos;analyser en temps réel des biomarqueurs salivaires directement à bord. Déjà testé sur la Station spatiale internationale pour mesurer le cortisol, un marqueur du stress chronique, et la DHEA-S, liée à l&apos;équilibre du système immunitaire.
                 </p>
@@ -657,9 +805,33 @@ export default function ConnectedDevicesSection() {
                 <span className="text-xs font-mono text-indigo-400 font-bold uppercase tracking-widest">
                   NASA AMES RESEARCH CENTER · CONDOR INSTRUMENTS (BRÉSIL)
                 </span>
-                <h3 className="text-2xl sm:text-3xl font-mono font-bold text-white uppercase mt-1">
-                  Actigraphie Spatiale : Du Laboratoire au Vol Artemis II
-                </h3>
+                <div className="flex items-center justify-between gap-3 mt-1 relative">
+                  <h3 className="text-2xl sm:text-3xl font-mono font-bold text-white uppercase">
+                    Actigraphie Spatiale : Du Laboratoire au Vol Artemis II
+                  </h3>
+                  <div className="relative edu-info-container">
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setOpenInfoId(openInfoId === "actigraphy" ? null : "actigraphy");
+                      }}
+                      aria-expanded={openInfoId === "actigraphy"}
+                      aria-label="Informations sur cet équipement"
+                      className={`p-1.5 rounded-lg transition-colors ${
+                        openInfoId === "actigraphy" ? "text-cyan-400" : "text-slate-400 hover:text-cyan-400"
+                      }`}
+                    >
+                      <Info className="w-5 h-5" />
+                    </button>
+                    {openInfoId === "actigraphy" && (
+                      <div className="absolute right-0 top-full mt-2 w-72 sm:w-80 p-3.5 rounded-2xl bg-[#0B0F1A]/95 border border-cyan-500/30 backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.7)] z-50 text-left text-xs font-mono">
+                        <span className="text-cyan-400 font-bold uppercase block text-[10px] tracking-wider mb-1">Ce qui est analysé</span>
+                        <span className="text-slate-200 leading-relaxed block">{deviceEducationalInfo.actigraphy}</span>
+                      </div>
+                    )}
+                  </div>
+                </div>
                 <p className="text-slate-300 text-sm sm:text-base leading-relaxed mt-3">
                   Ces appareils ressemblent à des montres numériques, mais n&apos;affichent pas toujours l&apos;heure, afin de ne pas biaiser les études sur la perception du temps en mission. Deux générations d&apos;actigraphes se succèdent dans le protocole ARCHeR (Artemis Research for Crew Health and Readiness) : l&apos;historique Actiwatch Spectrum Plus de Philips pour établir les données de référence au sol, et l&apos;ActLumus de la startup brésilienne Condor Instruments, embarqué en vol à bord de la capsule Orion depuis l&apos;arrêt de la gamme Philips.
                 </p>

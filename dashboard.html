@@ -750,19 +750,39 @@
 				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
 					
 					<!-- 1. Pression artérielle -->
-					<div class="p-4 rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-between hover:border-cyan-500/30 transition-all">
+					<div class="relative p-4 rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-between hover:border-cyan-500/30 transition-all">
 						<div>
 							<div class="flex items-center justify-between text-xs font-mono">
 								<span class="text-slate-400 flex items-center gap-1.5 font-bold uppercase text-[11px]">
 									<i data-lucide="activity" class="w-3.5 h-3.5 text-emerald-400"></i> Pression Artérielle
 								</span>
-								<span id="badge-bp" class="text-[10px] font-mono font-bold text-emerald-400">NORMAL</span>
+								<div class="flex items-center gap-1.5">
+									<span id="badge-bp" class="text-[10px] font-mono font-bold text-emerald-400">NORMAL</span>
+									<button type="button" onclick="toggleInfoPopover('pop-bp', this)" aria-expanded="false" aria-label="Informations sur cet indicateur" class="p-1 rounded text-slate-400 hover:text-cyan-400 transition-colors">
+										<i data-lucide="info" class="w-3.5 h-3.5"></i>
+									</button>
+								</div>
 							</div>
 							<div class="mt-2 flex items-baseline gap-2">
 								<span id="val-bp" class="text-2xl font-mono font-extrabold text-white">118/76</span>
 								<span class="text-xs font-mono text-slate-400">mmHg</span>
 							</div>
 							<p id="diag-bp" class="text-[10px] font-mono text-slate-300 mt-1 leading-snug">Normotension PTT continue</p>
+						</div>
+
+						<div id="pop-bp" class="info-popover hidden absolute right-2 top-11 w-72 sm:w-80 p-3.5 rounded-2xl bg-[#0B0F1A]/95 border border-cyan-500/30 backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.7)] z-50 text-left space-y-2 text-xs font-mono">
+							<div>
+								<span class="text-cyan-400 font-bold uppercase block text-[10px] tracking-wider">Ce qui est analysé</span>
+								<span class="text-slate-200">Tension systolique/diastolique, calculée en continu par le temps de transit de l'onde de pouls.</span>
+							</div>
+							<div class="pt-1.5 border-t border-white/10">
+								<span class="text-indigo-400 font-bold uppercase block text-[10px] tracking-wider">Par quoi</span>
+								<span class="text-slate-200">Astroskin (capteur PTT, sans brassard gonflable).</span>
+							</div>
+							<div class="pt-1.5 border-t border-white/10">
+								<span class="text-amber-400 font-bold uppercase block text-[10px] tracking-wider">Pourquoi</span>
+								<span class="text-slate-300">La microgravité redistribue les fluides vers le haut du corps et déconditionne le système cardiovasculaire (risque Champs Gravitationnels, NASA HRP).</span>
+							</div>
 						</div>
 
 						<div class="mt-3 pt-2.5 border-t border-white/5">
@@ -775,19 +795,39 @@
 					</div>
 
 					<!-- 2. Rythme cardiaque -->
-					<div class="p-4 rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-between hover:border-cyan-500/30 transition-all">
+					<div class="relative p-4 rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-between hover:border-cyan-500/30 transition-all">
 						<div>
 							<div class="flex items-center justify-between text-xs font-mono">
 								<span class="text-slate-400 flex items-center gap-1.5 font-bold uppercase text-[11px]">
 									<i data-lucide="heart" class="w-3.5 h-3.5 text-red-400"></i> Rythme Cardiaque
 								</span>
-								<span id="badge-bpm" class="text-[10px] font-mono font-bold text-emerald-400">NORMAL</span>
+								<div class="flex items-center gap-1.5">
+									<span id="badge-bpm" class="text-[10px] font-mono font-bold text-emerald-400">NORMAL</span>
+									<button type="button" onclick="toggleInfoPopover('pop-bpm', this)" aria-expanded="false" aria-label="Informations sur cet indicateur" class="p-1 rounded text-slate-400 hover:text-cyan-400 transition-colors">
+										<i data-lucide="info" class="w-3.5 h-3.5"></i>
+									</button>
+								</div>
 							</div>
 							<div class="mt-2 flex items-baseline gap-2">
 								<span id="val-bpm" class="text-2xl font-mono font-extrabold text-white">68</span>
 								<span class="text-xs font-mono text-slate-400">BPM</span>
 							</div>
 							<p id="diag-bpm" class="text-[10px] font-mono text-slate-300 mt-1 leading-snug">Rythme sinusal régulier (65-72)</p>
+						</div>
+
+						<div id="pop-bpm" class="info-popover hidden absolute right-2 top-11 w-72 sm:w-80 p-3.5 rounded-2xl bg-[#0B0F1A]/95 border border-cyan-500/30 backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.7)] z-50 text-left space-y-2 text-xs font-mono">
+							<div>
+								<span class="text-cyan-400 font-bold uppercase block text-[10px] tracking-wider">Ce qui est analysé</span>
+								<span class="text-slate-200">Fréquence cardiaque et régularité du rythme, détection d'arythmies.</span>
+							</div>
+							<div class="pt-1.5 border-t border-white/10">
+								<span class="text-indigo-400 font-bold uppercase block text-[10px] tracking-wider">Par quoi</span>
+								<span class="text-slate-200">Électrocardiogramme 3 dérivations (Astroskin).</span>
+							</div>
+							<div class="pt-1.5 border-t border-white/10">
+								<span class="text-amber-400 font-bold uppercase block text-[10px] tracking-wider">Pourquoi</span>
+								<span class="text-slate-300">Le cœur travaille différemment en micropesanteur, et le stress chronique peut provoquer des irrégularités (risques Champs Gravitationnels et Isolement/Confinement).</span>
+							</div>
 						</div>
 
 						<div class="mt-3 pt-2.5 border-t border-white/5">
@@ -800,18 +840,38 @@
 					</div>
 
 					<!-- 3. Glycémie -->
-					<div class="p-4 rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-between hover:border-cyan-500/30 transition-all">
+					<div class="relative p-4 rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-between hover:border-cyan-500/30 transition-all">
 						<div>
 							<div class="flex items-center justify-between text-xs font-mono">
 								<span class="text-slate-400 flex items-center gap-1.5 font-bold uppercase text-[11px]">
 									<i data-lucide="droplet" class="w-3.5 h-3.5 text-cyan-400"></i> Glycémie Interstitielle
 								</span>
-								<span id="badge-glycemia" class="text-[10px] font-mono font-bold text-emerald-400">NORMAL</span>
+								<div class="flex items-center gap-1.5">
+									<span id="badge-glycemia" class="text-[10px] font-mono font-bold text-emerald-400">NORMAL</span>
+									<button type="button" onclick="toggleInfoPopover('pop-glycemia', this)" aria-expanded="false" aria-label="Informations sur cet indicateur" class="p-1 rounded text-slate-400 hover:text-cyan-400 transition-colors">
+										<i data-lucide="info" class="w-3.5 h-3.5"></i>
+									</button>
+								</div>
 							</div>
 							<div class="mt-2 flex items-baseline gap-2">
 								<span id="val-glycemia" class="text-2xl font-mono font-extrabold text-white">94 mg/dL</span>
 							</div>
 							<p id="diag-glycemia" class="text-[10px] font-mono text-slate-300 mt-1 leading-snug">Normoglycémie basale stable</p>
+						</div>
+
+						<div id="pop-glycemia" class="info-popover hidden absolute right-2 top-11 w-72 sm:w-80 p-3.5 rounded-2xl bg-[#0B0F1A]/95 border border-cyan-500/30 backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.7)] z-50 text-left space-y-2 text-xs font-mono">
+							<div>
+								<span class="text-cyan-400 font-bold uppercase block text-[10px] tracking-wider">Ce qui est analysé</span>
+								<span class="text-slate-200">Taux de glucose dans le liquide interstitiel (pas directement sanguin).</span>
+							</div>
+							<div class="pt-1.5 border-t border-white/10">
+								<span class="text-indigo-400 font-bold uppercase block text-[10px] tracking-wider">Par quoi</span>
+								<span class="text-slate-200">Capteur de glycémie interstitielle continu, porté en patch.</span>
+							</div>
+							<div class="pt-1.5 border-t border-white/10">
+								<span class="text-amber-400 font-bold uppercase block text-[10px] tracking-wider">Pourquoi</span>
+								<span class="text-slate-300">Le stress et les changements métaboliques en mission peuvent déséquilibrer la glycémie, liée à l'alimentation inadéquate citée par la NASA.</span>
+							</div>
 						</div>
 
 						<div class="mt-3 pt-2.5 border-t border-white/5">
@@ -824,18 +884,38 @@
 					</div>
 
 					<!-- 4. Température corporelle -->
-					<div class="p-4 rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-between hover:border-cyan-500/30 transition-all">
+					<div class="relative p-4 rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-between hover:border-cyan-500/30 transition-all">
 						<div>
 							<div class="flex items-center justify-between text-xs font-mono">
 								<span class="text-slate-400 flex items-center gap-1.5 font-bold uppercase text-[11px]">
 									<i data-lucide="thermometer" class="w-3.5 h-3.5 text-cyan-400"></i> Température Corporelle
 								</span>
-								<span id="badge-bodytemp" class="text-[10px] font-mono font-bold text-emerald-400">NORMAL</span>
+								<div class="flex items-center gap-1.5">
+									<span id="badge-bodytemp" class="text-[10px] font-mono font-bold text-emerald-400">NORMAL</span>
+									<button type="button" onclick="toggleInfoPopover('pop-bodytemp', this)" aria-expanded="false" aria-label="Informations sur cet indicateur" class="p-1 rounded text-slate-400 hover:text-cyan-400 transition-colors">
+										<i data-lucide="info" class="w-3.5 h-3.5"></i>
+									</button>
+								</div>
 							</div>
 							<div class="mt-2 flex items-baseline gap-2">
 								<span id="val-bodytemp" class="text-2xl font-mono font-extrabold text-white">36.8 °C</span>
 							</div>
 							<p id="diag-bodytemp" class="text-[10px] font-mono text-slate-300 mt-1 leading-snug">Thermorégulation optimale</p>
+						</div>
+
+						<div id="pop-bodytemp" class="info-popover hidden absolute right-2 top-11 w-72 sm:w-80 p-3.5 rounded-2xl bg-[#0B0F1A]/95 border border-cyan-500/30 backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.7)] z-50 text-left space-y-2 text-xs font-mono">
+							<div>
+								<span class="text-cyan-400 font-bold uppercase block text-[10px] tracking-wider">Ce qui est analysé</span>
+								<span class="text-slate-200">Température cutanée en continu, mesurée par infrarouge.</span>
+							</div>
+							<div class="pt-1.5 border-t border-white/10">
+								<span class="text-indigo-400 font-bold uppercase block text-[10px] tracking-wider">Par quoi</span>
+								<span class="text-slate-200">EmbracePlus (sonde IR).</span>
+							</div>
+							<div class="pt-1.5 border-t border-white/10">
+								<span class="text-amber-400 font-bold uppercase block text-[10px] tracking-wider">Pourquoi</span>
+								<span class="text-slate-300">Un environnement clos mal régulé ou une infection naissante se détecte d'abord par une variation de température (risque Environnement Clos Hostile).</span>
+							</div>
 						</div>
 
 						<div class="mt-3 pt-2.5 border-t border-white/5">
@@ -848,18 +928,38 @@
 					</div>
 
 					<!-- 5. Durée du sommeil -->
-					<div class="p-4 rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-between hover:border-cyan-500/30 transition-all">
+					<div class="relative p-4 rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-between hover:border-cyan-500/30 transition-all">
 						<div>
 							<div class="flex items-center justify-between text-xs font-mono">
 								<span class="text-slate-400 flex items-center gap-1.5 font-bold uppercase text-[11px]">
 									<i data-lucide="moon" class="w-3.5 h-3.5 text-indigo-400"></i> Sommeil Actigraphique
 								</span>
-								<span id="badge-sleep" class="text-[10px] font-mono font-bold text-emerald-400">OPTIMAL</span>
+								<div class="flex items-center gap-1.5">
+									<span id="badge-sleep" class="text-[10px] font-mono font-bold text-emerald-400">OPTIMAL</span>
+									<button type="button" onclick="toggleInfoPopover('pop-sleep', this)" aria-expanded="false" aria-label="Informations sur cet indicateur" class="p-1 rounded text-slate-400 hover:text-cyan-400 transition-colors">
+										<i data-lucide="info" class="w-3.5 h-3.5"></i>
+									</button>
+								</div>
 							</div>
 							<div class="mt-2 flex items-baseline gap-2">
 								<span id="val-sleep" class="text-2xl font-mono font-extrabold text-white">7h 35m</span>
 							</div>
 							<p id="diag-sleep" class="text-[10px] font-mono text-slate-300 mt-1 leading-snug">Efficacité 89% • 4 cycles REM</p>
+						</div>
+
+						<div id="pop-sleep" class="info-popover hidden absolute right-2 top-11 w-72 sm:w-80 p-3.5 rounded-2xl bg-[#0B0F1A]/95 border border-cyan-500/30 backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.7)] z-50 text-left space-y-2 text-xs font-mono">
+							<div>
+								<span class="text-cyan-400 font-bold uppercase block text-[10px] tracking-wider">Ce qui est analysé</span>
+								<span class="text-slate-200">Durée, cycles REM et efficacité du sommeil, déduits des micro-mouvements du poignet.</span>
+							</div>
+							<div class="pt-1.5 border-t border-white/10">
+								<span class="text-indigo-400 font-bold uppercase block text-[10px] tracking-wider">Par quoi</span>
+								<span class="text-slate-200">Actiwatch Spectrum Plus (études au sol) / ActLumus de Condor Instruments (en vol), protocole ARCHeR.</span>
+							</div>
+							<div class="pt-1.5 border-t border-white/10">
+								<span class="text-amber-400 font-bold uppercase block text-[10px] tracking-wider">Pourquoi</span>
+								<span class="text-slate-300">L'absence de cycle jour-nuit naturel perturbe le rythme circadien (risque Isolement et Confinement).</span>
+							</div>
 						</div>
 
 						<div class="mt-3 pt-2.5 border-t border-white/5">
@@ -872,13 +972,18 @@
 					</div>
 
 					<!-- 6. Humeur & Santé mentale -->
-					<div class="p-4 rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-between hover:border-cyan-500/30 transition-all">
+					<div class="relative p-4 rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-between hover:border-cyan-500/30 transition-all">
 						<div>
 							<div class="flex items-center justify-between text-xs font-mono">
 								<span class="text-slate-400 flex items-center gap-1.5 font-bold uppercase text-[11px]">
 									<i data-lucide="smile" class="w-3.5 h-3.5 text-purple-400"></i> Humeur &amp; Mental
 								</span>
-								<span id="badge-mood" class="text-[10px] font-mono font-bold text-emerald-400">STABLE</span>
+								<div class="flex items-center gap-1.5">
+									<span id="badge-mood" class="text-[10px] font-mono font-bold text-emerald-400">STABLE</span>
+									<button type="button" onclick="toggleInfoPopover('pop-mood', this)" aria-expanded="false" aria-label="Informations sur cet indicateur" class="p-1 rounded text-slate-400 hover:text-cyan-400 transition-colors">
+										<i data-lucide="info" class="w-3.5 h-3.5"></i>
+									</button>
+								</div>
 							</div>
 							<div class="mt-2 flex items-baseline gap-2">
 								<span id="val-mood" class="text-xl font-mono font-extrabold text-white">Serein (8.8/10)</span>
@@ -886,23 +991,58 @@
 							<p id="diag-mood" class="text-[10px] font-mono text-slate-300 mt-1 leading-snug">Stabilité thymique &amp; concentration</p>
 						</div>
 
+						<div id="pop-mood" class="info-popover hidden absolute right-2 top-11 w-72 sm:w-80 p-3.5 rounded-2xl bg-[#0B0F1A]/95 border border-cyan-500/30 backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.7)] z-50 text-left space-y-2 text-xs font-mono">
+							<div>
+								<span class="text-cyan-400 font-bold uppercase block text-[10px] tracking-wider">Ce qui est analysé</span>
+								<span class="text-slate-200">Stabilité de l'humeur déclarée par l'astronaute, mise en regard d'un signal physiologique de stress. Aucun capteur ne mesure l'humeur elle-même.</span>
+							</div>
+							<div class="pt-1.5 border-t border-white/10">
+								<span class="text-indigo-400 font-bold uppercase block text-[10px] tracking-wider">Par quoi</span>
+								<span class="text-slate-200">Saisie déclarative de l'astronaute, croisée avec la variabilité de la fréquence cardiaque et l'activité électrodermale (EmbracePlus).</span>
+							</div>
+							<div class="pt-1.5 border-t border-white/10">
+								<span class="text-amber-400 font-bold uppercase block text-[10px] tracking-wider">Pourquoi</span>
+								<span class="text-slate-300">Le mal-être peut rester invisible verbalement en isolement prolongé (risque Isolement et Confinement).</span>
+							</div>
+						</div>
+
 						<div class="mt-3 pt-2.5 border-t border-white/5">
 							<div id="spark-mood" class="h-7 w-full"></div>
 							<div class="mt-1 flex items-center justify-between text-[9px] font-mono text-slate-400">
 								<span>Fiabilité :</span>
-								<span id="trust-mood" class="text-purple-400 font-bold">Élevée (97.0%) • VFC &amp; Voix</span>
+								<span id="trust-mood" class="text-purple-400 font-bold">Indirecte • Déclaration + signal de stress physiologique</span>
 							</div>
 						</div>
 					</div>
 
 					<!-- 7. NUTRITION & HYDRATATION (NOUVEAU - INDICATEUR DÉCLARATIF COMPLET) -->
-					<div class="p-4 rounded-2xl bg-gradient-to-br from-cyan-950/20 via-white/5 to-white/5 border border-cyan-500/30 sm:col-span-2 flex flex-col justify-between hover:border-cyan-400 transition-all">
+					<div class="relative p-4 rounded-2xl bg-gradient-to-br from-cyan-950/20 via-white/5 to-white/5 border border-cyan-500/30 sm:col-span-2 flex flex-col justify-between hover:border-cyan-400 transition-all">
 						<div>
 							<div class="flex items-center justify-between text-xs font-mono">
 								<span class="text-cyan-400 flex items-center gap-1.5 font-bold uppercase text-[11px]">
 									<i data-lucide="utensils" class="w-3.5 h-3.5"></i> 7. Nutrition &amp; Hydratation
 								</span>
-								<span id="badge-nutrition" class="text-[10px] font-mono font-bold text-emerald-400">OPTIMAL</span>
+								<div class="flex items-center gap-1.5">
+									<span id="badge-nutrition" class="text-[10px] font-mono font-bold text-emerald-400">OPTIMAL</span>
+									<button type="button" onclick="toggleInfoPopover('pop-nutrition', this)" aria-expanded="false" aria-label="Informations sur cet indicateur" class="p-1 rounded text-slate-400 hover:text-cyan-400 transition-colors">
+										<i data-lucide="info" class="w-3.5 h-3.5"></i>
+									</button>
+								</div>
+							</div>
+
+							<div id="pop-nutrition" class="info-popover hidden absolute right-2 top-11 w-72 sm:w-80 p-3.5 rounded-2xl bg-[#0B0F1A]/95 border border-cyan-500/30 backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.7)] z-50 text-left space-y-2 text-xs font-mono">
+								<div>
+									<span class="text-cyan-400 font-bold uppercase block text-[10px] tracking-wider">Ce qui est analysé</span>
+									<span class="text-slate-200">Apport calorique et hydrique cumulé sur la journée.</span>
+								</div>
+								<div class="pt-1.5 border-t border-white/10">
+									<span class="text-indigo-400 font-bold uppercase block text-[10px] tracking-wider">Par quoi</span>
+									<span class="text-slate-200">Saisie déclarative de l'astronaute (aucun capteur automatique).</span>
+								</div>
+								<div class="pt-1.5 border-t border-white/10">
+									<span class="text-amber-400 font-bold uppercase block text-[10px] tracking-wider">Pourquoi</span>
+									<span class="text-slate-300">Une alimentation inadéquate est citée par la NASA comme conséquence directe des 5 risques combinés des vols habités.</span>
+								</div>
 							</div>
 
 							<!-- Cumul Jour -->
@@ -971,13 +1111,34 @@
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 					
 					<!-- Densité osseuse REMS -->
-					<div id="deep-metric-bone" class="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-3 transition-all">
+					<div id="deep-metric-bone" class="relative p-5 rounded-2xl bg-white/5 border border-white/10 space-y-3 transition-all">
 						<div class="flex items-center justify-between text-xs font-mono">
 							<span class="text-slate-300 font-bold uppercase flex items-center gap-1.5">
 								<i data-lucide="bone" class="w-4 h-4 text-blue-400"></i> Densité Osseuse REMS
 							</span>
-							<span id="badge-bone" class="text-[10px] font-mono font-bold text-emerald-400">OPTIMAL</span>
+							<div class="flex items-center gap-1.5">
+								<span id="badge-bone" class="text-[10px] font-mono font-bold text-emerald-400">OPTIMAL</span>
+								<button type="button" onclick="toggleInfoPopover('pop-bone', this)" aria-expanded="false" aria-label="Informations sur cet indicateur" class="p-1 rounded text-slate-400 hover:text-cyan-400 transition-colors">
+									<i data-lucide="info" class="w-3.5 h-3.5"></i>
+								</button>
+							</div>
 						</div>
+
+						<div id="pop-bone" class="info-popover hidden absolute right-2 top-11 w-72 sm:w-80 p-3.5 rounded-2xl bg-[#0B0F1A]/95 border border-cyan-500/30 backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.7)] z-50 text-left space-y-2 text-xs font-mono">
+							<div>
+								<span class="text-cyan-400 font-bold uppercase block text-[10px] tracking-wider">Ce qui est analysé</span>
+								<span class="text-slate-200">Microarchitecture osseuse de la colonne et du fémur.</span>
+							</div>
+							<div class="pt-1.5 border-t border-white/10">
+								<span class="text-indigo-400 font-bold uppercase block text-[10px] tracking-wider">Par quoi</span>
+								<span class="text-slate-200">Échographe portable Echolight (technologie REMS, sans radiation).</span>
+							</div>
+							<div class="pt-1.5 border-t border-white/10">
+								<span class="text-amber-400 font-bold uppercase block text-[10px] tracking-wider">Pourquoi</span>
+								<span class="text-slate-300">La micropesanteur prolongée entraîne une perte continue de densité osseuse (risque Champs Gravitationnels).</span>
+							</div>
+						</div>
+
 						<div class="flex items-baseline gap-2">
 							<span id="val-tscore" class="text-3xl font-mono font-extrabold text-white">-0.2</span>
 							<span id="val-boneloss" class="text-xs font-mono text-slate-400">(-0.1%/mois)</span>
@@ -992,13 +1153,34 @@
 					</div>
 
 					<!-- Radiations Spatiales -->
-					<div id="deep-metric-rad" class="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-3 transition-all">
+					<div id="deep-metric-rad" class="relative p-5 rounded-2xl bg-white/5 border border-white/10 space-y-3 transition-all">
 						<div class="flex items-center justify-between text-xs font-mono">
 							<span class="text-slate-300 font-bold uppercase flex items-center gap-1.5">
 								<i data-lucide="radiation" class="w-4 h-4 text-orange-400"></i> Dosimétrie Rayonnement
 							</span>
-							<span id="badge-rad" class="text-[10px] font-mono font-bold text-emerald-400">NOMINAL</span>
+							<div class="flex items-center gap-1.5">
+								<span id="badge-rad" class="text-[10px] font-mono font-bold text-emerald-400">NOMINAL</span>
+								<button type="button" onclick="toggleInfoPopover('pop-rad', this)" aria-expanded="false" aria-label="Informations sur cet indicateur" class="p-1 rounded text-slate-400 hover:text-cyan-400 transition-colors">
+									<i data-lucide="info" class="w-3.5 h-3.5"></i>
+								</button>
+							</div>
 						</div>
+
+						<div id="pop-rad" class="info-popover hidden absolute right-2 top-11 w-72 sm:w-80 p-3.5 rounded-2xl bg-[#0B0F1A]/95 border border-cyan-500/30 backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.7)] z-50 text-left space-y-2 text-xs font-mono">
+							<div>
+								<span class="text-cyan-400 font-bold uppercase block text-[10px] tracking-wider">Ce qui est analysé</span>
+								<span class="text-slate-200">Dose de radiations cumulée en temps réel.</span>
+							</div>
+							<div class="pt-1.5 border-t border-white/10">
+								<span class="text-indigo-400 font-bold uppercase block text-[10px] tracking-wider">Par quoi</span>
+								<span class="text-slate-200">Dosimètre personnel (NASA Human Research Program).</span>
+							</div>
+							<div class="pt-1.5 border-t border-white/10">
+								<span class="text-amber-400 font-bold uppercase block text-[10px] tracking-wider">Pourquoi</span>
+								<span class="text-slate-300">C'est le seul indicateur à mesure directe du risque, les radiations n'ayant pas d'autre signal physiologique fiable à court terme (risque Radiations Spatiales).</span>
+							</div>
+						</div>
+
 						<div class="flex items-baseline gap-2">
 							<span id="val-doserate" class="text-3xl font-mono font-extrabold text-white">0.17 µSv/h</span>
 							<span id="val-dosetotal" class="text-xs font-mono text-slate-400">(0.29 mSv)</span>
@@ -1013,13 +1195,34 @@
 					</div>
 
 					<!-- Cortisol & Stress Salivaire -->
-					<div id="deep-metric-stress" class="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-3 transition-all">
+					<div id="deep-metric-stress" class="relative p-5 rounded-2xl bg-white/5 border border-white/10 space-y-3 transition-all">
 						<div class="flex items-center justify-between text-xs font-mono">
 							<span class="text-slate-300 font-bold uppercase flex items-center gap-1.5">
 								<i data-lucide="flask-conical" class="w-4 h-4 text-purple-400"></i> Stress Salivaire &amp; EDA
 							</span>
-							<span id="badge-stress" class="text-[10px] font-mono font-bold text-emerald-400">ÉQUILIBRE</span>
+							<div class="flex items-center gap-1.5">
+								<span id="badge-stress" class="text-[10px] font-mono font-bold text-emerald-400">ÉQUILIBRE</span>
+								<button type="button" onclick="toggleInfoPopover('pop-stress', this)" aria-expanded="false" aria-label="Informations sur cet indicateur" class="p-1 rounded text-slate-400 hover:text-cyan-400 transition-colors">
+									<i data-lucide="info" class="w-3.5 h-3.5"></i>
+								</button>
+							</div>
 						</div>
+
+						<div id="pop-stress" class="info-popover hidden absolute right-2 top-11 w-72 sm:w-80 p-3.5 rounded-2xl bg-[#0B0F1A]/95 border border-cyan-500/30 backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.7)] z-50 text-left space-y-2 text-xs font-mono">
+							<div>
+								<span class="text-cyan-400 font-bold uppercase block text-[10px] tracking-wider">Ce qui est analysé</span>
+								<span class="text-slate-200">Cortisol salivaire (biomarqueur de stress chronique) et activité électrodermale de la peau.</span>
+							</div>
+							<div class="pt-1.5 border-t border-white/10">
+								<span class="text-indigo-400 font-bold uppercase block text-[10px] tracking-wider">Par quoi</span>
+								<span class="text-slate-200">Biocapteur salivaire portable et capteur EDA d'EmbracePlus.</span>
+							</div>
+							<div class="pt-1.5 border-t border-white/10">
+								<span class="text-amber-400 font-bold uppercase block text-[10px] tracking-wider">Pourquoi</span>
+								<span class="text-slate-300">Le stress chronique affecte aussi le système immunitaire (risques Isolement/Confinement et système immunitaire).</span>
+							</div>
+						</div>
+
 						<div class="flex items-baseline gap-2">
 							<span id="val-cortisol" class="text-3xl font-mono font-extrabold text-white">4.2 ng/mL</span>
 							<span id="val-eda" class="text-xs font-mono text-slate-400">(1.8 µS)</span>
@@ -1317,6 +1520,8 @@
 
 	<!-- Logique JavaScript du Tableau de Bord -->
 	<script src="dashboard.js" defer></script>
+	<!-- Composant d'explication pédagogique réutilisable -->
+	<script src="info-popover.js" defer></script>
 	<!-- Fond spatial animé synchronisé au défilement -->
 	<script src="space-background.js" defer></script>
 
