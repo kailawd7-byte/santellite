@@ -35,7 +35,6 @@ export default function ConnectedDevicesSection() {
 
   const [astroskinImgMode, setAstroskinImgMode] = useState<"iss" | "diagram">("iss");
   const [embraceImgMode, setEmbraceImgMode] = useState<"front" | "sensors">("front");
-  const [actigraphyImgMode, setActigraphyImgMode] = useState<"sol" | "vol">("sol");
 
   const products = [
     { id: "astroskin", label: "1. Maillot Astroskin", icon: Shield, color: "text-blue-500" },
@@ -634,56 +633,20 @@ export default function ConnectedDevicesSection() {
         {/* ================= 6. ACTIGRAPHIE SPATIALE : DU LABORATOIRE AU VOL ARTEMIS II ================= */}
         {activeProduct === "actigraphy" && (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#0B0F1A]/85 border border-white/[0.08] rounded-3xl p-6 sm:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-xl relative overflow-hidden">
-            {/* Left: Image with Toggle Sol / Vol */}
+            {/* Left: Actiwatch Image (Référence Sol) */}
             <div className="lg:col-span-6 flex flex-col gap-4">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-black/60 border border-white/10 group shadow-xl">
                 <Image
-                  src={
-                    actigraphyImgMode === "sol"
-                      ? "/images/actiwatch-spectrum-pro.jpg"
-                      : "/images/somnowatch-artemis-actigraphy.jpg"
-                  }
-                  alt={
-                    actigraphyImgMode === "sol"
-                      ? "Actiwatch Spectrum PRO par Philips Respironics - Référence au sol NASA Ames"
-                      : "Actigraphe de vol spatiale Artemis II"
-                  }
+                  src="/images/actiwatch-spectrum-pro.jpg"
+                  alt="Actiwatch Spectrum PRO par Philips Respironics - Référence au sol NASA Ames"
                   fill
                   className="object-contain p-2 group-hover:scale-105 transition-transform duration-300"
                   priority
                 />
                 <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/15 text-[11px] font-mono text-indigo-300 flex items-center gap-1.5">
                   <Moon className="w-3.5 h-3.5 text-indigo-400" />
-                  <span>
-                    {actigraphyImgMode === "sol"
-                      ? "● Référence Sol • Actiwatch Spectrum Plus (NASA Ames)"
-                      : "● En Vol Orion • ActLumus / Artemis II"}
-                  </span>
+                  <span>● Référence Sol • Actiwatch Spectrum Plus (NASA Ames)</span>
                 </div>
-              </div>
-
-              {/* View Switch Buttons */}
-              <div className="flex gap-2">
-                <button
-                  onClick={() => setActigraphyImgMode("sol")}
-                  className={`px-4 py-2 rounded-lg text-xs font-mono font-semibold transition-all border ${
-                    actigraphyImgMode === "sol"
-                      ? "bg-indigo-600 text-white border-indigo-500 shadow-md shadow-indigo-600/30"
-                      : "bg-white/5 text-slate-300 border-white/10 hover:bg-white/10"
-                  }`}
-                >
-                  Vue 1 : Actiwatch (Sol)
-                </button>
-                <button
-                  onClick={() => setActigraphyImgMode("vol")}
-                  className={`px-4 py-2 rounded-lg text-xs font-mono font-semibold transition-all border ${
-                    actigraphyImgMode === "vol"
-                      ? "bg-indigo-600 text-white border-indigo-500 shadow-md shadow-indigo-600/30"
-                      : "bg-white/5 text-slate-300 border-white/10 hover:bg-white/10"
-                  }`}
-                >
-                  Vue 2 : En Vol (Artemis II)
-                </button>
               </div>
             </div>
 

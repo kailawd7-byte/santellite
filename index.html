@@ -862,8 +862,8 @@
 				</div>
 
 				<!-- ================= 6. ACTIGRAPHIE SPATIALE : DU LABORATOIRE AU VOL ARTEMIS II ================= -->
-				<div id="product-pane-actigraphy" class="hidden grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#070d1a] border border-white/10 rounded-3xl p-6 sm:p-10 shadow-2xl">
-					<!-- Left: Image with Toggle Sol / Vol -->
+				<div id="product-pane-actigraphy" class="hidden grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#0B0F1A]/85 border border-white/[0.08] rounded-3xl p-6 sm:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-xl relative overflow-hidden">
+					<!-- Left: Image Actiwatch (Référence Sol) -->
 					<div class="lg:col-span-6 flex flex-col gap-4">
 						<div class="relative aspect-[4/3] rounded-2xl overflow-hidden bg-black/60 border border-white/10 group shadow-xl">
 							<img id="actigraphy-main-img" src="./images/actiwatch-spectrum-pro.jpg" alt="Actiwatch Spectrum PRO par Philips Respironics - Données de référence au sol NASA Ames" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300">
@@ -871,16 +871,6 @@
 								<i data-lucide="flask-conical" class="w-3.5 h-3.5 text-purple-400"></i>
 								<span>● Référence Sol • Actiwatch Spectrum Plus (NASA Ames)</span>
 							</div>
-						</div>
-
-						<!-- Boutons de bascule de vue -->
-						<div class="flex gap-2">
-							<button id="actigraphy-btn-sol" onclick="switchActigraphyImage('sol')" class="px-4 py-2 rounded-lg text-xs font-mono font-semibold transition-all border bg-indigo-600 text-white border-indigo-500 shadow-md">
-								Vue 1 : Actiwatch (Sol)
-							</button>
-							<button id="actigraphy-btn-vol" onclick="switchActigraphyImage('vol')" class="px-4 py-2 rounded-lg text-xs font-mono font-semibold transition-all border bg-white/5 text-slate-300 border-white/10 hover:bg-white/10">
-								Vue 2 : En Vol (Artemis II)
-							</button>
 						</div>
 					</div>
 
@@ -1024,94 +1014,6 @@
 						<p class="text-slate-300 text-xs sm:text-sm leading-relaxed md:max-w-md text-left">
 							Dès qu'un biomarqueur s'écarte des seuils de sécurité (syncope, arythmie sévère, chute de SpO2), une alerte visuelle et vibratoire guide immédiatement l'équipage dans le protocole de réanimation.
 						</p>
-					</div>
-				</div>
-
-				<!-- ================= 6. ACTIGRAPHIE SPATIALE : DU LABORATOIRE AU VOL ARTEMIS II ================= -->
-				<div id="product-pane-actigraphy" class="hidden grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#070d1a] border border-white/10 rounded-3xl p-6 sm:p-10 shadow-2xl">
-					<!-- Left: Image with Toggle Sol / Vol -->
-					<div class="lg:col-span-6 flex flex-col gap-4">
-						<div class="relative aspect-[4/3] rounded-2xl overflow-hidden bg-black/60 border border-white/10 group shadow-xl">
-							<img id="actigraphy-main-img" src="./images/actiwatch-spectrum-pro.jpg" alt="Actiwatch Spectrum PRO par Philips Respironics - Données de référence au sol NASA Ames" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300">
-							<div id="actigraphy-badge" class="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/15 text-[11px] font-mono text-indigo-300 flex items-center gap-1.5">
-								<i data-lucide="flask-conical" class="w-3.5 h-3.5 text-purple-400"></i>
-								<span>● Référence Sol • Actiwatch Spectrum Plus (NASA Ames)</span>
-							</div>
-						</div>
-
-						<!-- Boutons de bascule de vue -->
-						<div class="flex gap-2">
-							<button id="actigraphy-btn-sol" onclick="switchActigraphyImage('sol')" class="px-4 py-2 rounded-lg text-xs font-mono font-semibold transition-all border bg-indigo-600 text-white border-indigo-500 shadow-md">
-								Vue 1 : Actiwatch (Sol)
-							</button>
-							<button id="actigraphy-btn-vol" onclick="switchActigraphyImage('vol')" class="px-4 py-2 rounded-lg text-xs font-mono font-semibold transition-all border bg-white/5 text-slate-300 border-white/10 hover:bg-white/10">
-								Vue 2 : En Vol (Artemis II)
-							</button>
-						</div>
-					</div>
-
-					<!-- Right: Description -->
-					<div class="lg:col-span-6 text-left space-y-6">
-						<div>
-							<span class="text-xs font-mono text-indigo-400 font-bold uppercase tracking-widest">
-								NASA AMES RESEARCH CENTER · CONDOR INSTRUMENTS (BRÉSIL)
-							</span>
-							<h3 class="text-2xl sm:text-3xl font-mono font-bold text-white uppercase mt-1">
-								Actigraphie Spatiale : Du Laboratoire au Vol Artemis II
-							</h3>
-							<p class="text-slate-300 text-sm sm:text-base leading-relaxed mt-3">
-								Ces appareils ressemblent à des montres numériques, mais n&apos;affichent pas toujours l&apos;heure, afin de ne pas biaiser les études sur la perception du temps en mission. Deux générations d&apos;actigraphes se succèdent dans le protocole ARCHeR (Artemis Research for Crew Health and Readiness) : l&apos;historique Actiwatch Spectrum Plus de Philips pour établir les données de référence au sol, et l&apos;ActLumus de la startup brésilienne Condor Instruments, embarqué en vol à bord de la capsule Orion depuis l&apos;arrêt de la gamme Philips.
-							</p>
-						</div>
-
-						<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-							<div class="p-3.5 rounded-xl bg-white/5 border border-white/5">
-								<div class="flex items-center gap-2 text-indigo-300 font-mono text-xs font-bold uppercase mb-1">
-									<i data-lucide="flask-conical" class="w-4 h-4 text-purple-400"></i>
-									Référence au Sol : Actiwatch
-								</div>
-								<p class="text-xs text-slate-400 leading-snug">
-									Utilisé au Fatigue Countermeasures Laboratory du NASA Ames Research Center pour établir les données de référence avant le vol (étude Artemis Sleep Countermeasures).
-								</p>
-							</div>
-
-							<div class="p-3.5 rounded-xl bg-white/5 border border-white/5">
-								<div class="flex items-center gap-2 text-indigo-300 font-mono text-xs font-bold uppercase mb-1">
-									<i data-lucide="rocket" class="w-4 h-4 text-cyan-400"></i>
-									En Vol : ActLumus
-								</div>
-								<p class="text-xs text-slate-400 leading-snug">
-									Suite à l&apos;arrêt de la gamme Actiwatch par Philips, la NASA a adopté cet actigraphe brésilien pour le suivi continu de l&apos;équipage à bord d&apos;Orion pendant Artemis II.
-								</p>
-							</div>
-
-							<div class="p-3.5 rounded-xl bg-white/5 border border-white/5">
-								<div class="flex items-center gap-2 text-indigo-300 font-mono text-xs font-bold uppercase mb-1">
-									<i data-lucide="activity" class="w-4 h-4 text-emerald-400"></i>
-									Accélérométrie Haute Précision
-								</div>
-								<p class="text-xs text-slate-400 leading-snug">
-									Micro-mouvements du poignet enregistrés à environ 32 Hz, pour distinguer éveil, agitation et sommeil profond.
-								</p>
-							</div>
-
-							<div class="p-3.5 rounded-xl bg-white/5 border border-white/5">
-								<div class="flex items-center gap-2 text-indigo-300 font-mono text-xs font-bold uppercase mb-1">
-									<i data-lucide="sun" class="w-4 h-4 text-amber-400"></i>
-									Photodétecteurs Ambiants
-								</div>
-								<p class="text-xs text-slate-400 leading-snug">
-									Mesure de l&apos;intensité et du spectre de la lumière (bleue, rouge, verte) pour évaluer son effet sur le rythme circadien, en l&apos;absence d&apos;alternance jour-nuit naturelle.
-								</p>
-							</div>
-						</div>
-
-						<div class="pt-2">
-							<a href="#simulateur" onclick="applySimScenario('actigraphy')" class="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-indigo-300 hover:text-white transition-colors group cursor-pointer">
-								<span>Visualiser la télémétrie de l&apos;actigraphie dans le simulateur</span>
-								<i data-lucide="chevron-right" class="w-4 h-4 text-indigo-400 group-hover:translate-x-1 transition-transform"></i>
-							</a>
-						</div>
 					</div>
 				</div>
 
