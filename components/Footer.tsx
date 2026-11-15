@@ -28,6 +28,11 @@ export default function Footer() {
             <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-white mb-4">Navigation</h4>
             <ul className="space-y-2 text-xs font-mono">
               <li>
+                <a href="/dashboard.html" className="text-cyan-400 font-bold hover:text-cyan-300 transition-colors flex items-center gap-1.5">
+                  <ChevronRight className="w-3.5 h-3.5 text-cyan-400" /> Tableau de bord ↗
+                </a>
+              </li>
+              <li>
                 <a href="#defi" className="hover:text-cyan-300 transition-colors flex items-center gap-1.5">
                   <ChevronRight className="w-3.5 h-3.5 text-blue-500" /> Le Défi NASA
                 </a>

@@ -19,7 +19,8 @@ export default function Navbar() {
     { label: "Le Défi NASA", href: "#defi" },
     { label: "Équipements", href: "#equipements" },
     { label: "Architecture", href: "#architecture" },
-    { label: "Simulateur IA", href: "#simulateur" },
+    { label: "Tableau de bord", href: "/dashboard.html", highlight: true },
+    { label: "Aperçu IA", href: "#simulateur" },
     { label: "Données NASA", href: "#donnees" },
     { label: "Équipe 404", href: "#equipe" },
   ];
@@ -49,13 +50,20 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Links */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-7">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="text-xs font-mono uppercase tracking-wider text-slate-300 hover:text-white transition-colors"
+              className={`text-xs font-mono uppercase tracking-wider transition-colors flex items-center gap-1.5 ${
+                link.highlight
+                  ? "text-cyan-400 font-bold hover:text-cyan-300"
+                  : "text-slate-300 hover:text-white"
+              }`}
             >
+              {link.highlight && (
+                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+              )}
               {link.label}
             </a>
           ))}
@@ -64,10 +72,10 @@ export default function Navbar() {
         {/* Action Button right (matching GET STARTED ↗ from mockup) */}
         <div className="hidden lg:flex items-center">
           <a
-            href="#simulateur"
+            href="/dashboard.html"
             className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-mono text-xs font-semibold uppercase tracking-wider transition-all shadow-md shadow-blue-600/30 hover:shadow-blue-500/50"
           >
-            Simulateur IA <ArrowUpRight className="w-3.5 h-3.5" />
+            Tableau de bord <ArrowUpRight className="w-3.5 h-3.5" />
           </a>
         </div>
 
@@ -89,18 +97,20 @@ export default function Navbar() {
               key={link.label}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="block py-2 text-sm font-mono uppercase tracking-wider text-slate-300 hover:text-cyan-400 transition-colors"
+              className={`block py-2 text-sm font-mono uppercase tracking-wider transition-colors ${
+                link.highlight ? "text-cyan-400 font-bold" : "text-slate-300 hover:text-cyan-400"
+              }`}
             >
               {link.label}
             </a>
           ))}
           <div className="pt-2">
             <a
-              href="#simulateur"
+              href="/dashboard.html"
               onClick={() => setIsOpen(false)}
               className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-mono text-xs font-semibold uppercase tracking-wider transition-all"
             >
-              Simulateur IA <ArrowUpRight className="w-3.5 h-3.5" />
+              Tableau de bord <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
           </div>
         </div>
