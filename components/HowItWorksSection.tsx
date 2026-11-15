@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Cpu, Radio, AlertTriangle } from "lucide-react";
+import { Cpu, Radio, AlertTriangle, ShieldCheck } from "lucide-react";
 
 export default function HowItWorksSection() {
   const steps = [
@@ -84,6 +84,23 @@ export default function HowItWorksSection() {
               </div>
             );
           })}
+        </div>
+
+        {/* Encart de synthèse & adoption institutionnelle */}
+        <div className="reveal-on-scroll mt-8 max-w-4xl mx-auto p-6 sm:p-7 rounded-2xl bg-[#0B0F1A]/80 border border-white/[0.08] backdrop-blur-xl relative overflow-hidden shadow-lg">
+          <div className="flex items-start gap-4">
+            <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-slate-300 shrink-0">
+              <ShieldCheck className="w-5 h-5 text-indigo-400" />
+            </div>
+            <div className="space-y-2 text-left">
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-medium bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">
+                Instruction d&apos;intégration pour une adoption institutionnelle
+              </div>
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                Cette architecture reste volontairement ouverte à tout capteur médical supplémentaire que la NASA pourrait déjà utiliser en interne, documenté ou non dans les sources publiques consultées pour ce projet.
+              </p>
+            </div>
+          </div>
         </div>
 
       </div>

@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Santellite : VitaOrbit — Surveillance Médicale Spatiale & Capteurs Portables | NASA Space Apps 2026</title>
-	<meta name="description" content="Plateforme clinique autonome de surveillance en temps réel connectée à 6 dispositifs spatiaux (Astroskin, EmbracePlus, SOMNOwatch Artemis, dosimètre, échographe, biocapteur) pour astronautes.">
+	<meta name="description" content="Plateforme clinique autonome de surveillance en temps réel connectée à 6 dispositifs spatiaux (Astroskin, EmbracePlus, Actiwatch / ActLumus Artemis II, dosimètre, échographe, biocapteur) pour astronautes.">
 
 	<!-- Favicon Satellite VitaOrbit -->
 	<link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -939,6 +939,23 @@
 					</div>
 				</div>
 
+				<!-- Encart de prudence : Une liste non exhaustive -->
+				<div class="reveal-on-scroll mt-12 p-6 sm:p-7 rounded-2xl bg-[#0B0F1A]/80 border border-white/[0.08] backdrop-blur-xl relative overflow-hidden shadow-lg">
+					<div class="flex items-start gap-4">
+						<div class="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-slate-300 shrink-0">
+							<i data-lucide="info" class="w-5 h-5 text-sky-400"></i>
+						</div>
+						<div class="space-y-2 text-left">
+							<h3 class="font-mono text-sm sm:text-base font-bold text-white uppercase tracking-tight">
+								Une liste non exhaustive
+							</h3>
+							<p class="text-xs sm:text-sm text-slate-400 leading-relaxed font-normal">
+								Les 6 dispositifs présentés ici sont ceux que nous avons pu identifier et documenter avec des sources fiables (agences spatiales, fabricants, études publiées) au cours de nos recherches. Ils ne représentent pas nécessairement l'ensemble des capteurs que la NASA utilise réellement pour surveiller la santé de ses astronautes en continu : d'autres instruments, notamment ceux encore classifiés, en développement, ou simplement absents des sources publiques que nous avons consultées, existent probablement. Santellite est conçu comme une architecture ouverte : chaque nouveau capteur documenté peut être intégré selon le même principe de centralisation, sans modifier la structure du logiciel.
+							</p>
+						</div>
+					</div>
+				</div>
+
 			</div>
 		</section>
 
@@ -976,7 +993,7 @@
 							</div>
 						</div>
 						<p class="text-slate-300 text-xs sm:text-sm leading-relaxed md:max-w-md text-left">
-							L'écosystème de 6 capteurs (textiles Astroskin, montres EmbracePlus et SOMNOwatch, dosimètre cosmique, échographe osseux et biocapteurs) mesure 24/7 l'ensemble des constantes vitales sans gêne opérationnelle.
+							L'écosystème de 6 capteurs (textiles Astroskin, montres EmbracePlus et actigraphes spatiaux Actiwatch / ActLumus, dosimètre cosmique, échographe osseux et biocapteurs) mesure 24/7 l'ensemble des constantes vitales sans gêne opérationnelle.
 						</p>
 					</div>
 
@@ -1014,6 +1031,23 @@
 						<p class="text-slate-300 text-xs sm:text-sm leading-relaxed md:max-w-md text-left">
 							Dès qu'un biomarqueur s'écarte des seuils de sécurité (syncope, arythmie sévère, chute de SpO2), une alerte visuelle et vibratoire guide immédiatement l'équipage dans le protocole de réanimation.
 						</p>
+					</div>
+				</div>
+
+				<!-- Encart de synthèse & adoption institutionnelle -->
+				<div class="reveal-on-scroll mt-8 max-w-4xl mx-auto p-6 sm:p-7 rounded-2xl bg-[#0B0F1A]/80 border border-white/10 backdrop-blur-xl relative overflow-hidden shadow-lg">
+					<div class="flex items-start gap-4">
+						<div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-indigo-400 shrink-0">
+							<i data-lucide="shield-check" class="w-5 h-5"></i>
+						</div>
+						<div class="space-y-2 text-left">
+							<div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-medium bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">
+								Instruction d'intégration pour une adoption institutionnelle
+							</div>
+							<p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+								Cette architecture reste volontairement ouverte à tout capteur médical supplémentaire que la NASA pourrait déjà utiliser en interne, documenté ou non dans les sources publiques consultées pour ce projet.
+							</p>
+						</div>
 					</div>
 				</div>
 
@@ -1266,7 +1300,7 @@
 					</a>
 					<p class="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-md font-mono">
 						Projet présenté au NASA Space Apps Challenge 2026 par l'Équipe 404 Introuvable (Libreville, Gabon). 
-						Plateforme clinique de surveillance continue interconnectant 6 dispositifs médicaux spatiaux (Astroskin, EmbracePlus, SOMNOwatch Artemis II, dosimètre HRP, échographe REMS, biocapteurs) pour la santé des astronautes.
+						Plateforme clinique de surveillance continue interconnectant 6 dispositifs médicaux spatiaux (Astroskin, EmbracePlus, Actiwatch / ActLumus Artemis II, dosimètre HRP, échographe REMS, biocapteurs) pour la santé des astronautes.
 					</p>
 				</div>
 

@@ -106,7 +106,7 @@ var simData = {
 		sleepBadge: "OPTIMAL",
 		sleepBadgeClass: "text-emerald-400",
 		sleepDiag: "Efficacité 89% • 4 cycles REM",
-		sleepTrust: "Élevée (98.9%) • SOMNOwatch Artemis",
+		sleepTrust: "Élevée (98.9%) • Actiwatch / ActLumus (ARCHeR)",
 		sleepSpark: [7.2, 7.5, 7.1, 7.4, 7.6, 7.3, 7.5, 7.8, 7.2, 7.4, 7.5, 7.6],
 
 		mood: "Serein (8.8/10)",
@@ -205,7 +205,7 @@ var simData = {
 		sleepBadge: "ÉCOURTÉ",
 		sleepBadgeClass: "text-amber-400",
 		sleepDiag: "Sommeil écourté pré-mission EVA",
-		sleepTrust: "Élevée (98.5%) • SOMNOwatch Artemis",
+		sleepTrust: "Élevée (98.5%) • Actiwatch / ActLumus (ARCHeR)",
 		sleepSpark: [7.2, 7.0, 6.8, 6.5, 6.4, 6.2, 6.1, 6.1, 6.1, 6.1, 6.1, 6.1],
 
 		mood: "Stress Aigu (4.2/10)",
@@ -302,7 +302,7 @@ var simData = {
 		sleepBadge: "SATISFAISANT",
 		sleepBadgeClass: "text-emerald-400",
 		sleepDiag: "Récupération nocturne satisfaisante",
-		sleepTrust: "Élevée (98.7%) • SOMNOwatch Artemis",
+		sleepTrust: "Élevée (98.7%) • Actiwatch / ActLumus (ARCHeR)",
 		sleepSpark: [7.0, 7.1, 7.2, 7.1, 7.3, 7.2, 7.1, 7.2, 7.1, 7.2, 7.1, 7.1],
 
 		mood: "Stable (7.9/10)",
@@ -399,7 +399,7 @@ var simData = {
 		sleepBadge: "INTERROMPU",
 		sleepBadgeClass: "text-amber-400",
 		sleepDiag: "Sommeil interrompu par l'alarme SPE",
-		sleepTrust: "Élevée (98.6%) • SOMNOwatch Artemis",
+		sleepTrust: "Élevée (98.6%) • Actiwatch / ActLumus (ARCHeR)",
 		sleepSpark: [7.0, 6.8, 6.5, 6.2, 5.9, 5.7, 5.5, 5.6, 5.7, 5.7, 5.6, 5.6],
 
 		mood: "Tension (4.8/10)",
@@ -496,7 +496,7 @@ var simData = {
 		sleepBadge: "FRAGMENTÉ",
 		sleepBadgeClass: "text-red-400 font-extrabold animate-pulse",
 		sleepDiag: "Insomnie orbitale • Sommeil fragmenté",
-		sleepTrust: "Élevée (98.8%) • SOMNOwatch Artemis",
+		sleepTrust: "Élevée (98.8%) • Actiwatch / ActLumus (ARCHeR)",
 		sleepSpark: [6.5, 6.2, 5.8, 5.4, 5.0, 4.8, 4.6, 4.7, 4.8, 4.9, 4.8, 4.8],
 
 		mood: "Épuisement (3.1/10)",
@@ -593,7 +593,7 @@ var simData = {
 		sleepBadge: "ÉCOURTÉ",
 		sleepBadgeClass: "text-amber-400",
 		sleepDiag: "Sommeil fragmenté • 5 micro-réveils",
-		sleepTrust: "Élevée (99.5%) • SOMNOwatch Actimétrie + Lux",
+		sleepTrust: "Élevée (99.5%) • Actiwatch Spectrum Plus (Actimétrie + Lux)",
 		sleepSpark: [6.8, 6.4, 6.0, 5.6, 5.4, 5.2, 5.0, 5.1, 5.2, 5.1, 5.2, 5.2],
 
 		mood: "Fatigue Circadienne (5.6/10)",
@@ -754,7 +754,7 @@ var bodyZones = {
 	brain: {
 		name: "Cerveau, Humeur & Vigilance Cognitive",
 		icon: "brain",
-		sensor: "Variabilité de la Fréquence Cardiaque (VFC) & Actigraphie SOMNOwatch",
+		sensor: "Variabilité de la Fréquence Cardiaque (VFC) & Actigraphie ARCHeR (Actiwatch/ActLumus)",
 		indicator: "Score d'Humeur & Vigilance (0 à 10) & Temps de Réaction",
 		nasaHazard: "Isolement & Confinement (Isolation & Confinement)",
 		plainText: "Le confinement prolongé dans un espace restreint, l'absence de lumière naturelle et la charge de travail intense perturbent le moral et la vigilance. L'algorithme détecte les signaux précoces de fatigue cognitive ou de stress aigu bien avant que l'astronaute ne commette une erreur opérationnelle.",

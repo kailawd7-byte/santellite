@@ -26,6 +26,7 @@ import {
   Moon,
   FlaskConical,
   Rocket,
+  Info,
 } from "lucide-react";
 
 export default function ConnectedDevicesSection() {
@@ -724,6 +725,23 @@ export default function ConnectedDevicesSection() {
             </div>
           </div>
         )}
+
+        {/* Encart de prudence : Une liste non exhaustive */}
+        <div className="reveal-on-scroll mt-12 p-6 sm:p-7 rounded-2xl bg-[#0B0F1A]/80 border border-white/[0.08] backdrop-blur-xl relative overflow-hidden shadow-lg">
+          <div className="flex items-start gap-4">
+            <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-slate-300 shrink-0">
+              <Info className="w-5 h-5 text-sky-400" />
+            </div>
+            <div className="space-y-2 text-left">
+              <h3 className="font-mono text-sm sm:text-base font-bold text-white uppercase tracking-tight">
+                Une liste non exhaustive
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-400 leading-relaxed font-normal">
+                Les 6 dispositifs présentés ici sont ceux que nous avons pu identifier et documenter avec des sources fiables (agences spatiales, fabricants, études publiées) au cours de nos recherches. Ils ne représentent pas nécessairement l&apos;ensemble des capteurs que la NASA utilise réellement pour surveiller la santé de ses astronautes en continu : d&apos;autres instruments, notamment ceux encore classifiés, en développement, ou simplement absents des sources publiques que nous avons consultées, existent probablement. Santellite est conçu comme une architecture ouverte : chaque nouveau capteur documenté peut être intégré selon le même principe de centralisation, sans modifier la structure du logiciel.
+              </p>
+            </div>
+          </div>
+        </div>
 
       </div>
     </section>

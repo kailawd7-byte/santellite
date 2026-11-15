@@ -142,7 +142,7 @@ function switchActigraphyImage(mode) {
 		btnSol.className = "px-4 py-2 rounded-lg text-xs font-mono font-semibold transition-all border bg-indigo-600 text-white border-indigo-500 shadow-md";
 		btnVol.className = "px-4 py-2 rounded-lg text-xs font-mono font-semibold transition-all border bg-white/5 text-slate-300 border-white/10 hover:bg-white/10";
 	} else {
-		img.src = "./images/somnowatch-artemis-actigraphy.jpg";
+		img.src = "./images/actiwatch-spectrum-pro.jpg";
 		badge.innerHTML = '<i data-lucide="rocket" class="w-3.5 h-3.5 text-cyan-400"></i><span>● En Vol Orion • ActLumus / Artemis II</span>';
 		btnVol.className = "px-4 py-2 rounded-lg text-xs font-mono font-semibold transition-all border bg-indigo-600 text-white border-indigo-500 shadow-md";
 		btnSol.className = "px-4 py-2 rounded-lg text-xs font-mono font-semibold transition-all border bg-white/5 text-slate-300 border-white/10 hover:bg-white/10";
@@ -575,7 +575,7 @@ var simData = {
 	actigraphy: {
 		name: "Équipage Artemis II • Mission Circumlunaire",
 		missionStatus: "• SOL 08 • MISSION ARTEMIS II • ESPACE PROFOND",
-		badgeDevice: "6. Montre d'Actigraphie SOMNOwatch plus (Artemis II)",
+		badgeDevice: "6. Actigraphie Spatiale ARCHeR (Actiwatch / ActLumus)",
 		statusText: "Alerte : Dérèglement Circadien",
 		statusColor: "text-indigo-400 bg-indigo-500/15 border-indigo-500/40",
 		dotColor: "bg-indigo-400",
@@ -584,7 +584,7 @@ var simData = {
 
 		recTitle: "Protocole de Resynchronisation Circadienne (Artemis)",
 		recDesc: "Activation de la luminothérapie bleue/blanche enrichie (10 000 Lux) dans le cockpit d'Orion pendant 45 minutes pour stimuler la mélanopsine rétinienne. Verrouillage du module de sommeil avec occultation totale.",
-		recDevice: "Montre d'Actigraphie SOMNOwatch plus (NASA Artemis HRP)",
+		recDevice: "Actigraphie Spatiale ARCHeR (NASA Ames / Artemis II)",
 		recBoxClass: "bg-indigo-500/10 border-indigo-500/40",
 
 		// 1. Pression artérielle

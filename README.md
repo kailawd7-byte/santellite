@@ -19,7 +19,7 @@ Face aux délais de communication radio avec la Terre (pouvant atteindre 22 minu
 - **Échographe Osseux Portatif EchoLight REMS** (NASA Human Research Program) : Suivi sans radiation de l'ostéopénie et de la microarchitecture trabéculaire en microgravité (scan fémoral & rachis en < 10 min).
 - **Dosimètre Personnel de Radiations Tracerco PED2-IS+** (NASA HRP) : Débit de dose en continu (µSv/h) et dose cumulée (mSv), seuils d'alerte lors d'Événements à Particules Solaires (SPE).
 - **Biocapteur Salivaire ASI / Université de Bologne** : Dosage rapide non invasif du cortisol (stress chronique) et de la DHEA-S (équilibre immunitaire) par cartouche microfluidique USB.
-- **Montre d'Actigraphie Spatiale SOMNOwatch plus** (NASA Artemis II) : Actimétrie 3D, surveillance photique (Lux / spectre bleu 480 nm) et détection des désynchronisations circadiennes.
+- **Actigraphie Spatiale ARCHeR (Actiwatch Spectrum Plus & ActLumus)** (NASA Ames / Artemis II) : Actimétrie haute précision (32 Hz), photodétecteurs ambiants (spectre bleu/rouge/vert) et analyse du rythme circadien.
 
 ### 2. Cockpit Médical & Tableau de Bord Avancé (`dashboard.html`)
 - **Silhouette Humaine Interactive 3D** : Cartographie vectorielle SVG cliquable avec retours en langage clair pour les organes clés (Cœur, Poumons, Os, Cerveau, Système immunitaire, Estomac).
