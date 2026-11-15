@@ -1,0 +1,95 @@
+import React from "react";
+import { Orbit, ChevronRight, Globe, Award } from "lucide-react";
+
+export default function Footer() {
+  return (
+    <footer className="bg-[#05070d] border-t border-white/10 pt-16 pb-12 text-slate-400 text-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+          
+          {/* Brand */}
+          <div className="md:col-span-6 space-y-4 text-left">
+            <a href="#accueil" className="flex items-center gap-2 group">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center text-white">
+                <Orbit className="w-4 h-4" />
+              </div>
+              <span className="font-extrabold text-lg tracking-tight text-white font-mono">
+                Santellite<span className="text-cyan-400">.</span>
+              </span>
+            </a>
+            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-md font-mono">
+              Projet présenté au NASA Space Apps Challenge 2026 par l&apos;Équipe 404 Introuvable (Libreville, Gabon). 
+              Plateforme clinique de surveillance continue par capteurs connectés (Astroskin et EmbracePlus) pour la santé des astronautes.
+            </p>
+          </div>
+
+          {/* Quick Links */}
+          <div className="md:col-span-3 text-left">
+            <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-white mb-4">Navigation</h4>
+            <ul className="space-y-2 text-xs font-mono">
+              <li>
+                <a href="#defi" className="hover:text-cyan-300 transition-colors flex items-center gap-1.5">
+                  <ChevronRight className="w-3.5 h-3.5 text-blue-500" /> Le Défi NASA
+                </a>
+              </li>
+              <li>
+                <a href="#equipements" className="hover:text-cyan-300 transition-colors flex items-center gap-1.5">
+                  <ChevronRight className="w-3.5 h-3.5 text-blue-500" /> Équipements Portables
+                </a>
+              </li>
+              <li>
+                <a href="#architecture" className="hover:text-cyan-300 transition-colors flex items-center gap-1.5">
+                  <ChevronRight className="w-3.5 h-3.5 text-blue-500" /> Architecture Embarquée
+                </a>
+              </li>
+              <li>
+                <a href="#simulateur" className="hover:text-cyan-300 transition-colors flex items-center gap-1.5">
+                  <ChevronRight className="w-3.5 h-3.5 text-blue-500" /> Simulateur NASA IA
+                </a>
+              </li>
+              <li>
+                <a href="#donnees" className="hover:text-cyan-300 transition-colors flex items-center gap-1.5">
+                  <ChevronRight className="w-3.5 h-3.5 text-blue-500" /> Données Ouvertes NASA
+                </a>
+              </li>
+              <li>
+                <a href="#equipe" className="hover:text-cyan-300 transition-colors flex items-center gap-1.5">
+                  <ChevronRight className="w-3.5 h-3.5 text-blue-500" /> Équipe 404
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* References */}
+          <div className="md:col-span-3 text-left">
+            <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-white mb-4">Événement</h4>
+            <div className="space-y-3 text-xs font-mono text-slate-400">
+              <div className="flex items-center gap-2">
+                <Globe className="w-4 h-4 text-cyan-400 shrink-0" />
+                <span>Libreville, Gabon (2026)</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Award className="w-4 h-4 text-cyan-400 shrink-0" />
+                <span>NASA Space Apps Challenge</span>
+              </div>
+              <div className="p-3 rounded-lg bg-white/5 border border-white/5 text-[11px] text-slate-400">
+                Basé sur les standards de vol de l&apos;Agence Spatiale Canadienne (Astroskin ISS) et du TRISH / NASA (EmbracePlus).
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Bottom bar */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-400">
+          <div>
+            © 2026 Santellite • Équipe 404 Introuvable. Tous droits réservés.
+          </div>
+          <div>
+            Développé pour la santé et la sécurité des équipages spatiaux.
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}

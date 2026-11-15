@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Santellite : VitaOrbit — Surveillance Santé pour Astronautes | NASA Space Apps Challenge 2026</title>
+	<meta name="description" content="Santellite / VitaOrbit : Logiciel de surveillance et télémétrie de santé autonome pour les astronautes en mission spatiale longue durée. Projet pour le NASA Space Apps Challenge 2026.">
+	
+	<!-- Métadonnées Open Graph -->
+	<meta property="og:title" content="Santellite : VitaOrbit — NASA Space Apps Challenge 2026">
+	<meta property="og:description" content="Tableau de bord de télémétrie et suivi clinique autonome pour les équipages spatiaux vers la Lune et Mars.">
+	<meta property="og:type" content="website">
+	<meta name="theme-color" content="#0f172a">
+
+	<!-- Typographies Google : Plus Jakarta Sans & JetBrains Mono -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+	<!-- Icônes Lucide modernes (CDN) -->
+	<script src="https://unpkg.com/lucide@latest"></script>
+
+	<!-- Feuille de style principale -->
+	<link rel="stylesheet" href="style.css">
+	
+	<!-- Script applicatif (déferré) -->
+	<script src="script.js" defer></script>
+</head>
+
+<body>
+	<!-- ============ EN-TÊTE & NAVIGATION ============ -->
+	<header class="site-header">
+		<nav class="navbar" aria-label="Navigation principale">
+			<a href="#accueil" class="logo" aria-label="Santellite Accueil">
+				<span class="logo-mark">
+					<i data-lucide="orbit"></i>
+				</span>
+				<span class="logo-text">Santellite<span class="logo-dot">.</span></span>
+				<span class="logo-badge">Space Apps 2K26</span>
+			</a>
+
+			<ul class="nav-links" id="menu-principal">
+				<li><a href="#defi">Le Défi NASA</a></li>
+				<li><a href="#solution">Solution VitaOrbit</a></li>
+				<li><a href="#iot-capteurs">Capteurs & IoT</a></li>
+				<li><a href="#donnees">Données Scientifiques</a></li>
+				<li><a href="#demo">Démo Interactive</a></li>
+				<li><a href="#equipe">Équipe 404</a></li>
+			</ul>
+
+			<div class="nav-actions">
+				<a href="#demo" class="btn btn-primary btn-nav">
+					<i data-lucide="play" class="btn-icon"></i>
+					<span>Tester la Démo</span>
+				</a>
+
+				<button class="nav-toggle" type="button" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="menu-principal">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+			</div>
+		</nav>
+	</header>
+	
+	<main>
+		<!-- ============ SECTION HERO ============ -->
+		<section id="accueil" class="hero">
+			<div class="hero-text">
+				<div class="badge-group">
+					<span class="badge badge-nasa">
+						<i data-lucide="award"></i> NASA Space Apps Challenge 2026
+					</span>
+					<span class="badge badge-location">
+						<i data-lucide="map-pin"></i> Libreville, Gabon
+					</span>
+				</div>
+
+				<h1>VitaOrbit : La télémétrie clinique au cœur des missions spatiales profondes</h1>
+
+				<p class="hero-subtitle">
+					Loin de la Terre, les délais de communication empêchent toute consultation médicale d'urgence. 
+					<strong>Santellite : VitaOrbit</strong> connecte en temps réel les dispositifs médicaux et capteurs portables de l'astronaute (montres biomédicales, maillots de tension continue, patchs de stress) pour surveiller en permanence ses constantes vitales et déclencher une alerte instantanée à la moindre dérive physiologique.
+				</p>
+
+				<div class="hero-actions">
+					<a href="#demo" class="btn btn-primary btn-lg">
+						<i data-lucide="activity"></i>
+						<span>Tester le Simulateur IoT</span>
+					</a>
+					<a href="#iot-capteurs" class="btn btn-secondary btn-lg">
+						<i data-lucide="radio"></i>
+						<span>Voir les Capteurs Connectés</span>
+					</a>
+				</div>
+
+				<div class="hero-telemetry-status">
+					<div class="status-indicator">
+						<span class="pulse-dot"></span>
+						<span class="status-label">Flux IoT : <strong>4/4 Capteurs Connectés</strong></span>
+					</div>
+					<div class="status-divider"></div>
+					<div class="status-indicator">
+						<i data-lucide="zap" class="status-icon"></i>
+						<span class="status-label">Alerte : <strong>Détection &lt; 2 sec</strong></span>
+					</div>
+					<div class="status-divider"></div>
+					<div class="status-indicator">
+						<i data-lucide="shield-check" class="status-icon"></i>
+						<span class="status-label">Autonomie : <strong>100% Hors-Ligne (Edge)</strong></span>
+					</div>
+				</div>
+			</div>
+
+			<!-- Visualiseur télémétrique interactif en Hero -->
+			<div class="hero-visual">
+				<div class="dashboard-preview-card" role="region" aria-label="Aperçu du cockpit de santé VitaOrbit">
+					<div class="preview-card-header">
+						<div class="astronaut-identity">
+							<div class="astronaut-avatar">
+								<i data-lucide="user-check"></i>
+							</div>
+							<div class="astronaut-meta">
+								<span class="astronaut-name">Cmdr. Thomas P.</span>
+								<span class="astronaut-mission">Mission Artemis III • Sol 142 • Orbite Lunaire</span>
+							</div>
+						</div>
+						<span class="pill-badge pill-good">
+							<span class="status-dot-sm"></span> État Général : Optimal
+						</span>
+					</div>
+
+					<div class="preview-card-body">
+						<!-- Silhouette anatomique interactive vectorielle -->
+						<div class="body-scan-container">
+							<div class="scan-radar-grid"></div>
+							
+							<svg class="body-scan-svg" viewBox="0 0 200 340" aria-label="Silhouette anatomique de l'astronaute avec capteurs">
+								<!-- Silhouette stylisée MedTech -->
+								<path class="silhouette-path" d="M100 20 C112 20 120 28 120 42 C120 54 112 62 100 62 C88 62 80 54 80 42 C80 28 88 20 100 20 Z 
+									M95 63 L105 63 L110 74 L142 90 C146 92 148 97 146 101 L132 165 C131 169 127 172 123 171 L115 168 L116 210 L128 300 C129 306 124 312 118 312 L112 312 C108 312 105 309 104 305 L96 235 L96 235 L88 305 C87 309 84 312 80 312 L74 312 C68 312 63 306 64 300 L76 210 L77 168 L69 171 C65 172 61 169 60 165 L46 101 C44 97 46 92 50 90 L82 74 L87 63 Z" />
+
+								<!-- Hotspots de biomonitoring avec pulsations -->
+								<!-- Cerveau / Neuro -->
+								<g class="scan-hotspot" data-target="neuro" tabindex="0" role="button" aria-label="Capteur neurologique : Équilibre & Vigilance">
+									<circle cx="100" cy="40" r="10" class="hotspot-pulse pulse-cyan"></circle>
+									<circle cx="100" cy="40" r="5" class="hotspot-dot dot-cyan"></circle>
+								</g>
+								<line x1="100" y1="40" x2="160" y2="40" class="hotspot-lead" />
+								<text x="165" y="44" class="hotspot-text">Neuro : 98%</text>
+
+								<!-- Cœur / Cardiovasculaire -->
+								<g class="scan-hotspot" data-target="cardio" tabindex="0" role="button" aria-label="Capteur cardiaque : Fréquence et Pression artérielle">
+									<circle cx="95" cy="105" r="12" class="hotspot-pulse pulse-green"></circle>
+									<circle cx="95" cy="105" r="6" class="hotspot-dot dot-green"></circle>
+								</g>
+								<line x1="95" y1="105" x2="35" y2="105" class="hotspot-lead" />
+								<text x="5" y="109" class="hotspot-text">Pouls : 68 BPM</text>
+
+								<!-- Dosimétrie / Radiations -->
+								<g class="scan-hotspot" data-target="radiation" tabindex="0" role="button" aria-label="Capteur dosimétrique : Rayonnement ionisant">
+									<circle cx="102" cy="150" r="10" class="hotspot-pulse pulse-amber"></circle>
+									<circle cx="102" cy="150" r="5" class="hotspot-dot dot-amber"></circle>
+								</g>
+								<line x1="102" y1="150" x2="160" y2="150" class="hotspot-lead" />
+								<text x="165" y="154" class="hotspot-text">Rad : 0.38 mSv</text>
+
+								<!-- Densité Osseuse & Masse Musculaire -->
+								<g class="scan-hotspot" data-target="muscles" tabindex="0" role="button" aria-label="Capteur musculo-squelettique : Charge et Atrophie">
+									<circle cx="82" cy="245" r="10" class="hotspot-pulse pulse-cyan"></circle>
+									<circle cx="82" cy="245" r="5" class="hotspot-dot dot-cyan"></circle>
+								</g>
+								<line x1="82" y1="245" x2="30" y2="245" class="hotspot-lead" />
+								<text x="5" y="249" class="hotspot-text">Masse : 99.2%</text>
+							</svg>
+
+							<p class="scan-caption">
+								<i data-lucide="info"></i>
+								<span>Surveillance active des 4 foyers physiologiques prioritaires</span>
+							</p>
+						</div>
+
+						<!-- Métriques télémétriques temps réel -->
+						<div class="preview-metrics-grid">
+							<div class="metric-box">
+								<div class="metric-top">
+									<span class="metric-title"><i data-lucide="heart"></i> Fréquence</span>
+									<span class="metric-tag tag-good">Nominal</span>
+								</div>
+								<div class="metric-value">68 <span class="metric-unit">BPM</span></div>
+								<div class="metric-sub">Ligne de base : 65-75</div>
+							</div>
+
+							<div class="metric-box">
+								<div class="metric-top">
+									<span class="metric-title"><i data-lucide="gauge"></i> Pression</span>
+									<span class="metric-tag tag-good">Optimal</span>
+								</div>
+								<div class="metric-value">118/76 <span class="metric-unit">mmHg</span></div>
+								<div class="metric-sub">Régulation fluide OK</div>
+							</div>
+
+							<div class="metric-box">
+								<div class="metric-top">
+									<span class="metric-title"><i data-lucide="wind"></i> SpO2</span>
+									<span class="metric-tag tag-good">Optimal</span>
+								</div>
+								<div class="metric-value">98.5 <span class="metric-unit">%</span></div>
+								<div class="metric-sub">PPO2 cabine : 21.2 kPa</div>
+							</div>
+
+							<div class="metric-box">
+								<div class="metric-top">
+									<span class="metric-title"><i data-lucide="radiation"></i> Rayonnement</span>
+									<span class="metric-tag tag-warn">Surveillé</span>
+								</div>
+								<div class="metric-value">0.38 <span class="metric-unit">mSv/j</span></div>
+								<div class="metric-sub">Seuil d'alerte : 1.0 mSv</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="preview-card-footer">
+						<div class="preview-alert-summary">
+							<i data-lucide="sparkles" class="alert-icon-check"></i>
+							<span><strong>Recommandation VitaOrbit :</strong> Séance vélo ergomètre ARED 45 min programmée à 14h00 UTC.</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ SECTION 1 : LE DÉFI NASA ============ -->
+		<section id="defi" class="section section-bordered">
+			<div class="section-header">
+				<p class="section-kicker">
+					<i data-lucide="target"></i> Le Défi NASA
+				</p>
+				<h2>L'autonomie médicale : le verrou critique des voyages interplanétaires</h2>
+				<p class="section-intro">
+					Lorsque les équipages dépasseront l'orbite basse terrestre vers la Lune puis Mars, 
+					le cordon ombilical médical avec la Terre sera définitivement distendu. Concevoir un outil clinique 
+					intelligible et proactif devient une condition absolue de survie.
+				</p>
+			</div>
+
+			<!-- Chiffres chocs du défi -->
+			<div class="stats-row">
+				<div class="stat-card">
+					<div class="stat-number">22<span class="stat-unit">min</span></div>
+					<div class="stat-label">Délai radio Terre-Mars aller simple</div>
+					<p class="stat-desc">Impossibilité d'une télé-assistance chirurgicale en direct : l'équipage doit décider seul.</p>
+				</div>
+				<div class="stat-card">
+					<div class="stat-number">5<span class="stat-unit">risques</span></div>
+					<div class="stat-label">Dangers classifiés R.I.D.G.E.</div>
+					<p class="stat-desc">Programme de recherche humaine de la NASA documentant les agressions de l'espace profond.</p>
+				</div>
+				<div class="stat-card">
+					<div class="stat-number">3<span class="stat-unit">ans</span></div>
+					<div class="stat-label">Durée estimée d'une mission martienne</div>
+					<p class="stat-desc">Exposition prolongée à la microgravité entraînant atrophie musculaire et déminéralisation osseuse.</p>
+				</div>
+			</div>
+
+			<!-- Grille des 3 axes du défi -->
+			<div class="grid grid-3">
+				<article class="card card-accent-top">
+					<div class="card-icon-badge">
+						<i data-lucide="alert-triangle"></i>
+					</div>
+					<h3>Les 5 Risques R.I.D.G.E.</h3>
+					<p>
+						La NASA structure la médecine spatiale autour de 5 dangers systémiques : 
+						<strong>R</strong>adiations cosmiques, <strong>I</strong>solement psychologique, 
+						<strong>D</strong>istance de la Terre, <strong>G</strong>ravité altérée et 
+						<strong>E</strong>nvironnements clos hostiles.
+					</p>
+					<ul class="card-feature-list">
+						<li>Impact sur le système immunitaire & le microbiome</li>
+						<li>Perte de 1% à 1.5% de masse osseuse par mois</li>
+						<li>Syndrome neuro-oculaire lié aux fluides (SANS)</li>
+					</ul>
+				</article>
+
+				<article class="card card-accent-top">
+					<div class="card-icon-badge">
+						<i data-lucide="shield-alert"></i>
+					</div>
+					<h3>Le Problème Clinique</h3>
+					<p>
+						Les astronautes sont des pilotes, ingénieurs et chercheurs d'élite, mais ils ne sont 
+						pas tous médecins spécialistes. Face à des téraoctets de données de capteurs, 
+						ils manquent d'une synthèse clinique claire pour savoir quand une dérive devient critique.
+					</p>
+					<ul class="card-feature-list">
+						<li>Surcharge cognitive face aux données brutes</li>
+						<li>Dérive asymptomatique insidieuse (déshydratation, anémie spatiale)</li>
+						<li>Stress accru en cas d'incertitude sur les symptômes</li>
+					</ul>
+				</article>
+
+				<article class="card card-accent-top">
+					<div class="card-icon-badge">
+						<i data-lucide="crosshair"></i>
+					</div>
+					<h3>Notre Objectif</h3>
+					<p>
+						Bâtir une interface de surveillance médicale <strong>centrée sur l'action humaine</strong> : 
+						traduire des mesures physiologiques complexes en un état de santé visuel compréhensible en 3 secondes, 
+						avec un protocole de contre-mesures guidé pas à pas.
+					</p>
+					<ul class="card-feature-list">
+						<li>Code couleur d'alerte universel normalisé</li>
+						<li>Corrélation des constantes croisées (sommeil + pouls + stress)</li>
+						<li>Conseils préventifs immédiats avant consultation sol</li>
+					</ul>
+				</article>
+			</div>
+		</section>
+
+		<!-- ============ SECTION 2 : NOTRE SOLUTION (VITAORBIT) ============ -->
+		<section id="solution" class="section">
+			<div class="section-header">
+				<p class="section-kicker">
+					<i data-lucide="cpu"></i> Notre Solution
+				</p>
+				<h2>VitaOrbit : Le tableau de bord clinique autonome de l'astronaute</h2>
+				<p class="section-intro">
+					Une application web conçue pour fonctionner en environnement déconnecté, 
+					offrant une vision panoramique de la condition physique et psychologique de l'équipage.
+				</p>
+			</div>
+
+			<!-- Fonctionnalités piliers -->
+			<div class="grid grid-3">
+				<article class="card card-feature">
+					<div class="feature-header">
+						<div class="feature-icon icon-blue">
+							<i data-lucide="user"></i>
+						</div>
+						<span class="feature-number">01</span>
+					</div>
+					<h4>Silhouette interactive par organes</h4>
+					<p>
+						Cartographie anatomique interactive du corps. Chaque système (cerveau, appareil cardio-vasculaire, 
+						squelette, immunité) est cliquable et expose son état d'écart à la normale, 
+						ses risques spécifiques en microgravité et les protocoles d'action recommandés.
+					</p>
+				</article>
+
+				<article class="card card-feature">
+					<div class="feature-header">
+						<div class="feature-icon icon-orange">
+							<i data-lucide="trending-up"></i>
+						</div>
+						<span class="feature-number">02</span>
+					</div>
+					<h4>Tendances & seuils dynamiques</h4>
+					<p>
+						Plutôt qu'un cliché statique, VitaOrbit calcule des moyennes mobiles sur 7 et 30 sols. 
+						Le code couleur (Vert, Ambre, Rouge) s'adapte à la ligne de base physiologique propre 
+						à chaque astronaute, évitant les fausses alertes.
+					</p>
+				</article>
+
+				<article class="card card-feature">
+					<div class="feature-header">
+						<div class="feature-icon icon-teal">
+							<i data-lucide="stethoscope"></i>
+						</div>
+						<span class="feature-number">03</span>
+					</div>
+					<h4>Arbre décisionnel & contre-mesures</h4>
+					<p>
+						Pour chaque anomalie détectée, l'outil propose des contre-mesures validées : ajustement de l'exercice 
+						sur la machine ARED, adaptation de la supplémentation (vitamine D, électrolytes), réordonnancement 
+						du cycle circadien ou mise sous surveillance renforcée.
+					</p>
+				</article>
+			</div>
+
+			<!-- Comment ça marche : Workflow étapes -->
+			<div class="workflow-container">
+				<h3 class="subsection-title">
+					<i data-lucide="git-merge"></i> Protocole de fonctionnement en 3 phases
+				</h3>
+				
+				<div class="steps-flow">
+					<div class="step-card">
+						<div class="step-badge">1</div>
+						<div class="step-content">
+							<h4>Saisie & Télémétrie passive</h4>
+							<p>L'astronaute synchronise ses capteurs portables (ECG, tensiomètre, dosimètre) ou complète son bilan matinal en 60 secondes (sommeil, humeur, perception d'effort).</p>
+						</div>
+					</div>
+
+					<div class="step-card">
+						<div class="step-badge">2</div>
+						<div class="step-content">
+							<h4>Analyse différentielle embarquée</h4>
+							<p>Le moteur algorithmique compare les mesures aux normes NASA HRP (Human Research Program) et à l'historique personnel pour identifier les signaux faibles.</p>
+						</div>
+					</div>
+
+					<div class="step-card">
+						<div class="step-badge">3</div>
+						<div class="step-content">
+							<h4>Synthèse visuelle & Plan de vol</h4>
+							<p>La silhouette s'actualise instantanément, les risques prioritaires sont hiérarchisés et un rapport chiffré prêt pour la prochaine fenêtre de transmission est généré.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Matrice d'impact attendu -->
+			<div class="impact-box">
+				<div class="impact-header">
+					<div class="impact-badge-tag">
+						<i data-lucide="check-check"></i> Impact Clinique Mesurable
+					</div>
+					<h3>Ce que VitaOrbit apporte concrètement à l'équipage</h3>
+				</div>
+
+				<div class="impact-grid">
+					<div class="impact-item">
+						<div class="impact-check"><i data-lucide="check"></i></div>
+						<div class="impact-text">
+							<strong>Détection précoce en quelques secondes :</strong> Identification des signes de déshydratation, d'arythmie ou d'épuisement mental bien avant la survenue d'un malaise.
+						</div>
+					</div>
+
+					<div class="impact-item">
+						<div class="impact-check"><i data-lucide="check"></i></div>
+						<div class="impact-text">
+							<strong>Réduction de la charge mentale :</strong> Fini les tableurs opaques ; la vue silhouette fournit une lecture spatiale naturelle et rassurante de son propre corps.
+						</div>
+					</div>
+
+					<div class="impact-item">
+						<div class="impact-check"><i data-lucide="check"></i></div>
+						<div class="impact-text">
+							<strong>Motivation & respect des routines :</strong> Système de suivi des objectifs quotidiens (2h d'exercice obligatoire, 8h de sommeil, hydratation) pour préserver le capital santé.
+						</div>
+					</div>
+
+					<div class="impact-item">
+						<div class="impact-check warning-check"><i data-lucide="alert-circle"></i></div>
+						<div class="impact-text text-subtle">
+							<strong>Rappel de déontologie :</strong> Prototype scientifique conçu dans le cadre du hackathon. Il utilise des données simulées et ne constitue pas un dispositif médical certifié de vol sans validation de vol.
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ NOUVELLE SECTION : ÉCOSYSTÈME IOT & CAPTEURS TEMPS RÉEL ============ -->
+		<section id="iot-capteurs" class="section section-bordered">
+			<div class="section-header">
+				<p class="section-kicker">
+					<i data-lucide="radio"></i> Dispositifs Médicaux & Flux Temps Réel
+				</p>
+				<h2>Connectivité continue 24/7 : Du capteur portable à l'alerte instantanée</h2>
+				<p class="section-intro">
+					Santellite : VitaOrbit se synchronise en temps réel avec un écosystème d'outils médicaux connectés portés par l'astronaute. 
+					En analysant en continu la pression artérielle, la fréquence cardiaque, la charge mentale et l'exposition environnementale, 
+					le logiciel détecte la moindre dérive physiologique et déclenche une alerte immédiate.
+				</p>
+			</div>
+
+			<!-- Grille des 4 Appareils Connectés Spatiaux -->
+			<div class="grid grid-2">
+				<article class="card card-device">
+					<div class="device-card-header">
+						<div class="device-icon-box icon-blue">
+							<i data-lucide="shirt"></i>
+						</div>
+						<div class="device-header-meta">
+							<span class="device-badge badge-active">
+								<span class="pulse-dot-sm"></span> Flux Actif (250 Hz)
+							</span>
+							<h3>Maillot Biométrique Spatial</h3>
+							<span class="device-model">Inspiré d'Astroskin / Bio-Monitor (ASC & NASA)</span>
+						</div>
+					</div>
+					<p class="device-desc">
+						Vêtement connecté médicalisé équipé de capteurs textiles capacitifs et de photodiodes. 
+						Il assure la mesure <strong>de la pression artérielle en continu sans brassard gonflable</strong> 
+						(par temps de transit de l'onde de pouls - PTT) et enregistre un électrocardiogramme (ECG) 3 dérivations.
+					</p>
+					<div class="device-specs">
+						<div class="spec-item">
+							<span class="spec-label"><i data-lucide="gauge"></i> Pression artérielle :</span>
+							<span class="spec-val">Continue (PTT optique & impédance)</span>
+						</div>
+						<div class="spec-item">
+							<span class="spec-label"><i data-lucide="activity"></i> Électrocardiogramme :</span>
+							<span class="spec-val">3 dérivations médicales continues</span>
+						</div>
+						<div class="spec-item">
+							<span class="spec-label"><i data-lucide="wind"></i> Mécanique ventilatoire :</span>
+							<span class="spec-val">Volume courant et rythme respiratoire</span>
+						</div>
+					</div>
+				</article>
+
+				<article class="card card-device">
+					<div class="device-card-header">
+						<div class="device-icon-box icon-orange">
+							<i data-lucide="watch"></i>
+						</div>
+						<div class="device-header-meta">
+							<span class="device-badge badge-active">
+								<span class="pulse-dot-sm"></span> Flux Actif (50 Hz)
+							</span>
+							<h3>Montre Biomédicale Aérospatiale</h3>
+							<span class="device-model">Smartwatch Clinique Haute Précision</span>
+						</div>
+					</div>
+					<p class="device-desc">
+						Bien plus exigeante qu'une montre connectée grand public, elle intègre des capteurs photopléthysmographiques (PPG) 
+						multi-longueurs d'onde. Elle mesure en continu la fréquence cardiaque, la variabilité sinusale (HRV), 
+						la saturation en oxygène (SpO2) et transmet des <strong>retours haptiques vibratoires</strong> d'alerte.
+					</p>
+					<div class="device-specs">
+						<div class="spec-item">
+							<span class="spec-label"><i data-lucide="heart"></i> Fréquence Cardiaque :</span>
+							<span class="spec-val">PPG multi-canaux (précision &plusmn; 1 BPM)</span>
+						</div>
+						<div class="spec-item">
+							<span class="spec-label"><i data-lucide="trending-up"></i> Variabilité du rythme :</span>
+							<span class="spec-val">HRV / RMSSD (Indice de stress autonome)</span>
+						</div>
+						<div class="spec-item">
+							<span class="spec-label"><i data-lucide="bell"></i> Alertes haptiques :</span>
+							<span class="spec-val">Vibration au poignet en cas d'anomalie</span>
+						</div>
+					</div>
+				</article>
+
+				<article class="card card-device">
+					<div class="device-card-header">
+						<div class="device-icon-box icon-teal">
+							<i data-lucide="activity-square"></i>
+						</div>
+						<div class="device-header-meta">
+							<span class="device-badge badge-active">
+								<span class="pulse-dot-sm"></span> Flux Actif (20 Hz)
+							</span>
+							<h3>Patch Cutané de Neuro-Vigilance</h3>
+							<span class="device-model">Bio-Sticker & Capteur Électrodermal (GSR)</span>
+						</div>
+					</div>
+					<p class="device-desc">
+						Capteur adhésif hypoallergénique mesurant l'activité électrodermale (réponse galvanique de la peau). 
+						Il capte la micro-sudation liée aux décharges du système nerveux sympathique, quantifiant <strong>le stress aigu, 
+						la charge cognitive et l'état ressenti</strong> avant même que l'astronaute ne formule de plainte.
+					</p>
+					<div class="device-specs">
+						<div class="spec-item">
+							<span class="spec-label"><i data-lucide="brain"></i> État de stress ressenti :</span>
+							<span class="spec-val">Activité électrodermale (GSR & micro-sudation)</span>
+						</div>
+						<div class="spec-item">
+							<span class="spec-label"><i data-lucide="thermometer"></i> Température cutanée :</span>
+							<span class="spec-val">Écarts thermiques locaux &plusmn; 0.05&deg;C</span>
+						</div>
+						<div class="spec-item">
+							<span class="spec-label"><i data-lucide="eye"></i> Vigilance cognitive :</span>
+							<span class="spec-val">Détection précoce du surmenage mental</span>
+						</div>
+					</div>
+				</article>
+
+				<article class="card card-device">
+					<div class="device-card-header">
+						<div class="device-icon-box icon-purple">
+							<i data-lucide="radiation"></i>
+						</div>
+						<div class="device-header-meta">
+							<span class="device-badge badge-active">
+								<span class="pulse-dot-sm"></span> Flux Actif (1 Hz)
+							</span>
+							<h3>Dosimètre & Spectromètre IoT</h3>
+							<span class="device-model">Capteur Environnemental de Poche</span>
+						</div>
+					</div>
+					<p class="device-desc">
+						Dispositif communicant à semi-conducteur mesurant en direct l'exposition aux rayonnements cosmiques galactiques (GCR) 
+						et aux éruptions de particules solaires (SPE). Il transmet ses mesures par liaison sans fil au logiciel Santellite 
+						pour corréler la dose reçue avec la dégradation des paramètres vitaux.
+					</p>
+					<div class="device-specs">
+						<div class="spec-item">
+							<span class="spec-label"><i data-lucide="shield-alert"></i> Débit de dose ionisante :</span>
+							<span class="spec-val">Millisiéverts en direct (mSv/h)</span>
+						</div>
+						<div class="spec-item">
+							<span class="spec-label"><i data-lucide="sun"></i> Détection Éruption SPE :</span>
+							<span class="spec-val">Alerte critique &lt; 500 ms</span>
+						</div>
+						<div class="spec-item">
+							<span class="spec-label"><i data-lucide="layers"></i> Corrélation clinique :</span>
+							<span class="spec-val">Lien direct dose-réponse physiologique</span>
+						</div>
+					</div>
+				</article>
+			</div>
+
+			<!-- Pipeline de Traitement des Flux & Déclenchement d'Alerte -->
+			<div class="pipeline-card">
+				<div class="pipeline-header">
+					<span class="pipeline-badge"><i data-lucide="git-commit"></i> Architecture Temps Réel</span>
+					<h3>De la captation du signal à l'intervention médicale d'urgence</h3>
+					<p>Un flux de données continu traité 100% à bord du vaisseau (Edge Computing), éliminant tout délai de transmission avec la Terre.</p>
+				</div>
+
+				<div class="pipeline-steps">
+					<div class="pipe-step">
+						<div class="pipe-icon-wrapper">
+							<i data-lucide="bluetooth"></i>
+							<span class="pipe-step-num">1</span>
+						</div>
+						<h4>Synchronisation Locale</h4>
+						<p>Les capteurs transmettent leurs trames via Bluetooth 5.3 Low Energy sécurisé et bus avionique redondant.</p>
+					</div>
+
+					<div class="pipe-arrow"><i data-lucide="chevron-right"></i></div>
+
+					<div class="pipe-step">
+						<div class="pipe-icon-wrapper">
+							<i data-lucide="cpu"></i>
+							<span class="pipe-step-num">2</span>
+						</div>
+						<h4>Ingestion & Filtrage</h4>
+						<p>Santellite élimine le bruit de mesure (mouvements, microgravité) et calcule les moyennes glissantes instantanées.</p>
+					</div>
+
+					<div class="pipe-arrow"><i data-lucide="chevron-right"></i></div>
+
+					<div class="pipe-step">
+						<div class="pipe-icon-wrapper">
+							<i data-lucide="git-merge"></i>
+							<span class="pipe-step-num">3</span>
+						</div>
+						<h4>Corrélation Croisée</h4>
+						<p>L'algorithme vérifie si l'élévation du pouls est normale (séance de sport ARED) ou pathologique (repos / déshydratation).</p>
+					</div>
+
+					<div class="pipe-arrow"><i data-lucide="chevron-right"></i></div>
+
+					<div class="pipe-step">
+						<div class="pipe-icon-wrapper pipe-alert-step">
+							<i data-lucide="bell-ring"></i>
+							<span class="pipe-step-num">4</span>
+						</div>
+						<h4>Alerte & Recommandation</h4>
+						<p>Dès le moindre écart anormal, notification haptique au poignet, alarme écran et prescription du protocole NASA.</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Matrice des 3 Niveaux d'Alerte Santellite -->
+			<div class="alert-matrix-wrapper">
+				<h3 class="subsection-title">
+					<i data-lucide="alert-octagon"></i> Matrice de Réaction aux Anomalies en Temps Réel
+				</h3>
+				<div class="matrix-grid">
+					<div class="matrix-card matrix-nominal">
+						<div class="matrix-badge">
+							<span class="status-indicator-dot dot-green"></span> Niveau 0 : Nominal
+						</div>
+						<h4>Constantes dans les Bornes</h4>
+						<p>Pression artérielle, pouls de repos et saturation conformes à la ligne de base personnalisée de l'astronaute.</p>
+						<div class="matrix-action">
+							<i data-lucide="check"></i> Maintien du programme d'activités standard.
+						</div>
+					</div>
+
+					<div class="matrix-card matrix-warning">
+						<div class="matrix-badge">
+							<span class="status-indicator-dot dot-amber"></span> Niveau 1 : Vigilance Dérive
+						</div>
+						<h4>Signal Faible Détecté</h4>
+						<p>Chute de tension orthostatique, tachycardie légère au repos ou pic de stress cutané prolongé sans activité physique.</p>
+						<div class="matrix-action action-warning">
+							<i data-lucide="clock"></i> Recommandation préventive : hydratation électrolytique, sieste flash ou luminothérapie.
+						</div>
+					</div>
+
+					<div class="matrix-card matrix-critical">
+						<div class="matrix-badge">
+							<span class="status-indicator-dot dot-red"></span> Niveau 2 : Alerte Critique Immédiate
+						</div>
+						<h4>Anomalie Aiguë ou Danger SPE</h4>
+						<p>Pic de tension sévère (&gt; 160 mmHg), arythmie cardiaque soudaine ou dépassement du seuil de radiation (1.0 mSv).</p>
+						<div class="matrix-action action-critical">
+							<i data-lucide="zap"></i> Alarme sonore + haptique, protocole d'urgence et guidage pas-à-pas de l'équipage.
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ SECTION 3 : DONNÉES NASA & TECHNOLOGIES ============ -->
+		<section id="donnees" class="section section-bordered">
+			<div class="section-header">
+				<p class="section-kicker">
+					<i data-lucide="database"></i> Données Officielles NASA
+				</p>
+				<h2>Des référentiels scientifiques solides au cœur du modèle</h2>
+				<p class="section-intro">
+					VitaOrbit s'appuie sur les archives ouvertes de la NASA, intégrant les résultats 
+					de décennies de recherche biomédicale menée à bord de la station spatiale internationale (ISS) 
+					et lors des missions lunaires Apollo.
+				</p>
+			</div>
+
+			<div class="grid grid-3">
+				<article class="card card-data">
+					<div class="data-card-badge">Base de données 01</div>
+					<h3>NASA OSDR / GeneLab</h3>
+					<p>
+						L'Open Science Data Repository regroupe les données omiques et biomoléculaires des organismes vivants exposés aux radiations spatiales et à la microgravité.
+					</p>
+					<ul class="data-meta">
+						<li><strong>Source :</strong> NASA Ames Research Center</li>
+						<li><strong>Type :</strong> Biomarqueurs d'expression génique & stress oxydatif</li>
+						<li><strong>Application :</strong> Étalonnage des seuils de tolérance aux rayonnements</li>
+					</ul>
+					<a href="https://osdr.nasa.gov" target="_blank" rel="noopener noreferrer" class="data-link">
+						<span>Consulter le portail OSDR</span>
+						<i data-lucide="external-link"></i>
+					</a>
+				</article>
+
+				<article class="card card-data">
+					<div class="data-card-badge">Base de données 02</div>
+					<h3>NASA LSDA (Life Sciences)</h3>
+					<p>
+						L'archive des sciences de la vie de la NASA collige les mesures physiologiques standard des équipages : électrocardiogrammes, tests de densité osseuse DXA et bilans sanguins.
+					</p>
+					<ul class="data-meta">
+						<li><strong>Source :</strong> NASA Johnson Space Center</li>
+						<li><strong>Type :</strong> Séries chronologiques physiologiques en vol</li>
+						<li><strong>Application :</strong> Modélisation des dérives musculaires et de la tension</li>
+					</ul>
+					<a href="https://lsda.jsc.nasa.gov" target="_blank" rel="noopener noreferrer" class="data-link">
+						<span>Consulter les archives LSDA</span>
+						<i data-lucide="external-link"></i>
+					</a>
+				</article>
+
+				<article class="card card-data">
+					<div class="data-card-badge">Référentiel 03</div>
+					<h3>NASA HRP Evidence Books</h3>
+					<p>
+						Les livres de preuves du Human Research Program synthétisent l'état de l'art médical mondial sur chaque risque pour l'organisme humain en mission d'exploration.
+					</p>
+					<ul class="data-meta">
+						<li><strong>Source :</strong> NASA Human Research Program</li>
+						<li><strong>Type :</strong> Directives cliniques & protocoles de contre-mesure</li>
+						<li><strong>Application :</strong> Arbre décisionnel des recommandations préventives</li>
+					</ul>
+					<a href="https://humanresearchroadmap.nasa.gov" target="_blank" rel="noopener noreferrer" class="data-link">
+						<span>Consulter la Roadmap HRP</span>
+						<i data-lucide="external-link"></i>
+					</a>
+				</article>
+			</div>
+
+			<!-- Outils et Technologies -->
+			<div class="tech-stack-container">
+				<h3 class="subsection-title">
+					<i data-lucide="layers"></i> Architecture technique & outils de réalisation
+				</h3>
+				<ul class="tag-list">
+					<li><i data-lucide="code-2"></i> HTML5 Sémantique & Accessible</li>
+					<li><i data-lucide="palette"></i> CSS3 Moderne (Custom Properties & Grid)</li>
+					<li><i data-lucide="zap"></i> JavaScript ES6+ Vanilla (Zéro Framework Lourd)</li>
+					<li><i data-lucide="compass"></i> Graphiques Vectoriels SVG Dynamiques</li>
+					<li><i data-lucide="database"></i> NASA Open Data APIs</li>
+					<li><i data-lucide="smartphone"></i> Responsive Design dès 360px</li>
+				</ul>
+				<p class="tech-note">
+					<i data-lucide="info"></i>
+					Ce projet a été conçu selon une approche de sobriété numérique : code léger, temps de chargement quasi-instantané (&lt; 0.4s) et indépendance vis-à-vis des connexions externes, simulant l'autonomie d'un ordinateur de bord spatial.
+				</p>
+			</div>
+		</section>
+
+		<!-- ============ SECTION 4 : DÉMO INTERACTIVE & PROTOTYPE ============ -->
+		<section id="demo" class="section">
+			<div class="section-header">
+				<p class="section-kicker">
+					<i data-lucide="laptop"></i> Démo Interactive
+				</p>
+				<h2>Le simulateur clinique VitaOrbit en conditions réelles</h2>
+				<p class="section-intro">
+					Testez les différents scénarios de santé rencontrés par un équipage spatial. 
+					Cliquez sur les scénarios ci-dessous pour observer la réaction instantanée du système.
+				</p>
+			</div>
+
+			<!-- Simulateur interactif de scénarios -->
+			<div class="simulator-wrapper">
+				<div class="simulator-controls">
+					<span class="controls-title"><i data-lucide="sliders"></i> Choisissez un scénario de test :</span>
+					<div class="scenario-buttons" role="tablist" aria-label="Scénarios cliniques simulés">
+						<button type="button" class="scenario-btn active" role="tab" aria-selected="true" data-scenario="nominal">
+							<span class="btn-dot dot-green"></span>
+							<span>1. Vol Nominal (Lune)</span>
+						</button>
+						<button type="button" class="scenario-btn" role="tab" aria-selected="false" data-scenario="fatigue">
+							<span class="btn-dot dot-amber"></span>
+							<span>2. Dette de Sommeil & Stress</span>
+						</button>
+						<button type="button" class="scenario-btn" role="tab" aria-selected="false" data-scenario="radiation">
+							<span class="btn-dot dot-red"></span>
+							<span>3. Tempête Solaire (SPE)</span>
+						</button>
+						<button type="button" class="scenario-btn scenario-btn-danger" role="tab" aria-selected="false" data-scenario="hypertension">
+							<span class="btn-dot dot-red"></span>
+							<span>⚡ 4. Alerte Subite (Pic Tension & Pouls)</span>
+						</button>
+					</div>
+				</div>
+
+				<div class="simulator-display">
+					<!-- Bandeau Télémétrique des Outils Connectés en Direct -->
+					<div class="sim-devices-bar" aria-label="État de connexion des capteurs portés">
+						<div class="sim-device-chip" id="chip-shirt">
+							<span class="live-pulse-dot dot-pulse-green"></span>
+							<i data-lucide="shirt"></i>
+							<div class="chip-info">
+								<span class="chip-name">Maillot Astroskin PTT</span>
+								<span class="chip-state" id="chip-shirt-state">Tension Continue • 250 Hz</span>
+							</div>
+						</div>
+
+						<div class="sim-device-chip" id="chip-watch">
+							<span class="live-pulse-dot dot-pulse-green"></span>
+							<i data-lucide="watch"></i>
+							<div class="chip-info">
+								<span class="chip-name">Montre SmartWatch Med</span>
+								<span class="chip-state" id="chip-watch-state">Pouls PPG • BLE 5.3 (50 Hz)</span>
+							</div>
+						</div>
+
+						<div class="sim-device-chip" id="chip-patch">
+							<span class="live-pulse-dot dot-pulse-green"></span>
+							<i data-lucide="activity-square"></i>
+							<div class="chip-info">
+								<span class="chip-name">Patch Cutané GSR</span>
+								<span class="chip-state" id="chip-patch-state">Stress & Temp • 20 Hz</span>
+							</div>
+						</div>
+
+						<div class="sim-device-chip" id="chip-dosimeter">
+							<span class="live-pulse-dot dot-pulse-green"></span>
+							<i data-lucide="radiation"></i>
+							<div class="chip-info">
+								<span class="chip-name">Dosimètre Personnel</span>
+								<span class="chip-state" id="chip-dosimeter-state">Rayonnement • 1 Hz</span>
+							</div>
+						</div>
+					</div>
+
+					<!-- Bannière d'Alerte Instantanée Dynamique -->
+					<div class="sim-live-alert-toast" id="sim-live-alert" style="display: none;">
+						<div class="alert-toast-icon">
+							<i data-lucide="bell-ring"></i>
+						</div>
+						<div class="alert-toast-body">
+							<div class="alert-toast-title" id="sim-alert-title">DÉTECTION D'ANOMALIE EN TEMPS RÉEL (&lt; 1.2s)</div>
+							<div class="alert-toast-text" id="sim-alert-text">
+								Le maillot biométrique et la montre détectent un écart critique par rapport à la baseline de l'astronaute. Alerte haptique transmise au poignet.
+							</div>
+						</div>
+						<span class="alert-toast-badge" id="sim-alert-time">À l'instant</span>
+					</div>
+
+					<div class="sim-header">
+						<div class="sim-patient-info">
+							<span class="sim-label">Astronaute actif</span>
+							<h3 id="sim-astronaut-name">Cmdr. Thomas P. — Artemis III</h3>
+						</div>
+						<div class="sim-status-box" id="sim-status-badge">
+							<span class="status-indicator-dot dot-green"></span>
+							<span id="sim-status-text">État Physiologique : Nominal</span>
+						</div>
+					</div>
+
+					<div class="sim-grid">
+						<div class="sim-metric-card">
+							<div class="sim-metric-name"><i data-lucide="heart"></i> Fréquence Cardiaque</div>
+							<div class="sim-metric-val" id="sim-heart">68 <span class="val-unit">BPM</span></div>
+							<div class="sim-metric-bar"><div class="bar-fill fill-green" id="bar-heart" style="width: 55%;"></div></div>
+							<div class="sim-metric-diag" id="diag-heart">Rythme sinusal régulier</div>
+						</div>
+
+						<div class="sim-metric-card">
+							<div class="sim-metric-name"><i data-lucide="gauge"></i> Pression Artérielle</div>
+							<div class="sim-metric-val" id="sim-bp">118/76 <span class="val-unit">mmHg</span></div>
+							<div class="sim-metric-bar"><div class="bar-fill fill-green" id="bar-bp" style="width: 60%;"></div></div>
+							<div class="sim-metric-diag" id="diag-bp">Normotension parfaite</div>
+						</div>
+
+						<div class="sim-metric-card">
+							<div class="sim-metric-name"><i data-lucide="moon"></i> Sommeil & Récupération</div>
+							<div class="sim-metric-val" id="sim-sleep">7h 45m <span class="val-unit">Sommeil profond</span></div>
+							<div class="sim-metric-bar"><div class="bar-fill fill-green" id="bar-sleep" style="width: 85%;"></div></div>
+							<div class="sim-metric-diag" id="diag-sleep">Indice de repos : 94%</div>
+						</div>
+
+						<div class="sim-metric-card">
+							<div class="sim-metric-name"><i data-lucide="shield-alert"></i> Dose Radiologique</div>
+							<div class="sim-metric-val" id="sim-rad">0.38 <span class="val-unit">mSv/24h</span></div>
+							<div class="sim-metric-bar"><div class="bar-fill fill-green" id="bar-rad" style="width: 25%;"></div></div>
+							<div class="sim-metric-diag" id="diag-rad">Sous le seuil d'alarme (1.0 mSv)</div>
+						</div>
+					</div>
+
+					<!-- Carte de prescription intelligente -->
+					<div class="sim-recommendation-card" id="sim-rec-box">
+						<div class="rec-icon" id="sim-rec-icon">
+							<i data-lucide="check-circle-2"></i>
+						</div>
+						<div class="rec-details">
+							<h4 id="sim-rec-title">Protocole recommandé par VitaOrbit</h4>
+							<p id="sim-rec-text">
+								Tous les paramètres sont dans les intervalles de sécurité NASA HRP. Maintenir le programme standard : 45 minutes de cyclo-ergomètre et hydratation à 2.5L.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Liens vers la démonstration et le code source -->
+			<div class="demo-actions-card">
+				<div class="demo-actions-content">
+					<h3>Prêt à examiner les ressources du projet ?</h3>
+					<p>Explorez le code source complet, la documentation méthodologique et le pitch officiel déposé pour le NASA Space Apps Challenge.</p>
+				</div>
+				<div class="demo-buttons">
+					<a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+						<i data-lucide="github"></i>
+						<span>Voir le Dépôt GitHub</span>
+					</a>
+					<a href="https://www.spaceappschallenge.org" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+						<i data-lucide="external-link"></i>
+						<span>Page Officielle Space Apps</span>
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ SECTION 5 : L'ÉQUIPE ============ -->
+		<section id="equipe" class="section section-bordered">
+			<div class="section-header">
+				<p class="section-kicker">
+					<i data-lucide="users"></i> Équipe de Développement
+				</p>
+				<h2>L'Équipe 404 Introuvable — Libreville 2026</h2>
+				<p class="section-intro">
+					Réunis à Libreville (Gabon) pour le NASA Space Apps Challenge 2026, 
+					notre équipe associe gestion de projet, analyse de données scientifiques, design clinique et ingénierie logicielle.
+				</p>
+			</div>
+
+			<div class="grid grid-3">
+				<article class="card card-member">
+					<div class="member-avatar-wrapper">
+						<div class="member-avatar-badge avatar-lead">
+							<span>GK</span>
+						</div>
+						<span class="member-role-tag">Chef de Projet</span>
+					</div>
+					<h3>Guy-Charles Junior KOUMBA M.</h3>
+					<p class="member-title">Direction de Projet & Données Spatiales</p>
+					<p class="member-bio">
+						Supervision globale du projet, modélisation des besoins opérationnels des équipages et sélection des jeux de données ouverts NASA OSDR/LSDA.
+					</p>
+					<div class="member-skills">
+						<span class="skill-pill">Data Analysis</span>
+						<span class="skill-pill">NASA Data</span>
+						<span class="skill-pill">Project Lead</span>
+					</div>
+				</article>
+
+				<article class="card card-member">
+					<div class="member-avatar-wrapper">
+						<div class="member-avatar-badge avatar-design">
+							<span>WB</span>
+						</div>
+						<span class="member-role-tag">Coordinateur UI/UX</span>
+					</div>
+					<h3>Wyls's Ferryl BALONDZI M.</h3>
+					<p class="member-title">Coordination & Design Visuel Aérospatial</p>
+					<p class="member-bio">
+						Conception ergonomique du tableau de bord médical, cohérence de la charte clinique, hiérarchisation des indicateurs et accessibilité visuelle.
+					</p>
+					<div class="member-skills">
+						<span class="skill-pill">UI/UX Design</span>
+						<span class="skill-pill">Human Factors</span>
+						<span class="skill-pill">Ergonomie</span>
+					</div>
+				</article>
+
+				<article class="card card-member">
+					<div class="member-avatar-wrapper">
+						<div class="member-avatar-badge avatar-dev">
+							<span>WM</span>
+						</div>
+						<span class="member-role-tag">Développeur Web</span>
+					</div>
+					<h3>Wences W. Matthieu MOUNGUENGUI K.</h3>
+					<p class="member-title">Architecture Frontend & Intégration</p>
+					<p class="member-bio">
+						Développement de la plateforme interactive en HTML5/CSS3/JS pur, intégration de la télémétrie SVG, optimisation des performances et responsive design.
+					</p>
+					<div class="member-skills">
+						<span class="skill-pill">Frontend Dev</span>
+						<span class="skill-pill">SVG Analytics</span>
+						<span class="skill-pill">Vanilla JS</span>
+					</div>
+				</article>
+			</div>
+
+			<div class="team-quote-card">
+				<div class="quote-icon"><i data-lucide="quote"></i></div>
+				<p class="quote-text">
+					« Dans le vide de l'espace, la santé humaine est le composant le plus fragile et le plus précieux. VitaOrbit incarne notre vision d'une technologie au service des pionniers de demain. »
+				</p>
+				<p class="quote-author">— Équipe 404 Introuvable, NASA Space Apps Challenge Libreville</p>
+			</div>
+		</section>
+	</main>
+	
+	<!-- ============ PIED DE PAGE ============ -->
+	<footer class="site-footer">
+		<div class="footer-content">
+			<div class="footer-brand">
+				<a href="#accueil" class="footer-logo">
+					<i data-lucide="orbit"></i>
+					<span>Santellite</span>
+				</a>
+				<p class="footer-tagline">
+					Projet présenté au NASA Space Apps Challenge 2026 par l'Équipe 404 Introuvable (Libreville, Gabon).
+				</p>
+			</div>
+
+			<div class="footer-nav">
+				<h4 class="footer-nav-title">Plan du site</h4>
+				<ul class="footer-links">
+					<li><a href="#accueil"><i data-lucide="chevron-right"></i> Accueil</a></li>
+					<li><a href="#defi"><i data-lucide="chevron-right"></i> Le Défi NASA</a></li>
+					<li><a href="#solution"><i data-lucide="chevron-right"></i> Solution VitaOrbit</a></li>
+					<li><a href="#iot-capteurs"><i data-lucide="chevron-right"></i> Capteurs & IoT</a></li>
+					<li><a href="#donnees"><i data-lucide="chevron-right"></i> Données Scientifiques</a></li>
+					<li><a href="#demo"><i data-lucide="chevron-right"></i> Démo Interactive</a></li>
+					<li><a href="#equipe"><i data-lucide="chevron-right"></i> L'Équipe</a></li>
+				</ul>
+			</div>
+
+			<div class="footer-legal">
+				<h4 class="footer-nav-title">Mentions & Déontologie</h4>
+				<p class="footer-disclaimer">
+					Ce projet est une proposition conceptuelle et éducative réalisée dans le cadre du hackathon international NASA Space Apps Challenge 2026. 
+					Il n'est pas affilié officiellement à la NASA, ni approuvé ou financé par celle-ci. 
+					Les données et protocoles scientifiques s'inspirent des publications ouvertes du NASA Human Research Program.
+				</p>
+				<div class="footer-external-links">
+					<a href="https://www.spaceappschallenge.org" target="_blank" rel="noopener noreferrer">
+						<i data-lucide="globe"></i> Site officiel Space Apps
+					</a>
+					<a href="https://github.com" target="_blank" rel="noopener noreferrer">
+						<i data-lucide="github"></i> Dépôt GitHub
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer-bottom">
+			<div class="footer-bottom-container">
+				<p>© 2026 Santellite • VitaOrbit. Conçu avec passion par l'Équipe 404 Introuvable.</p>
+				<p class="footer-coords">Libreville, Gabon • NASA Space Apps Challenge Edition 2026</p>
+			</div>
+		</div>
+	</footer>
+
+	<!-- ============ BOUTON RETOUR EN HAUT ============ -->
+	<a href="#accueil" class="back-to-top" aria-label="Retour en haut de la page">
+		<i data-lucide="arrow-up"></i>
+	</a>
+</body>
+</html>
