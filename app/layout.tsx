@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Santellite : VitaOrbit — Surveillance Médicale Spatiale & IoT Temps Réel | NASA Space Apps 2026",
-  description: "Plateforme clinique de télémétrie autonome et surveillance continue interconnectant 6 dispositifs médicaux spatiaux (Astroskin, EmbracePlus, Actiwatch / ActLumus Artemis II, dosimètre, échographe osseux, biocapteurs) pour astronautes.",
-  keywords: ["NASA Space Apps", "Santellite", "VitaOrbit", "Astronaut Health", "IoT Médical", "Télémétrie Spatiale", "Astroskin", "EmbracePlus", "Actiwatch", "ActLumus", "Artemis II"],
+  title: "Santellite : VitaOrbit — Autonomous Space Medical Telemetry & Real-Time IoT | NASA Space Apps 2026",
+  description: "Autonomous clinical telemetry and continuous health monitoring platform interconnecting 6 space medical devices (Astroskin, EmbracePlus, Actiwatch / ActLumus Artemis II, dosimeter, bone ultrasound scanner, biosensors) for deep-space astronauts.",
+  keywords: ["NASA Space Apps", "Santellite", "VitaOrbit", "Astronaut Health", "Medical IoT", "Space Telemetry", "Astroskin", "EmbracePlus", "Actiwatch", "ActLumus", "Artemis II"],
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Santellite : VitaOrbit — NASA Space Apps Challenge 2026",
-    description: "Hub médical autonome pour astronautes en espace profond : IoT temps réel, tension artérielle continue et alertes instantanées.",
+    description: "Autonomous medical hub for deep-space astronauts: Real-time clinical IoT, continuous blood pressure, and instant emergency alerts without Earth lag.",
     type: "website",
   },
 };
@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="alternate icon" href="/favicon.ico" />

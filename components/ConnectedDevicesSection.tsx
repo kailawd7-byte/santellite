@@ -22,7 +22,6 @@ import {
   Layers,
   Usb,
   Sun,
-  Footprints,
   Moon,
   FlaskConical,
   Rocket,
@@ -38,12 +37,12 @@ export default function ConnectedDevicesSection() {
   const [embraceImgMode, setEmbraceImgMode] = useState<"front" | "sensors">("front");
 
   const products = [
-    { id: "astroskin", label: "1. Maillot Astroskin", icon: Shield, color: "text-blue-500" },
-    { id: "embraceplus", label: "2. Montre EmbracePlus", icon: Heart, color: "text-cyan-400" },
-    { id: "echolight", label: "3. Échographe REMS", icon: Bone, color: "text-emerald-400" },
-    { id: "dosimeter", label: "4. Dosimètre Radiations", icon: AlertTriangle, color: "text-amber-400" },
-    { id: "saliva", label: "5. Biocapteur Salivaire", icon: Droplets, color: "text-purple-400" },
-    { id: "actigraphy", label: "6. Actigraphie Spatiale", icon: Moon, color: "text-indigo-400" },
+    { id: "astroskin", label: "1. Astroskin Smart Shirt", icon: Shield, color: "text-blue-500" },
+    { id: "embraceplus", label: "2. EmbracePlus Watch", icon: Heart, color: "text-cyan-400" },
+    { id: "echolight", label: "3. REMS Bone Scanner", icon: Bone, color: "text-emerald-400" },
+    { id: "dosimeter", label: "4. Radiation Dosimeter", icon: AlertTriangle, color: "text-amber-400" },
+    { id: "saliva", label: "5. Saliva Biosensor", icon: Droplets, color: "text-purple-400" },
+    { id: "actigraphy", label: "6. Artemis II Actigraphy", icon: Moon, color: "text-indigo-400" },
   ];
 
   return (
@@ -54,19 +53,19 @@ export default function ConnectedDevicesSection() {
         <div className="reveal-on-scroll text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-white/[0.05] text-slate-300 border border-white/[0.1] mb-4 backdrop-blur-md">
             <Radio className="w-3.5 h-3.5 animate-pulse text-emerald-400" />
-            Équipements Éprouvés & Connectés
+            Flight-Proven & Connected Space Hardware
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-mono font-extrabold text-white tracking-tight uppercase leading-[1.12]">
-            Capteurs Portables Spatiaux. <br />
+            Space Wearable Sensors. <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-100 to-slate-400/80">
-              Télémétrie Médicale Continue.
+              Continuous Medical Telemetry.
             </span>
           </h2>
           <p className="text-slate-400 mt-4 text-sm sm:text-base leading-relaxed">
-            Pour assurer la santé de l&apos;équipage en mission de longue durée, Santellite centralise la télémétrie de <strong>6 dispositifs médicaux spatiaux réels</strong> : suivi cardiovasculaire continu, densité osseuse, dosimétrie et biomarqueurs salivaires.
+            To ensure crew health during long-duration deep space exploration, Santellite centralizes real-time telemetry from <strong>6 flight-proven biomedical devices</strong>: continuous cardiovascular monitoring, bone density scanning, active dosimetry, and salivary biomarkers.
           </p>
 
-          {/* Product Switcher Segmented Control (Apple / Linear style) */}
+          {/* Product Switcher Segmented Control */}
           <div className="inline-flex flex-wrap items-center justify-center gap-1.5 p-1.5 rounded-2xl bg-white/[0.03] border border-white/[0.08] backdrop-blur-xl mt-8">
             {products.map((p) => {
               const Icon = p.icon;
@@ -103,15 +102,15 @@ export default function ConnectedDevicesSection() {
                   }
                   alt={
                     astroskinImgMode === "iss"
-                      ? "Astronaute David Saint-Jacques portant le maillot Astroskin sur l'ISS"
-                      : "Diagramme des capteurs du maillot Astroskin"
+                      ? "Astronaut David Saint-Jacques wearing the Astroskin smart shirt aboard the ISS"
+                      : "Astroskin smart shirt sensor topology diagram"
                   }
                   fill
                   className="object-contain p-2 group-hover:scale-105 transition-transform duration-300"
                   priority
                 />
                 <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/15 text-[11px] font-mono text-cyan-300">
-                  {astroskinImgMode === "iss" ? "● Test Réel à bord de l'ISS" : "● Architecture des Capteurs"}
+                  {astroskinImgMode === "iss" ? "● Real In-Flight ISS Test" : "● Sensor Architecture Topology"}
                 </div>
               </div>
 
@@ -125,7 +124,7 @@ export default function ConnectedDevicesSection() {
                       : "bg-white/5 text-slate-300 border-white/10 hover:bg-white/10"
                   }`}
                 >
-                  Vue 1 : Astronaute en Vol (ISS)
+                  View 1: Astronaut in Flight (ISS)
                 </button>
                 <button
                   onClick={() => setAstroskinImgMode("diagram")}
@@ -135,7 +134,7 @@ export default function ConnectedDevicesSection() {
                       : "bg-white/5 text-slate-300 border-white/10 hover:bg-white/10"
                   }`}
                 >
-                  Vue 2 : Schéma des Capteurs
+                  View 2: Sensor Diagram
                 </button>
               </div>
             </div>
@@ -144,13 +143,13 @@ export default function ConnectedDevicesSection() {
             <div className="lg:col-span-6 text-left space-y-6">
               <div>
                 <span className="text-xs font-mono text-blue-400 font-bold uppercase tracking-widest">
-                  Agence Spatiale Canadienne (ASC) • Carré Technologies
+                  Canadian Space Agency (CSA) • Carré Technologies
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-mono font-bold text-white uppercase mt-1">
-                  Maillot Biométrique Spatial Astroskin
+                  Astroskin Space Biometric Smart Shirt
                 </h3>
                 <p className="text-slate-300 text-sm sm:text-base leading-relaxed mt-3">
-                  Conçu pour surveiller les astronautes 24h/24 sans entraver le sommeil ni les activités physiques. Il intègre des capteurs textiles brevetés pour mesurer en continu les fonctions vitales critiques.
+                  Engineered to monitor astronauts 24/7 without impeding sleep, workouts, or flight duties. Integrates patented smart textile sensors to continuously record critical vital signs in microgravity.
                 </p>
               </div>
 
@@ -159,40 +158,40 @@ export default function ConnectedDevicesSection() {
                 <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-cyan-300 font-mono text-xs font-bold uppercase mb-1">
                     <Activity className="w-4 h-4 text-cyan-400" />
-                    Pression Artérielle Continue
+                    Cuffless Blood Pressure
                   </div>
                   <p className="text-xs text-slate-400 leading-snug">
-                    Tension mesurée battement par battement (PTT) sans brassard gonflable.
+                    Continuous beat-by-beat arterial pressure (PTT) without waking astronauts with a pneumatic cuff.
                   </p>
                 </div>
 
                 <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-cyan-300 font-mono text-xs font-bold uppercase mb-1">
                     <Heart className="w-4 h-4 text-red-400" />
-                    Électrocardiogramme 3 Dérivations
+                    Continuous 3-Lead ECG
                   </div>
                   <p className="text-xs text-slate-400 leading-snug">
-                    Fréquence cardiaque et détection d&apos;arythmies en continu.
+                    Clinical-grade heart rate, beat intervals, and real-time arrhythmia detection.
                   </p>
                 </div>
 
                 <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-cyan-300 font-mono text-xs font-bold uppercase mb-1">
                     <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                    Pléthysmographie Respiratoire
+                    Respiratory Inductance Plethysmography
                   </div>
                   <p className="text-xs text-slate-400 leading-snug">
-                    Volume et fréquence respiratoire par double bande thoracique et abdominale.
+                    Tidal volume and respiratory rate via dual thoracic and abdominal textile bands.
                   </p>
                 </div>
 
                 <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-cyan-300 font-mono text-xs font-bold uppercase mb-1">
                     <CheckCircle2 className="w-4 h-4 text-blue-400" />
-                    SpO2 & Température Cutanée
+                    SpO2 & Skin Temperature
                   </div>
                   <p className="text-xs text-slate-400 leading-snug">
-                    Saturation en oxygène et sonde de thermorégulation intégrée.
+                    Continuous peripheral oxygen saturation and dual-site thermoregulation tracking.
                   </p>
                 </div>
               </div>
@@ -207,7 +206,7 @@ export default function ConnectedDevicesSection() {
                   }}
                   className="inline-flex items-center gap-2 text-xs font-mono font-bold text-cyan-400 hover:text-cyan-300 uppercase tracking-wider group"
                 >
-                  Visualiser la télémétrie du maillot dans le simulateur 
+                  View Smart Shirt Telemetry in Simulator 
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>
@@ -229,15 +228,15 @@ export default function ConnectedDevicesSection() {
                   }
                   alt={
                     embraceImgMode === "front"
-                      ? "Montre connectée médicale EmbracePlus"
-                      : "Capteurs dorsaux EmbracePlus par Empatica"
+                      ? "EmbracePlus clinical space smartwatch front view"
+                      : "EmbracePlus rear clinical sensor array by Empatica"
                   }
                   fill
                   className="object-contain p-2 group-hover:scale-105 transition-transform duration-300"
                   priority
                 />
                 <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/15 text-[11px] font-mono text-cyan-300">
-                  {embraceImgMode === "front" ? "● EmbracePlus — Vue de Face" : "● Architecture Dorsale des Capteurs"}
+                  {embraceImgMode === "front" ? "● EmbracePlus — Front View" : "● Rear Sensor Architecture"}
                 </div>
               </div>
 
@@ -250,7 +249,7 @@ export default function ConnectedDevicesSection() {
                       : "bg-white/5 text-slate-300 border-white/10 hover:bg-white/10"
                   }`}
                 >
-                  Vue 1 : Montre EmbracePlus
+                  View 1: EmbracePlus Watch
                 </button>
                 <button
                   onClick={() => setEmbraceImgMode("sensors")}
@@ -260,7 +259,7 @@ export default function ConnectedDevicesSection() {
                       : "bg-white/5 text-slate-300 border-white/10 hover:bg-white/10"
                   }`}
                 >
-                  Vue 2 : Capteurs Cliniques Dorsaux
+                  View 2: Rear Clinical Sensors
                 </button>
               </div>
             </div>
@@ -269,13 +268,13 @@ export default function ConnectedDevicesSection() {
             <div className="lg:col-span-6 text-left space-y-6">
               <div>
                 <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-widest">
-                  Empatica • Certifié Recherche Spatiale NASA / TRISH
+                  Empatica • Certified for NASA / TRISH Space Research
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-mono font-bold text-white uppercase mt-1">
-                  Montre Médicale Spatiale EmbracePlus
+                  EmbracePlus Space Medical Smartwatch
                 </h3>
                 <p className="text-slate-300 text-sm sm:text-base leading-relaxed mt-3">
-                  Dispositif médical au poignet retenu pour les missions spatiales humaines (TRISH / NASA / Polaris Dawn). Conçue pour une surveillance physiologique continue de grade clinique en microgravité sans perturber les tâches de vol.
+                  Clinical-grade wrist device selected for human spaceflight missions (TRISH / NASA / Polaris Dawn). Designed for continuous microgravity physiological surveillance without hindering flight operational duties.
                 </p>
               </div>
 
@@ -284,40 +283,40 @@ export default function ConnectedDevicesSection() {
                 <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-cyan-300 font-mono text-xs font-bold uppercase mb-1">
                     <Zap className="w-4 h-4 text-amber-400" />
-                    Capteur EDA Ventral (Activité Électrodermale)
+                    Ventral EDA Sensor (Electrodermal Activity)
                   </div>
                   <p className="text-xs text-slate-400 leading-snug">
-                    Mesure en continu de la réponse galvanique cutanée (GSR) pour évaluer le stress neurologique.
+                    Continuous Galvanic Skin Response (GSR) monitoring to evaluate sympathetic nervous stress.
                   </p>
                 </div>
 
                 <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-cyan-300 font-mono text-xs font-bold uppercase mb-1">
                     <Heart className="w-4 h-4 text-red-400" />
-                    Capteur PPG Optique Haute Fréquence
+                    High-Frequency Optical PPG
                   </div>
                   <p className="text-xs text-slate-400 leading-snug">
-                    Fréquence cardiaque, variabilité (HRV) et estimation de la pression continue.
+                    Continuous pulse rate, heart rate variability (HRV), and pulse wave velocity estimation.
                   </p>
                 </div>
 
                 <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-cyan-300 font-mono text-xs font-bold uppercase mb-1">
                     <Thermometer className="w-4 h-4 text-cyan-400" />
-                    Sonde de Température Cutanée Continue
+                    Continuous Skin Temperature Probe
                   </div>
                   <p className="text-xs text-slate-400 leading-snug">
-                    Suivi précis de la thermorégulation périphérique pour anticiper les chocs hypothermiques.
+                    High-precision peripheral thermoregulation tracking to anticipate hypothermia or inflammatory spikes.
                   </p>
                 </div>
 
                 <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-cyan-300 font-mono text-xs font-bold uppercase mb-1">
                     <Activity className="w-4 h-4 text-emerald-400" />
-                    Accéléromètre & Gyroscope 3D (IP67)
+                    3D Accelerometer & Gyroscope (IP67)
                   </div>
                   <p className="text-xs text-slate-400 leading-snug">
-                    Analyse des mouvements, des phases de sommeil circadien et détection instantanée de chute.
+                    Actigraphy kinematics, circadian rest-activity rhythm tracking, and instant impact detection.
                   </p>
                 </div>
               </div>
@@ -332,7 +331,7 @@ export default function ConnectedDevicesSection() {
                   }}
                   className="inline-flex items-center gap-2 text-xs font-mono font-bold text-cyan-400 hover:text-cyan-300 uppercase tracking-wider group"
                 >
-                  Tester la télémétrie EmbracePlus dans le simulateur 
+                  Test EmbracePlus Telemetry in Simulator 
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>
@@ -340,7 +339,7 @@ export default function ConnectedDevicesSection() {
           </div>
         )}
 
-        {/* ================= 3. ECHOLIGHT (TECHNOLOGIE REMS) ================= */}
+        {/* ================= 3. ECHOLIGHT (REMS TECHNOLOGY) ================= */}
         {activeProduct === "echolight" && (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#0B0F1A]/85 border border-white/[0.08] rounded-3xl p-6 sm:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-xl relative overflow-hidden">
             {/* Left: Image */}
@@ -348,17 +347,17 @@ export default function ConnectedDevicesSection() {
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-black/60 border border-white/10 group shadow-xl">
                 <Image
                   src="/images/echolight-bone-scanner.jpg"
-                  alt="Échographe osseux portable EchoLight REMS"
+                  alt="EchoLight REMS portable bone ultrasound scanner"
                   fill
                   className="object-contain p-3 group-hover:scale-105 transition-transform duration-300"
                   priority
                 />
                 <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/15 text-[11px] font-mono text-emerald-400">
-                  ● Échographe Osseux Portatif REMS
+                  ● REMS Portable Bone Scanner
                 </div>
               </div>
               <div className="text-center font-mono text-xs text-slate-400">
-                Scan ultrasonore de la colonne vertébrale et du fémur en &lt; 10 min
+                Ultrasound scan of spine and femur in &lt; 10 minutes
               </div>
             </div>
 
@@ -366,13 +365,13 @@ export default function ConnectedDevicesSection() {
             <div className="lg:col-span-6 text-left space-y-6">
               <div>
                 <span className="text-xs font-mono text-emerald-400 font-bold uppercase tracking-widest">
-                  NASA · Echolight (Technologie REMS)
+                  NASA · Echolight (REMS Technology)
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-mono font-bold text-white uppercase mt-1">
-                  Échographe Osseux Portable
+                  Portable Ultrasound Bone Scanner
                 </h3>
                 <p className="text-slate-300 text-sm sm:text-base leading-relaxed mt-3">
-                  Appareil de la taille d&apos;une petite valise, utilisé par la NASA pour suivre la perte osseuse en microgravité. Mesure la densité et la microarchitecture osseuses par ultrasons, sans aucune radiation, avec un scan de moins de 10 minutes sur la colonne et le fémur.
+                  Briefcase-sized device utilized by NASA to track microgravity-induced bone demineralization. Accurately measures bone mineral density (BMD) and bone microarchitecture via ultrasound without ionizing X-ray radiation in under 10 minutes on spine and femur.
                 </p>
               </div>
 
@@ -381,40 +380,40 @@ export default function ConnectedDevicesSection() {
                 <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-emerald-300 font-mono text-xs font-bold uppercase mb-1">
                     <Bone className="w-4 h-4 text-emerald-400" />
-                    Densité Osseuse Sans Radiation
+                    Radiation-Free Bone Density
                   </div>
                   <p className="text-xs text-slate-400 leading-snug">
-                    Technologie à ultrasons (REMS), sans exposition aux rayons X.
+                    Radiofrequency Echographic Multi Spectrometry (REMS), zero X-ray exposure.
                   </p>
                 </div>
 
                 <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-emerald-300 font-mono text-xs font-bold uppercase mb-1">
                     <Clock className="w-4 h-4 text-cyan-400" />
-                    Scan Rapide
+                    Rapid In-Flight Scan
                   </div>
                   <p className="text-xs text-slate-400 leading-snug">
-                    Examen complet en moins de 10 minutes, répétable fréquemment.
+                    Complete anatomical examination in under 10 minutes, frequently repeatable.
                   </p>
                 </div>
 
                 <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-emerald-300 font-mono text-xs font-bold uppercase mb-1">
                     <Calendar className="w-4 h-4 text-blue-400" />
-                    Mesure Périodique
+                    Periodic Diagnostic Sync
                   </div>
                   <p className="text-xs text-slate-400 leading-snug">
-                    Contrôle hebdomadaire plutôt qu&apos;en continu, à la différence d&apos;une montre.
+                    Weekly diagnostic checks rather than continuous wear, complementary to wearables.
                   </p>
                 </div>
 
                 <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-emerald-300 font-mono text-xs font-bold uppercase mb-1">
                     <TrendingDown className="w-4 h-4 text-amber-400" />
-                    Suivi de la Perte Osseuse
+                    Bone Loss Countermeasure Feedback
                   </div>
                   <p className="text-xs text-slate-400 leading-snug">
-                    Permet d&apos;ajuster les contre-mesures (exercice, alimentation) en cours de mission.
+                    Enables real-time adjustments to resistive exercise (ARED) and clinical nutrition.
                   </p>
                 </div>
               </div>
@@ -429,7 +428,7 @@ export default function ConnectedDevicesSection() {
                   }}
                   className="inline-flex items-center gap-2 text-xs font-mono font-bold text-emerald-400 hover:text-emerald-300 uppercase tracking-wider group"
                 >
-                  Visualiser les résultats du scan osseux dans le simulateur 
+                  View Bone Scan Results in Simulator 
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>
@@ -437,7 +436,7 @@ export default function ConnectedDevicesSection() {
           </div>
         )}
 
-        {/* ================= 4. DOSIMÈTRE PERSONNEL DE RADIATIONS ================= */}
+        {/* ================= 4. PERSONAL RADIATION DOSIMETER ================= */}
         {activeProduct === "dosimeter" && (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#0B0F1A]/85 border border-white/[0.08] rounded-3xl p-6 sm:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-xl relative overflow-hidden">
             {/* Left: Image */}
@@ -445,17 +444,17 @@ export default function ConnectedDevicesSection() {
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-black/60 border border-white/10 group shadow-xl">
                 <Image
                   src="/images/dosimeter-tracerco-hrp.png"
-                  alt="Dosimètre personnel de radiations spatiales"
+                  alt="Personal active space radiation dosimeter"
                   fill
                   className="object-contain p-3 group-hover:scale-105 transition-transform duration-300"
                   priority
                 />
                 <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/15 text-[11px] font-mono text-amber-400">
-                  ● Dosimètre Personnel Actif
+                  ● Active Personal Dosimeter
                 </div>
               </div>
               <div className="text-center font-mono text-xs text-slate-400">
-                Télémétrie radiative en direct (Dose Rate &amp; Dose cumulée en micro Sv)
+                Live radiation telemetry (Dose Rate &amp; Cumulative Dose in µSv)
               </div>
             </div>
 
@@ -463,13 +462,13 @@ export default function ConnectedDevicesSection() {
             <div className="lg:col-span-6 text-left space-y-6">
               <div>
                 <span className="text-xs font-mono text-amber-400 font-bold uppercase tracking-widest">
-                  Programme de Recherche Humaine de la NASA (HRP)
+                  NASA Human Research Program (HRP)
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-mono font-bold text-white uppercase mt-1">
-                  Dosimètre Personnel de Radiations
+                  Active Crew Radiation Dosimeter
                 </h3>
                 <p className="text-slate-300 text-sm sm:text-base leading-relaxed mt-3">
-                  Appareil porté en continu pour mesurer la dose de radiations spatiales reçue par l&apos;astronaute. Essentiel pour un risque qu&apos;aucun autre capteur corporel ne peut détecter directement, puisque les radiations n&apos;affectent les constantes vitales que lentement et indirectement.
+                  Continuously worn device measuring ionizing galactic cosmic rays (GCR) and solar particle events (SPE). Vital for deep space where radiation silently alters human cells without immediate vital sign shifts.
                 </p>
               </div>
 
@@ -478,40 +477,40 @@ export default function ConnectedDevicesSection() {
                 <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-amber-300 font-mono text-xs font-bold uppercase mb-1">
                     <Shield className="w-4 h-4 text-amber-400" />
-                    Dose Cumulée en Temps Réel
+                    Real-Time Cumulative Dose
                   </div>
                   <p className="text-xs text-slate-400 leading-snug">
-                    Suivi continu de l&apos;exposition totale depuis le début de la mission.
+                    Continuous monitoring of total absorbed radiation dose since mission liftoff.
                   </p>
                 </div>
 
                 <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-amber-300 font-mono text-xs font-bold uppercase mb-1">
                     <AlertTriangle className="w-4 h-4 text-red-400" />
-                    Seuils d&apos;Alerte Personnalisés
+                    Custom Alert Thresholds
                   </div>
                   <p className="text-xs text-slate-400 leading-snug">
-                    Notification si la dose approche une limite définie pour la mission.
+                    Instant automated alarms when ambient flux approaches safety limits (SPE storms).
                   </p>
                 </div>
 
                 <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-amber-300 font-mono text-xs font-bold uppercase mb-1">
                     <Clock className="w-4 h-4 text-cyan-400" />
-                    Historique par Période
+                    Period Breakdown History
                   </div>
                   <p className="text-xs text-slate-400 leading-snug">
-                    Répartition de la dose reçue par jour, semaine ou sortie extravéhiculaire.
+                    Granular radiation dose distribution broken down by day, week, or EVA sortie.
                   </p>
                 </div>
 
                 <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-amber-300 font-mono text-xs font-bold uppercase mb-1">
                     <Wifi className="w-4 h-4 text-emerald-400" />
-                    Export des Données
+                    Automated Telemetry Sync
                   </div>
                   <p className="text-xs text-slate-400 leading-snug">
-                    Transmission au logiciel par liaison sans fil ou fichier d&apos;export, selon le modèle.
+                    Continuous streaming to onboard hub via encrypted wireless or flight bus.
                   </p>
                 </div>
               </div>
@@ -526,7 +525,7 @@ export default function ConnectedDevicesSection() {
                   }}
                   className="inline-flex items-center gap-2 text-xs font-mono font-bold text-amber-400 hover:text-amber-300 uppercase tracking-wider group"
                 >
-                  Visualiser la télémétrie du dosimètre dans le simulateur 
+                  View Radiation Dosimeter Telemetry in Simulator 
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>
@@ -534,7 +533,7 @@ export default function ConnectedDevicesSection() {
           </div>
         )}
 
-        {/* ================= 5. BIOCAPTEUR SALIVAIRE DE STRESS ET D'IMMUNITÉ ================= */}
+        {/* ================= 5. SALIVARY STRESS AND IMMUNITY BIOSENSOR ================= */}
         {activeProduct === "saliva" && (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#0B0F1A]/85 border border-white/[0.08] rounded-3xl p-6 sm:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-xl relative overflow-hidden">
             {/* Left: Image */}
@@ -542,17 +541,17 @@ export default function ConnectedDevicesSection() {
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-black/60 border border-white/10 group shadow-xl">
                 <Image
                   src="/images/saliva-biosensor-iss.jpg"
-                  alt="Astronaute testant le biocapteur salivaire sur l'ISS"
+                  alt="Astronaut testing the salivary biosensor aboard the ISS"
                   fill
                   className="object-contain p-2 group-hover:scale-105 transition-transform duration-300"
                   priority
                 />
                 <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/15 text-[11px] font-mono text-purple-400">
-                  ● Test en Vol Réel sur l&apos;ISS
+                  ● Real Flight Test aboard ISS
                 </div>
               </div>
               <div className="text-center font-mono text-xs text-slate-400">
-                Analyse biochimique du cortisol et de la DHEA-S directement à bord
+                Orbital biochemical assay of cortisol and DHEA-S directly aboard spacecraft
               </div>
             </div>
 
@@ -560,13 +559,13 @@ export default function ConnectedDevicesSection() {
             <div className="lg:col-span-6 text-left space-y-6">
               <div>
                 <span className="text-xs font-mono text-purple-400 font-bold uppercase tracking-widest">
-                  Agence Spatiale Italienne (ASI) · Université de Bologne
+                  Italian Space Agency (ASI) · University of Bologna
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-mono font-bold text-white uppercase mt-1">
-                  Biocapteur Salivaire de Stress et d&apos;Immunité
+                  Salivary Stress & Immune Biosensor
                 </h3>
                 <p className="text-slate-300 text-sm sm:text-base leading-relaxed mt-3">
-                  Laboratoire miniaturisé permettant d&apos;analyser en temps réel des biomarqueurs salivaires directement à bord. Déjà testé sur la Station spatiale internationale pour mesurer le cortisol, un marqueur du stress chronique, et la DHEA-S, liée à l&apos;équilibre du système immunitaire.
+                  Miniaturized lab-on-a-chip for real-time biochemical saliva analysis directly on orbit. Flight-tested on the International Space Station to quantify salivary cortisol (chronic stress) and DHEA-S (immune resilience).
                 </p>
               </div>
 
@@ -575,40 +574,40 @@ export default function ConnectedDevicesSection() {
                 <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-purple-300 font-mono text-xs font-bold uppercase mb-1">
                     <Droplets className="w-4 h-4 text-purple-400" />
-                    Analyse Salivaire Non Invasive
+                    Non-Invasive Salivary Assay
                   </div>
                   <p className="text-xs text-slate-400 leading-snug">
-                    Test rapide sur un simple prélèvement de salive, sans prise de sang.
+                    Rapid in-flight assay from a simple saliva swab, requiring zero invasive blood draws.
                   </p>
                 </div>
 
                 <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-purple-300 font-mono text-xs font-bold uppercase mb-1">
                     <Dna className="w-4 h-4 text-cyan-400" />
-                    Cortisol et DHEA-S
+                    Cortisol & DHEA-S Biomarkers
                   </div>
                   <p className="text-xs text-slate-400 leading-snug">
-                    Biomarqueurs du stress chronique et de l&apos;équilibre immunitaire.
+                    Direct biomarkers of hypothalamic-pituitary-adrenal axis stress and immune status.
                   </p>
                 </div>
 
                 <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-purple-300 font-mono text-xs font-bold uppercase mb-1">
                     <Layers className="w-4 h-4 text-emerald-400" />
-                    Cartouches à Usage Unique
+                    Single-Use Microfluidic Chips
                   </div>
                   <p className="text-xs text-slate-400 leading-snug">
-                    Système prêt à l&apos;emploi, sans entretien complexe.
+                    Disposable cartridge system ready for immediate use without fluidic recalibration.
                   </p>
                 </div>
 
                 <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-purple-300 font-mono text-xs font-bold uppercase mb-1">
                     <Usb className="w-4 h-4 text-blue-400" />
-                    Connexion Filaire au Logiciel
+                    Flight Bus Connectivity
                   </div>
                   <p className="text-xs text-slate-400 leading-snug">
-                    Branchement par port USB à l&apos;ordinateur de bord pour l&apos;analyse.
+                    Direct connection to onboard medical computer for instant data ingestion and analysis.
                   </p>
                 </div>
               </div>
@@ -623,7 +622,7 @@ export default function ConnectedDevicesSection() {
                   }}
                   className="inline-flex items-center gap-2 text-xs font-mono font-bold text-purple-400 hover:text-purple-300 uppercase tracking-wider group"
                 >
-                  Visualiser les résultats du biocapteur dans le simulateur 
+                  View Biosensor Telemetry in Simulator 
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>
@@ -631,22 +630,22 @@ export default function ConnectedDevicesSection() {
           </div>
         )}
 
-        {/* ================= 6. ACTIGRAPHIE SPATIALE : DU LABORATOIRE AU VOL ARTEMIS II ================= */}
+        {/* ================= 6. SPACE ACTIGRAPHY : FROM LAB TO ARTEMIS II FLIGHT ================= */}
         {activeProduct === "actigraphy" && (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#0B0F1A]/85 border border-white/[0.08] rounded-3xl p-6 sm:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-xl relative overflow-hidden">
-            {/* Left: Actiwatch Image (Référence Sol) */}
+            {/* Left: Actiwatch Image (Ground Reference) */}
             <div className="lg:col-span-6 flex flex-col gap-4">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-black/60 border border-white/10 group shadow-xl">
                 <Image
                   src="/images/actiwatch-spectrum-pro.jpg"
-                  alt="Actiwatch Spectrum PRO par Philips Respironics - Référence au sol NASA Ames"
+                  alt="Actiwatch Spectrum PRO by Philips Respironics - NASA Ames Ground Reference"
                   fill
                   className="object-contain p-2 group-hover:scale-105 transition-transform duration-300"
                   priority
                 />
                 <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/15 text-[11px] font-mono text-indigo-300 flex items-center gap-1.5">
                   <Moon className="w-3.5 h-3.5 text-indigo-400" />
-                  <span>● Référence Sol • Actiwatch Spectrum Plus (NASA Ames)</span>
+                  <span>● Ground Reference • Actiwatch Spectrum Plus (NASA Ames)</span>
                 </div>
               </div>
             </div>
@@ -655,55 +654,55 @@ export default function ConnectedDevicesSection() {
             <div className="lg:col-span-6 text-left space-y-6">
               <div>
                 <span className="text-xs font-mono text-indigo-400 font-bold uppercase tracking-widest">
-                  NASA AMES RESEARCH CENTER · CONDOR INSTRUMENTS (BRÉSIL)
+                  NASA AMES RESEARCH CENTER · CONDOR INSTRUMENTS (BRAZIL)
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-mono font-bold text-white uppercase mt-1">
-                  Actigraphie Spatiale : Du Laboratoire au Vol Artemis II
+                  Space Actigraphy: From Laboratory to Artemis II Flight
                 </h3>
                 <p className="text-slate-300 text-sm sm:text-base leading-relaxed mt-3">
-                  Ces appareils ressemblent à des montres numériques, mais n&apos;affichent pas toujours l&apos;heure, afin de ne pas biaiser les études sur la perception du temps en mission. Deux générations d&apos;actigraphes se succèdent dans le protocole ARCHeR (Artemis Research for Crew Health and Readiness) : l&apos;historique Actiwatch Spectrum Plus de Philips pour établir les données de référence au sol, et l&apos;ActLumus de la startup brésilienne Condor Instruments, embarqué en vol à bord de la capsule Orion depuis l&apos;arrêt de la gamme Philips.
+                  These digital wrist instruments often do not display the time, preventing astronauts from biasing mission time-perception research. Two generations of actigraphs succeed one another in the ARCHeR protocol (Artemis Research for Crew Health and Readiness): the legacy Philips Actiwatch Spectrum Plus for pre-flight baseline data at ground facilities, and the ActLumus by Brazilian startup Condor Instruments, deployed aboard Orion for in-flight crew monitoring following the discontinuation of the Philips product line.
                 </p>
               </div>
 
-              {/* 4 Feature Points as given by user */}
+              {/* 4 Feature Points */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                 <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-indigo-300 font-mono text-xs font-bold uppercase mb-1">
                     <FlaskConical className="w-4 h-4 text-purple-400" />
-                    Référence au sol : Actiwatch Spectrum Plus
+                    Ground Baseline: Actiwatch Spectrum Plus
                   </div>
                   <p className="text-xs text-slate-400 leading-snug">
-                    Utilisé au Fatigue Countermeasures Laboratory du NASA Ames Research Center pour établir les données de référence avant le vol (étude Artemis Sleep Countermeasures).
+                    Utilized at NASA Ames Research Center Fatigue Countermeasures Laboratory to establish pre-flight reference baselines (Artemis Sleep Countermeasures study).
                   </p>
                 </div>
 
                 <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-indigo-300 font-mono text-xs font-bold uppercase mb-1">
                     <Rocket className="w-4 h-4 text-cyan-400" />
-                    En vol : ActLumus (Condor Instruments)
+                    In-Flight: ActLumus (Condor Instruments)
                   </div>
                   <p className="text-xs text-slate-400 leading-snug">
-                    Suite à l&apos;arrêt de la gamme Actiwatch par Philips, la NASA a adopté cet actigraphe brésilien pour le suivi continu de l&apos;équipage à bord d&apos;Orion pendant Artemis II.
+                    Following Philips&apos; retirement of the Actiwatch line, NASA adopted this Brazilian actigraph for continuous crew sleep-wake tracking aboard Orion during Artemis II.
                   </p>
                 </div>
 
                 <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-indigo-300 font-mono text-xs font-bold uppercase mb-1">
                     <Activity className="w-4 h-4 text-emerald-400" />
-                    Accélérométrie Haute Précision
+                    High-Precision Accelerometry
                   </div>
                   <p className="text-xs text-slate-400 leading-snug">
-                    Micro-mouvements du poignet enregistrés à environ 32 Hz, pour distinguer éveil, agitation et sommeil profond.
+                    Wrist micro-movements sampled at approximately 32 Hz to differentiate wakefulness, restlessness, and deep sleep phases.
                   </p>
                 </div>
 
                 <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-indigo-300 font-mono text-xs font-bold uppercase mb-1">
                     <Sun className="w-4 h-4 text-amber-400" />
-                    Photodétecteurs Ambiants
+                    Ambient Photodetectors
                   </div>
                   <p className="text-xs text-slate-400 leading-snug">
-                    Mesure de l&apos;intensité et du spectre de la lumière (bleue, rouge, verte) pour évaluer son effet sur le rythme circadien, en l&apos;absence d&apos;alternance jour-nuit naturelle.
+                    Measures ambient light intensity and spectrum (blue, red, green) to evaluate its impact on circadian rhythm in the absence of natural solar cycles.
                   </p>
                 </div>
               </div>
@@ -718,7 +717,7 @@ export default function ConnectedDevicesSection() {
                   }}
                   className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-indigo-300 hover:text-white transition-colors group cursor-pointer"
                 >
-                  <span>Visualiser la télémétrie de l&apos;actigraphie dans le simulateur</span>
+                  <span>View Actigraphy Telemetry in Simulator</span>
                   <ChevronRight className="w-4 h-4 text-indigo-400 group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>
@@ -726,7 +725,7 @@ export default function ConnectedDevicesSection() {
           </div>
         )}
 
-        {/* Encart de prudence : Une liste non exhaustive */}
+        {/* Caution Box: A Non-Exhaustive List */}
         <div className="reveal-on-scroll mt-12 p-6 sm:p-7 rounded-2xl bg-[#0B0F1A]/80 border border-white/[0.08] backdrop-blur-xl relative overflow-hidden shadow-lg">
           <div className="flex items-start gap-4">
             <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-slate-300 shrink-0">
@@ -734,10 +733,10 @@ export default function ConnectedDevicesSection() {
             </div>
             <div className="space-y-2 text-left">
               <h3 className="font-mono text-sm sm:text-base font-bold text-white uppercase tracking-tight">
-                Une liste non exhaustive
+                A Non-Exhaustive List
               </h3>
               <p className="text-xs sm:text-sm text-slate-400 leading-relaxed font-normal">
-                Les 6 dispositifs présentés ici sont ceux que nous avons pu identifier et documenter avec des sources fiables (agences spatiales, fabricants, études publiées) au cours de nos recherches. Ils ne représentent pas nécessairement l&apos;ensemble des capteurs que la NASA utilise réellement pour surveiller la santé de ses astronautes en continu : d&apos;autres instruments, notamment ceux encore classifiés, en développement, ou simplement absents des sources publiques que nous avons consultées, existent probablement. Santellite est conçu comme une architecture ouverte : chaque nouveau capteur documenté peut être intégré selon le même principe de centralisation, sans modifier la structure du logiciel.
+                The 6 devices presented here are those we were able to identify and document with reliable sources (space agencies, manufacturers, published peer-reviewed studies) during our research. They do not necessarily represent the entirety of the sensors NASA actually deploys to monitor astronaut health continuously: other instruments, particularly classified systems, hardware under active development, or sensors absent from the public sources we consulted, likely exist. Santellite is engineered as an open architecture: any newly documented sensor can be integrated following the same centralization principle, without modifying the core software structure.
               </p>
             </div>
           </div>

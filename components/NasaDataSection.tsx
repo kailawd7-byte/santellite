@@ -4,30 +4,30 @@ import { Database, ExternalLink, FileText, Dna, ActivitySquare } from "lucide-re
 export default function NasaDataSection() {
   const sources = [
     {
-      badge: "Base de données 01",
+      badge: "Database 01",
       title: "NASA OSDR / GeneLab",
       icon: Dna,
-      desc: "L'Open Science Data Repository regroupe les données omiques et biomoléculaires des organismes vivants exposés aux radiations spatiales et à la microgravité.",
+      desc: "The Open Science Data Repository aggregates omics, transcriptomic, and biomolecular datasets from living organisms exposed to deep-space radiation and microgravity.",
       source: "NASA Ames Research Center",
-      type: "Biomarqueurs géniques & stress oxydatif",
+      type: "Genetic Biomarkers & Oxidative Stress",
       link: "https://osdr.nasa.gov",
     },
     {
-      badge: "Base de données 02",
+      badge: "Database 02",
       title: "NASA LSDA (Life Sciences)",
       icon: ActivitySquare,
-      desc: "L'archive des sciences de la vie de la NASA collige les mesures physiologiques standard des équipages : électrocardiogrammes, tests DXA et bilans sanguins.",
+      desc: "NASA's Life Sciences Data Archive collates standardized astronaut physiological telemetry: continuous ECGs, DXA bone scans, and spaceflight blood chemistry panels.",
       source: "NASA Johnson Space Center",
-      type: "Séries chronologiques en vol réel",
+      type: "In-Flight Longitudinal Time Series",
       link: "https://lsda.jsc.nasa.gov",
     },
     {
-      badge: "Référentiel 03",
+      badge: "Repository 03",
       title: "NASA HRP Evidence Books",
       icon: FileText,
-      desc: "Les livres de preuves du Human Research Program synthétisent l'état de l'art médical mondial sur chaque risque pour l'organisme humain en exploration spatiale.",
+      desc: "The Human Research Program evidence books summarize global medical consensus and clinical countermeasures for every documented human space exploration risk.",
       source: "NASA Human Research Program",
-      type: "Directives cliniques & contre-mesures",
+      type: "Clinical Guidelines & Countermeasures",
       link: "https://humanresearchroadmap.nasa.gov",
     },
   ];
@@ -38,17 +38,16 @@ export default function NasaDataSection() {
         <div className="reveal-on-scroll text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono font-medium bg-white/[0.05] border border-white/[0.1] text-slate-300 mb-4 backdrop-blur-md">
             <Database className="w-3.5 h-3.5 text-sky-400" />
-            <span>Données Officielles NASA</span>
+            <span>Official NASA Data Repositories</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-mono font-extrabold text-white tracking-tight uppercase leading-[1.15]">
-            Référentiels Scientifiques. <br />
+            Scientific Repositories. <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-100 to-slate-400/80">
-              Au Cœur du Modèle Clinique.
+              At the Core of the Clinical Model.
             </span>
           </h2>
           <p className="text-slate-400 mt-4 text-base sm:text-lg leading-relaxed">
-            VitaOrbit s&apos;appuie sur les archives ouvertes de la NASA, intégrant les résultats 
-            de décennies de recherche biomédicale menée à bord de l&apos;ISS et lors des missions lunaires.
+            VitaOrbit is grounded in NASA&apos;s open-access databases, synthesizing decades of biomedical research conducted aboard the ISS and Apollo/Skylab lunar missions.
           </p>
         </div>
 
@@ -79,11 +78,11 @@ export default function NasaDataSection() {
 
                 <div className="pt-4 border-t border-white/[0.06] space-y-2 text-xs font-mono">
                   <div>
-                    <span className="text-slate-500">Origine : </span>
+                    <span className="text-slate-500">Source: </span>
                     <span className="font-semibold text-slate-300">{src.source}</span>
                   </div>
                   <div>
-                    <span className="text-slate-500">Application : </span>
+                    <span className="text-slate-500">Application: </span>
                     <span className="font-semibold text-slate-300">{src.type}</span>
                   </div>
                   <a
@@ -92,7 +91,7 @@ export default function NasaDataSection() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 text-sky-400 hover:text-sky-300 font-semibold pt-2 transition-colors uppercase tracking-wider text-[11px]"
                   >
-                    <span>Consulter les données</span>
+                    <span>Access Open Datasets</span>
                     <ExternalLink className="w-3.5 h-3.5" />
                   </a>
                 </div>

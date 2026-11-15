@@ -18,8 +18,8 @@ export default function Footer() {
               </span>
             </a>
             <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-md font-mono">
-              Projet présenté au NASA Space Apps Challenge 2026 par l&apos;Équipe 404 Introuvable (Libreville, Gabon). 
-              Plateforme clinique de surveillance continue interconnectant 6 dispositifs médicaux spatiaux (Astroskin, EmbracePlus, ActLumus Artemis II, dosimètre HRP, échographe REMS, biocapteurs) pour la santé des équipages spatiaux.
+              Project presented at NASA Space Apps Challenge 2026 by Team 404 Introuvable (Libreville, Gabon). 
+              Continuous clinical telemetry platform interconnecting 6 space medical devices (Astroskin, EmbracePlus, ActLumus Artemis II, HRP radiation dosimeter, REMS ultrasound, biosensors) for astronaut healthcare.
             </p>
           </div>
 
@@ -29,37 +29,37 @@ export default function Footer() {
             <ul className="space-y-2 text-xs font-mono">
               <li>
                 <a href="/dashboard.html" className="text-white font-semibold hover:text-sky-300 transition-colors flex items-center gap-1.5">
-                  <ChevronRight className="w-3.5 h-3.5 text-emerald-400" /> Tableau de bord ↗
+                  <ChevronRight className="w-3.5 h-3.5 text-emerald-400" /> Dashboard ↗
                 </a>
               </li>
               <li>
                 <a href="#defi" className="text-slate-400 hover:text-white transition-colors flex items-center gap-1.5">
-                  <ChevronRight className="w-3.5 h-3.5 text-slate-600" /> Le Défi NASA
+                  <ChevronRight className="w-3.5 h-3.5 text-slate-600" /> NASA Challenge
                 </a>
               </li>
               <li>
                 <a href="#equipements" className="text-slate-400 hover:text-white transition-colors flex items-center gap-1.5">
-                  <ChevronRight className="w-3.5 h-3.5 text-slate-600" /> 6 Équipements Spatiaux
+                  <ChevronRight className="w-3.5 h-3.5 text-slate-600" /> 6 Space Devices
                 </a>
               </li>
               <li>
                 <a href="#architecture" className="text-slate-400 hover:text-white transition-colors flex items-center gap-1.5">
-                  <ChevronRight className="w-3.5 h-3.5 text-slate-600" /> Architecture Embarquée
+                  <ChevronRight className="w-3.5 h-3.5 text-slate-600" /> Flight Architecture
                 </a>
               </li>
               <li>
                 <a href="#simulateur" className="text-slate-400 hover:text-white transition-colors flex items-center gap-1.5">
-                  <ChevronRight className="w-3.5 h-3.5 text-slate-600" /> Simulateur Clinique
+                  <ChevronRight className="w-3.5 h-3.5 text-slate-600" /> Clinical Simulator
                 </a>
               </li>
               <li>
                 <a href="#donnees" className="text-slate-400 hover:text-white transition-colors flex items-center gap-1.5">
-                  <ChevronRight className="w-3.5 h-3.5 text-slate-600" /> Données Ouvertes NASA
+                  <ChevronRight className="w-3.5 h-3.5 text-slate-600" /> NASA Open Data
                 </a>
               </li>
               <li>
                 <a href="#equipe" className="text-slate-400 hover:text-white transition-colors flex items-center gap-1.5">
-                  <ChevronRight className="w-3.5 h-3.5 text-slate-600" /> Équipe 404
+                  <ChevronRight className="w-3.5 h-3.5 text-slate-600" /> Team 404
                 </a>
               </li>
             </ul>
@@ -67,7 +67,7 @@ export default function Footer() {
 
           {/* References */}
           <div className="md:col-span-3 text-left">
-            <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-white mb-4">Événement</h4>
+            <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-white mb-4">Event</h4>
             <div className="space-y-3 text-xs font-mono text-slate-400">
               <div className="flex items-center gap-2">
                 <Globe className="w-4 h-4 text-slate-300 shrink-0" />
@@ -78,7 +78,7 @@ export default function Footer() {
                 <span>NASA Space Apps Challenge</span>
               </div>
               <div className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.06] text-[11px] text-slate-400">
-                Basé sur les standards de vol spatiaux réels : CSA (Astroskin ISS), TRISH / NASA (EmbracePlus), et NASA ARCHeR Artemis II (Actiwatch & ActLumus).
+                Grounded in real spaceflight hardware: CSA (Astroskin ISS), TRISH / NASA (EmbracePlus), and NASA ARCHeR Artemis II (Actiwatch & ActLumus).
               </div>
             </div>
           </div>
@@ -88,10 +88,10 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-500">
           <div>
-            © 2026 Santellite • Équipe 404 Introuvable. Tous droits réservés.
+            © 2026 Santellite • Team 404 Introuvable. All rights reserved.
           </div>
           <div>
-            Développé pour la santé et la sécurité des équipages spatiaux.
+            Engineered for the health and safety of space exploration crews.
           </div>
         </div>
       </div>

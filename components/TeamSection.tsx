@@ -26,16 +26,16 @@ export default function TeamSection() {
         {/* Simple Badge */}
         <div className="reveal-on-scroll inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-mono font-medium bg-white/[0.05] text-slate-300 border border-white/[0.1] mb-4 backdrop-blur-md">
           <Users className="w-3.5 h-3.5 text-slate-300" />
-          <span>Équipe Projet</span>
+          <span>Project Team</span>
         </div>
 
         {/* Clean Title */}
         <h2 className="reveal-on-scroll delay-100 text-3xl sm:text-4xl font-mono font-extrabold text-white tracking-tight uppercase mb-4 leading-[1.15]">
-          Équipe 404 Introuvable
+          Team 404 Introuvable
         </h2>
         
         <p className="reveal-on-scroll delay-200 text-slate-400 text-sm sm:text-base font-mono max-w-2xl mx-auto mb-12">
-          Participants au NASA Space Apps Challenge 2026 • Événement de Libreville (Gabon)
+          Participants in NASA Space Apps Challenge 2026 • Libreville (Gabon) Official Event
         </p>
 
         {/* 3-Column Card Grid */}
@@ -59,7 +59,7 @@ export default function TeamSection() {
                 </h3>
                 
                 <span className="text-[11px] font-mono text-slate-400 mt-2 uppercase tracking-wider">
-                  Participant
+                  Core Contributor
                 </span>
               </div>
             );
@@ -69,7 +69,7 @@ export default function TeamSection() {
         {/* Simple footer note */}
         <div className="reveal-on-scroll delay-300 inline-flex items-center gap-2 text-xs font-mono text-slate-400">
           <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500" />
-          <span>Projet conçu avec passion pour le bien-être des explorateurs spatiaux</span>
+          <span>Crafted with passion for the health and safety of deep space explorers</span>
         </div>
 
       </div>

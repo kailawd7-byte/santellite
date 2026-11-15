@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Santellite : VitaOrbit — Cockpit de Télémétrie Médicale Spatiale | NASA Space Apps 2026</title>
-	<meta name="description" content="Tableau de bord clinique complet pour astronautes : télémétrie en direct des 6 capteurs spatiaux, silhouette anatomique interactive, risques NASA et analyse environnementale.">
+	<title>Santellite : VitaOrbit — Space Medical Telemetry Cockpit | NASA Space Apps 2026</title>
+	<meta name="description" content="Comprehensive astronaut clinical cockpit: 24/7 real-time telemetry from 6 space sensors, interactive anatomical silhouette, NASA hazards hierarchy, and mission environmental telemetry.">
 
 	<!-- Favicon Satellite VitaOrbit -->
 	<link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -186,32 +186,45 @@
 						Santellite<span class="text-sky-400">.</span>
 					</span>
 					<span class="text-[9px] font-mono tracking-widest text-slate-400 uppercase -mt-0.5">
-						Cockpit Médical • Space Apps 2026
+						Medical Cockpit • Space Apps 2026
 					</span>
 				</div>
 			</a>
 
 			<!-- Navigation Principale -->
 			<nav class="hidden lg:flex items-center gap-7">
-				<a href="index.html#accueil" class="text-xs font-mono uppercase tracking-wider text-slate-400 hover:text-white transition-colors">Accueil</a>
-				<a href="index.html#equipements" class="text-xs font-mono uppercase tracking-wider text-slate-400 hover:text-white transition-colors">6 Équipements</a>
-				<a href="index.html#architecture" class="text-xs font-mono uppercase tracking-wider text-slate-400 hover:text-white transition-colors">Architecture</a>
+				<a href="/#challenge" class="text-xs font-mono uppercase tracking-wider text-slate-400 hover:text-white transition-colors">NASA Challenge</a>
+				<a href="/#equipements" class="text-xs font-mono uppercase tracking-wider text-slate-400 hover:text-white transition-colors">6 Devices</a>
+				<a href="/#architecture" class="text-xs font-mono uppercase tracking-wider text-slate-400 hover:text-white transition-colors">Architecture</a>
 				<a href="dashboard.html" class="text-xs font-mono uppercase tracking-wider text-white hover:text-sky-300 transition-colors flex items-center gap-1.5 font-bold">
 					<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-					Tableau de bord
+					Cockpit
 				</a>
-				<a href="index.html#donnees" class="text-xs font-mono uppercase tracking-wider text-slate-400 hover:text-white transition-colors">Données NASA</a>
-				<a href="index.html#equipe" class="text-xs font-mono uppercase tracking-wider text-slate-400 hover:text-white transition-colors">Équipe 404</a>
+				<a href="/#donnees" class="text-xs font-mono uppercase tracking-wider text-slate-400 hover:text-white transition-colors">NASA Data</a>
+				<a href="/#equipe" class="text-xs font-mono uppercase tracking-wider text-slate-400 hover:text-white transition-colors">Team 404</a>
 			</nav>
 
-			<!-- Boutons d'Action Droite -->
+			<!-- Boutons d'Action Droite & Language Switcher -->
 			<div class="hidden lg:flex items-center gap-3">
+				<!-- Language Switcher Pill (Google Translate) -->
+				<div class="inline-flex items-center p-0.5 rounded-full bg-white/[0.06] border border-white/[0.12] text-xs font-mono backdrop-blur-md">
+					<button type="button" id="lang-btn-en" onclick="changeAppLanguage('en')" class="px-2.5 py-1 rounded-full text-[11px] font-semibold transition-all flex items-center gap-1.5 bg-white text-slate-950 shadow-[0_0_12px_rgba(255,255,255,0.25)]" title="Official Language: English (Default)">
+						<span class="text-xs">🇺🇸</span>
+						<span>EN</span>
+					</button>
+					<button type="button" id="lang-btn-fr" onclick="changeAppLanguage('fr')" class="px-2.5 py-1 rounded-full text-[11px] font-semibold transition-all flex items-center gap-1.5 text-slate-400 hover:text-white" title="Translate with Google: French">
+						<span class="text-xs">🇫🇷</span>
+						<span>FR</span>
+					</button>
+				</div>
+				<div id="google_translate_element" style="display:none"></div>
+
 				<button id="open-camera-scanner-btn" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-white/[0.05] hover:bg-white/[0.1] text-slate-300 border border-white/[0.12] font-mono text-xs font-semibold uppercase tracking-wider transition-all">
 					<i data-lucide="scan" class="w-3.5 h-3.5 text-slate-300"></i>
-					<span>Scanner un appareil</span>
+					<span>Scan Device</span>
 				</button>
-				<a href="index.html" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white hover:bg-slate-100 text-slate-950 font-mono text-xs font-semibold uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(255,255,255,0.15)] active:scale-95">
-					<span>Retour au Site</span>
+				<a href="/" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white hover:bg-slate-100 text-slate-950 font-mono text-xs font-semibold uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(255,255,255,0.15)] active:scale-95">
+					<span>Back to Site</span>
 					<i data-lucide="external-link" class="w-3.5 h-3.5 text-slate-950"></i>
 				</a>
 			</div>
@@ -224,19 +237,31 @@
 
 		<!-- Mobile Drawer -->
 		<div id="mobile-menu-drawer" class="hidden lg:hidden bg-[#05070D]/98 border-b border-white/10 px-4 pt-3 pb-6 space-y-3 backdrop-blur-xl">
-			<a href="index.html#accueil" class="block py-2 text-sm font-mono uppercase tracking-wider text-slate-300">Accueil</a>
-			<a href="index.html#equipements" class="block py-2 text-sm font-mono uppercase tracking-wider text-slate-300">6 Équipements</a>
-			<a href="index.html#architecture" class="block py-2 text-sm font-mono uppercase tracking-wider text-slate-300">Architecture</a>
-			<a href="dashboard.html" class="block py-2 text-sm font-mono uppercase tracking-wider text-cyan-400 font-bold">Tableau de bord (Actif)</a>
-			<a href="index.html#donnees" class="block py-2 text-sm font-mono uppercase tracking-wider text-slate-300">Données NASA</a>
-			<a href="index.html#equipe" class="block py-2 text-sm font-mono uppercase tracking-wider text-slate-300">Équipe 404</a>
+			<!-- Language Toggle for Mobile -->
+			<div class="flex items-center justify-between pb-2 border-b border-white/10">
+				<span class="text-xs font-mono text-slate-400 uppercase">Language / Langue :</span>
+				<div class="inline-flex items-center p-0.5 rounded-full bg-white/[0.06] border border-white/[0.12] text-xs font-mono">
+					<button type="button" onclick="changeAppLanguage('en')" class="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-white text-slate-950 font-bold">
+						<span>🇺🇸 EN</span>
+					</button>
+					<button type="button" onclick="changeAppLanguage('fr')" class="px-2.5 py-1 rounded-full text-[11px] font-semibold text-slate-400 hover:text-white">
+						<span>🇫🇷 FR</span>
+					</button>
+				</div>
+			</div>
+			<a href="/#challenge" class="block py-2 text-sm font-mono uppercase tracking-wider text-slate-300">NASA Challenge</a>
+			<a href="/#equipements" class="block py-2 text-sm font-mono uppercase tracking-wider text-slate-300">6 Devices</a>
+			<a href="/#architecture" class="block py-2 text-sm font-mono uppercase tracking-wider text-slate-300">Architecture</a>
+			<a href="dashboard.html" class="block py-2 text-sm font-mono uppercase tracking-wider text-cyan-400 font-bold">Cockpit (Active)</a>
+			<a href="/#donnees" class="block py-2 text-sm font-mono uppercase tracking-wider text-slate-300">NASA Data</a>
+			<a href="/#equipe" class="block py-2 text-sm font-mono uppercase tracking-wider text-slate-300">Team 404</a>
 			<div class="pt-2 flex flex-col gap-2">
 				<button onclick="document.getElementById('open-camera-scanner-btn').click()" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-white/5 border border-cyan-500/30 text-cyan-300 font-mono text-xs font-semibold uppercase">
 					<i data-lucide="scan" class="w-4 h-4"></i>
-					<span>Scanner un appareil médical</span>
+					<span>Scan Medical Device</span>
 				</button>
-				<a href="index.html" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-blue-600 text-white font-mono text-xs font-semibold uppercase">
-					<span>Retour au Site</span>
+				<a href="/" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-blue-600 text-white font-mono text-xs font-semibold uppercase">
+					<span>Back to Site</span>
 					<i data-lucide="external-link" class="w-4 h-4"></i>
 				</a>
 			</div>
@@ -259,19 +284,19 @@
 								SATELLITE VITAORBIT v2.4
 							</span>
 							<span id="sim-subject-status" class="text-xs font-mono text-slate-400 font-semibold">
-								• SOL 142 • ORBITE BASSE TERRESTRE
+								• SOL 142 • LOW EARTH ORBIT
 							</span>
 							<span id="sim-badge-device" class="text-xs font-mono text-slate-300 font-semibold">
-								1. Maillot Astroskin (PTT &amp; ECG)
+								1. Astroskin Smart Shirt (PTT &amp; ECG)
 							</span>
 						</div>
 						<h1 id="sim-subject-name" class="text-2xl sm:text-3xl font-mono font-extrabold text-white tracking-tight">
-							Cmdr. Thomas P. • Expédition 74
+							Cmdr. Thomas P. • Expedition 74
 						</h1>
 						<p class="text-xs font-mono text-slate-400 flex items-center gap-3">
 							<span>MET : T+ 142d 08:34:12 UTC</span>
 							<span>•</span>
-							<span>Fréquence Télémétrie : 250 Hz (Synchro Continue)</span>
+							<span>Telemetry Rate: 250 Hz (Continuous Sync)</span>
 						</p>
 					</div>
 
@@ -279,12 +304,12 @@
 					<div class="flex flex-wrap items-center gap-3">
 						<div id="sim-status-badge" class="px-3.5 py-1.5 rounded-full text-xs font-mono font-bold border flex items-center gap-2 text-emerald-400 bg-emerald-500/10 border-emerald-500/30">
 							<span id="sim-status-dot" class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-							<span id="sim-status-text">État : Optimal (Nominal)</span>
+							<span id="sim-status-text">Status: Optimal (Nominal)</span>
 						</div>
 
 						<button onclick="triggerShockTest()" id="sim-shock-btn" class="px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold border bg-red-950/40 text-red-300 border-red-500/40 hover:bg-red-900/50 hover:text-white transition-all flex items-center gap-1.5">
 							<i data-lucide="zap" class="w-3.5 h-3.5 text-red-400"></i>
-							<span>⚡ Simuler Syncope &amp; Choc 150J</span>
+							<span>⚡ Simulate Syncope &amp; 150J Shock</span>
 						</button>
 					</div>
 				</div>
@@ -298,14 +323,14 @@
 					<div>
 						<div class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-slate-400 uppercase tracking-wider mb-1">
 							<i data-lucide="compass" class="w-3.5 h-3.5 text-slate-300"></i>
-							<span>Module 02 • Contexte Opérationnel de Mission</span>
+							<span>Module 02 • Operational Mission Context</span>
 						</div>
 						<h2 class="text-xl sm:text-2xl font-mono font-bold text-white">
-							Environnement &amp; Hiérarchie des 5 Risques NASA
+							Environment &amp; NASA 5 Hazards Hierarchy
 						</h2>
 					</div>
 					<div id="env-badge-title" class="px-3.5 py-1.5 rounded-full text-xs font-mono font-bold border inline-flex items-center gap-2 bg-indigo-500/15 text-indigo-300 border-indigo-500/30 self-start md:self-auto">
-						🚀 Vaisseau en Transit (Espace Profond)
+						🚀 Transit Spacecraft (Deep Space)
 					</div>
 				</div>
 
@@ -313,47 +338,47 @@
 				<div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
 					<button onclick="applyEnvironment('transit')" id="env-btn-transit" class="px-4 py-2.5 rounded-xl font-mono text-xs font-bold transition-all border bg-white text-slate-950 border-white shadow-lg shadow-black/30 flex items-center gap-2">
 						<i data-lucide="rocket" class="w-4 h-4 text-slate-950"></i>
-						<span>1. Vaisseau en Transit</span>
+						<span>1. Transit Spacecraft</span>
 					</button>
 					<button onclick="applyEnvironment('station')" id="env-btn-station" class="px-4 py-2.5 rounded-xl font-mono text-xs font-semibold transition-all border bg-white/[0.03] text-slate-400 border-white/[0.08] hover:border-white/[0.18] hover:bg-white/[0.06] hover:text-white flex items-center gap-2">
 						<i data-lucide="orbit" class="w-4 h-4"></i>
-						<span>2. Station Orbitale (LEO)</span>
+						<span>2. Orbital Station (LEO)</span>
 					</button>
 					<button onclick="applyEnvironment('rover')" id="env-btn-rover" class="px-4 py-2.5 rounded-xl font-mono text-xs font-semibold transition-all border bg-white/[0.03] text-slate-400 border-white/[0.08] hover:border-white/[0.18] hover:bg-white/[0.06] hover:text-white flex items-center gap-2">
 						<i data-lucide="truck" class="w-4 h-4"></i>
-						<span>3. Rover de Surface</span>
+						<span>3. Surface Rover</span>
 					</button>
 					<button onclick="applyEnvironment('base')" id="env-btn-base" class="px-4 py-2.5 rounded-xl font-mono text-xs font-semibold transition-all border bg-white/[0.03] text-slate-400 border-white/[0.08] hover:border-white/[0.18] hover:bg-white/[0.06] hover:text-white flex items-center gap-2">
 						<i data-lucide="home" class="w-4 h-4"></i>
-						<span>4. Base Planétaire</span>
+						<span>4. Planetary Base</span>
 					</button>
 				</div>
 
 				<!-- Paramètres de l'Environnement sélectionné -->
 				<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs font-mono">
 					<div class="p-3.5 rounded-xl bg-white/5 border border-white/5">
-						<div class="text-slate-400 text-[10px] uppercase">Gravité Effective</div>
-						<div id="env-stat-gravity" class="text-slate-100 font-bold mt-0.5">0.00 G (Microgravité)</div>
+						<div class="text-slate-400 text-[10px] uppercase">Effective Gravity</div>
+						<div id="env-stat-gravity" class="text-slate-100 font-bold mt-0.5">0.00 G (Microgravity)</div>
 					</div>
 					<div class="p-3.5 rounded-xl bg-white/5 border border-white/5">
-						<div class="text-slate-400 text-[10px] uppercase">Environnement Radiatif</div>
-						<div id="env-stat-radiation" class="text-slate-100 font-bold mt-0.5">Élevé (GCR &amp; SPE)</div>
+						<div class="text-slate-400 text-[10px] uppercase">Radiation Environment</div>
+						<div id="env-stat-radiation" class="text-slate-100 font-bold mt-0.5">High (GCR &amp; SPE)</div>
 					</div>
 					<div class="p-3.5 rounded-xl bg-white/5 border border-white/5">
-						<div class="text-slate-400 text-[10px] uppercase">Liaison Terre (Délai)</div>
-						<div id="env-stat-com" class="text-slate-100 font-bold mt-0.5">+4.2 à +22 min</div>
+						<div class="text-slate-400 text-[10px] uppercase">Earth Link (Latency)</div>
+						<div id="env-stat-com" class="text-slate-100 font-bold mt-0.5">+4.2 to +22 min</div>
 					</div>
 					<div class="p-3.5 rounded-xl bg-white/5 border border-white/5">
-						<div class="text-slate-400 text-[10px] uppercase">Support de Vie (ECLSS)</div>
-						<div id="env-stat-eclss" class="text-slate-100 font-bold mt-0.5">Boucle fermée compacte</div>
+						<div class="text-slate-400 text-[10px] uppercase">Life Support (ECLSS)</div>
+						<div id="env-stat-eclss" class="text-slate-100 font-bold mt-0.5">Compact closed-loop</div>
 					</div>
 				</div>
 
 				<!-- Conteneur dynamique des Risques NASA pondérés -->
 				<div>
 					<div class="text-xs font-mono text-slate-400 uppercase tracking-wider mb-2.5 flex items-center justify-between">
-						<span>Pondération Clinique Dynamique des Risques Spatiaux pour cet Environnement :</span>
-						<span id="env-name-desc" class="text-cyan-400 font-bold">Vaisseau en Transit Cis-Lunaire / Mars</span>
+						<span>Dynamic Clinical Hazard Weighting for this Environment:</span>
+						<span id="env-name-desc" class="text-cyan-400 font-bold">Cis-Lunar / Mars Transit Spacecraft</span>
 					</div>
 					<div id="env-risks-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
 						<!-- Rempli par applyEnvironment() en JavaScript -->
@@ -368,13 +393,13 @@
 				<div class="border-b border-white/5 pb-4">
 					<div class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-slate-400 uppercase tracking-wider mb-1">
 						<i data-lucide="user-check" class="w-3.5 h-3.5 text-slate-300"></i>
-						<span>Module 01 • Cartographie Physiologique Interactive</span>
+						<span>Module 01 • Interactive Physiological Mapping</span>
 					</div>
 					<h2 class="text-xl sm:text-2xl font-mono font-bold text-white">
-						Silhouette Biomédicale des Organes Spatiaux
+						Biomedical Silhouette of Space Organs
 					</h2>
 					<p class="text-slate-400 text-xs sm:text-sm mt-1">
-						Cliquez ou survolez un organe pour comprendre le <strong>risque spatial associé</strong> (Risques NASA) et ce que mesure le capteur en langage simple accessible à l'astronaute.
+						Click or hover over an organ to understand the <strong>associated space risk</strong> (NASA 5 Hazards) and what the sensor measures in clear, astronaut-accessible language.
 					</p>
 				</div>
 
@@ -384,7 +409,7 @@
 					<div class="lg:col-span-5 flex flex-col items-center justify-center p-4 rounded-2xl bg-[#060a14] border border-white/10 relative">
 						
 						<div class="absolute top-3 left-3 text-[10px] font-mono text-slate-400 tracking-wider">
-							AVATAR BIOMÉDICAL • SCAN 3D
+							BIOMEDICAL AVATAR • 3D SCAN
 						</div>
 						<div class="absolute top-3 right-3 flex items-center gap-1.5 text-[10px] font-mono text-cyan-400">
 							<span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
@@ -427,14 +452,14 @@
 
 								<!-- 1. CERVEAU / TÊTE -->
 								<g id="svg-zone-brain" onclick="selectBodyZone('brain')" class="cursor-pointer transition-all duration-300 group" fill="rgba(16, 185, 129, 0.25)" stroke="#10B981" stroke-width="1.8">
-									<title>Cerveau • Humeur & Fatigue Cognitive</title>
+									<title>Brain • Mood & Cognitive Fatigue</title>
 									<path d="M 140 50 Q 160 38 180 50 Q 192 65 180 80 Q 160 88 140 80 Q 128 65 140 50 Z" />
 									<circle cx="160" cy="62" r="4" fill="#00E5FF" />
 								</g>
 
 								<!-- 2. POUMONS (Bilateral) -->
 								<g id="svg-zone-lungs" onclick="selectBodyZone('lungs')" class="cursor-pointer transition-all duration-300" fill="rgba(16, 185, 129, 0.25)" stroke="#10B981" stroke-width="1.8">
-									<title>Poumons • Respiration & SpO2</title>
+									<title>Lungs • Respiration & SpO2</title>
 									<!-- Poumon Droit -->
 									<path d="M 125 155 Q 142 155 145 180 Q 145 220 125 225 Q 115 200 125 155 Z" />
 									<!-- Poumon Gauche -->
@@ -443,20 +468,20 @@
 
 								<!-- 3. CŒUR (Décalé à gauche) -->
 								<g id="svg-zone-heart" onclick="selectBodyZone('heart')" class="cursor-pointer transition-all duration-300" fill="rgba(16, 185, 129, 0.35)" stroke="#10B981" stroke-width="2.2">
-									<title>Cœur • Rythme Cardiaque & Pression Artérielle</title>
+									<title>Heart • Heart Rate & Blood Pressure</title>
 									<path d="M 164 175 C 164 165 178 165 178 175 C 178 188 164 198 164 204 C 164 198 150 188 150 175 C 150 165 164 165 164 175 Z" />
 									<circle cx="164" cy="182" r="3" fill="#EF4444" class="animate-ping" opacity="0.8" />
 								</g>
 
 								<!-- 4. ESTOMAC & NUTRITION -->
 								<g id="svg-zone-stomach" onclick="selectBodyZone('stomach')" class="cursor-pointer transition-all duration-300" fill="rgba(16, 185, 129, 0.25)" stroke="#10B981" stroke-width="1.8">
-									<title>Estomac & Nutrition • Métabolisme & Hydratation</title>
+									<title>Stomach & Nutrition • Metabolism & Hydration</title>
 									<path d="M 148 232 Q 172 230 175 245 Q 172 265 150 262 Q 140 248 148 232 Z" />
 								</g>
 
 								<!-- 5. SYSTÈME IMMUNITAIRE / LYMPHE / SALIVE (Cou & Aisselles) -->
 								<g id="svg-zone-immune" onclick="selectBodyZone('immune')" class="cursor-pointer transition-all duration-300" fill="rgba(16, 185, 129, 0.25)" stroke="#10B981" stroke-width="1.8">
-									<title>Système Immunitaire • Cortisol & DHEA Salivaire</title>
+									<title>Immune System • Salivary Cortisol & DHEA</title>
 									<!-- Glandes salivaires cou -->
 									<circle cx="152" cy="116" r="4.5" />
 									<circle cx="168" cy="116" r="4.5" />
@@ -467,7 +492,7 @@
 
 								<!-- 6. SQUELETTE (Colonne Vertébrale & Fémurs) -->
 								<g id="svg-zone-skeleton" onclick="selectBodyZone('skeleton')" class="cursor-pointer transition-all duration-300" fill="rgba(16, 185, 129, 0.25)" stroke="#10B981" stroke-width="2.0">
-									<title>Squelette • Densité Osseuse REMS & Fémurs</title>
+									<title>Skeleton • REMS Bone Density & Femurs</title>
 									<!-- Colonne vertébrale -->
 									<line x1="160" y1="130" x2="160" y2="330" stroke-dasharray="3 4" stroke-width="3" />
 									<!-- Fémur Droit -->
@@ -478,13 +503,13 @@
 
 								<!-- Lignes directrices de repérage -->
 								<line x1="160" y1="62" x2="250" y2="62" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="2 2" />
-								<text x="255" y="66" fill="#94A3B8" font-size="9" font-family="JetBrains Mono">Cerveau</text>
+								<text x="255" y="66" fill="#94A3B8" font-size="9" font-family="JetBrains Mono">Brain</text>
 
 								<line x1="164" y1="182" x2="60" y2="182" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="2 2" />
-								<text x="25" y="186" fill="#94A3B8" font-size="9" font-family="JetBrains Mono">Cœur</text>
+								<text x="25" y="186" fill="#94A3B8" font-size="9" font-family="JetBrains Mono">Heart</text>
 
 								<line x1="140" y1="400" x2="50" y2="400" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="2 2" />
-								<text x="18" y="404" fill="#94A3B8" font-size="9" font-family="JetBrains Mono">Fémurs</text>
+								<text x="18" y="404" fill="#94A3B8" font-size="9" font-family="JetBrains Mono">Femurs</text>
 							</svg>
 						</div>
 
@@ -517,10 +542,10 @@
 							
 							<div class="flex flex-wrap items-center justify-between gap-3 border-b border-white/5 pb-3">
 								<h3 id="organ-title" class="text-lg sm:text-xl font-mono font-bold text-white flex items-center gap-2">
-									Cœur &amp; Système Cardiovasculaire
+									Heart &amp; Cardiovascular System
 								</h3>
 								<div id="organ-status-badge" class="px-3 py-1 rounded-full text-[10px] font-mono font-bold border inline-flex items-center gap-1.5 text-emerald-400 bg-emerald-500/10 border-emerald-500/30">
-									STATUT OPTIMAL • NOMINAL
+									OPTIMAL STATUS • NOMINAL
 								</div>
 							</div>
 
@@ -528,25 +553,25 @@
 							<div class="p-3.5 rounded-xl bg-indigo-950/30 border border-indigo-500/30 space-y-1">
 								<div class="text-[10px] font-mono uppercase tracking-wider text-indigo-300 font-bold flex items-center gap-1.5">
 									<i data-lucide="shield-alert" class="w-3.5 h-3.5 text-indigo-400"></i>
-									<span>Risque Spatial NASA Majeur Associé</span>
+									<span>Primary Associated NASA Space Hazard</span>
 								</div>
 								<div id="organ-hazard" class="text-sm font-mono font-bold text-white">
-									Champs Gravitationnels Altérés (Gravity Fields)
+									Altered Gravity Fields (Microgravity)
 								</div>
 							</div>
 
 							<!-- Ce que mesure le capteur -->
 							<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono">
 								<div class="p-3 rounded-xl bg-black/30 border border-white/5">
-									<span class="text-slate-400 text-[10px] uppercase block">Équipement Source</span>
+									<span class="text-slate-400 text-[10px] uppercase block">Source Sensor Device</span>
 									<span id="organ-sensor" class="text-cyan-300 font-bold mt-0.5 block">
-										Maillot Astroskin (ECG 3-Lead) &amp; EmbracePlus
+										Astroskin Smart Shirt (3-Lead ECG) &amp; EmbracePlus
 									</span>
 								</div>
 								<div class="p-3 rounded-xl bg-black/30 border border-white/5">
-									<span class="text-slate-400 text-[10px] uppercase block">Indicateur Mesuré</span>
+									<span class="text-slate-400 text-[10px] uppercase block">Measured Biomarker</span>
 									<span id="organ-indicator" class="text-slate-200 font-bold mt-0.5 block">
-										Rythme Cardiaque (BPM) &amp; Tension PTT (mmHg)
+										Heart Rate (BPM) &amp; Blood Pressure PTT (mmHg)
 									</span>
 								</div>
 							</div>
@@ -554,10 +579,10 @@
 							<!-- Explication simple pour l'astronaute -->
 							<div class="space-y-1.5">
 								<div class="text-xs font-mono uppercase tracking-wider text-slate-400 font-semibold">
-									Comprendre ce qui se passe dans votre corps :
+									Understanding what is happening in your body:
 								</div>
 								<p id="organ-plain-desc" class="text-slate-200 text-xs sm:text-sm leading-relaxed bg-[#05070D]/60 p-4 rounded-xl border border-white/5">
-									En apesanteur, les fluides corporels remontent vers le torse et la tête car la gravité ne les attire plus vers le bas. Le cœur n'a plus à pomper aussi fort pour alimenter le cerveau, ce qui entraîne une perte de tonus cardiovasculaire et un risque d'étourdissement ou de syncope lors des changements de posture ou du retour sur Terre.
+									In microgravity, body fluids shift toward the chest and head because gravity no longer pulls them downward. The heart doesn't have to work as hard to supply the brain, leading to cardiovascular deconditioning, cardiac atrophy, and a risk of orthostatic intolerance or syncope during posture changes or return to Earth.
 								</p>
 							</div>
 
@@ -565,10 +590,10 @@
 							<div class="p-4 rounded-xl bg-cyan-950/20 border border-cyan-500/30 space-y-1">
 								<div class="text-xs font-mono text-cyan-400 font-bold flex items-center gap-1.5 uppercase">
 									<i data-lucide="check-circle" class="w-4 h-4"></i>
-									<span>Contre-Mesure Opérationnelle Recommandée</span>
+									<span>Recommended Operational Countermeasure</span>
 								</div>
 								<p id="organ-recommendation" class="text-xs font-mono text-slate-300 leading-relaxed">
-									Maintien de 45 minutes d'exercice cardiovasculaire quotidien (tapis roulant T2 avec harnais de maintien élastique ou ergomètre vélo CEVIS).
+									Maintain 45 minutes of daily cardiovascular exercise (T2 treadmill with bungee harness or CEVIS cycle ergometer).
 								</p>
 							</div>
 
@@ -587,36 +612,36 @@
 					<div>
 						<div class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-slate-400 uppercase tracking-wider mb-1">
 							<i data-lucide="activity" class="w-3.5 h-3.5 text-slate-300"></i>
-							<span>Module 03 • Moteur de Télémétrie Clinique &amp; Diagnostic IA</span>
+							<span>Module 03 • Clinical Telemetry Engine &amp; AI Diagnostic</span>
 						</div>
 						<h2 class="text-xl sm:text-2xl font-mono font-bold text-white">
-							Console de Simulation des 6 Scénarios d'Équipage
+							Simulation Console: 6 Spaceflight Clinical Scenarios
 						</h2>
 					</div>
 					<div class="text-xs font-mono text-slate-400">
-						Sélectionnez un scénario pour observer la réaction physiologique en direct.
+						Select a scenario to observe real-time physiological response.
 					</div>
 				</div>
 
 				<!-- 6 Boutons de Scénarios Cliniques (Apple Segmented Style) -->
 				<div class="flex flex-wrap items-center justify-center gap-2">
 					<button onclick="applySimScenario('nominal')" id="sim-btn-nominal" class="sim-pill px-3.5 py-2.5 rounded-xl text-xs font-mono font-bold transition-all border bg-white text-slate-950 border-white shadow-lg shadow-black/30">
-						1. Maillot Astroskin (Nominal)
+						1. Astroskin Smart Shirt (Nominal)
 					</button>
 					<button onclick="applySimScenario('hypoxia')" id="sim-btn-hypoxia" class="sim-pill px-3.5 py-2.5 rounded-xl text-xs font-mono font-semibold transition-all border bg-white/[0.03] text-slate-400 border-white/[0.08] hover:border-white/[0.18] hover:bg-white/[0.06] hover:text-white">
-						2. Montre EmbracePlus (Hypoxie EVA)
+						2. EmbracePlus Watch (EVA Hypoxia)
 					</button>
 					<button onclick="applySimScenario('boneLoss')" id="sim-btn-boneLoss" class="sim-pill px-3.5 py-2.5 rounded-xl text-xs font-mono font-semibold transition-all border bg-white/[0.03] text-slate-400 border-white/[0.08] hover:border-white/[0.18] hover:bg-white/[0.06] hover:text-white">
-						3. Échographe REMS (Perte Osseuse)
+						3. Echolight REMS (Bone Loss)
 					</button>
 					<button onclick="applySimScenario('solarStorm')" id="sim-btn-solarStorm" class="sim-pill px-3.5 py-2.5 rounded-xl text-xs font-mono font-semibold transition-all border bg-white/[0.03] text-slate-400 border-white/[0.08] hover:border-white/[0.18] hover:bg-white/[0.06] hover:text-white">
-						4. Dosimètre HRP (Tempête Solaire)
+						4. HRP Dosimeter (Solar Storm)
 					</button>
 					<button onclick="applySimScenario('salivaStress')" id="sim-btn-salivaStress" class="sim-pill px-3.5 py-2.5 rounded-xl text-xs font-mono font-semibold transition-all border bg-white/[0.03] text-slate-400 border-white/[0.08] hover:border-white/[0.18] hover:bg-white/[0.06] hover:text-white">
-						5. Biocapteur Salivaire (Stress &amp; Immunité)
+						5. Saliva Biosensor (Stress &amp; Immunity)
 					</button>
 					<button onclick="applySimScenario('actigraphy')" id="sim-btn-actigraphy" class="sim-pill px-3.5 py-2.5 rounded-xl text-xs font-mono font-semibold transition-all border bg-white/[0.03] text-slate-400 border-white/[0.08] hover:border-white/[0.18] hover:bg-white/[0.06] hover:text-white">
-						6. Actigraphie Spatiale (Artemis II)
+						6. Space Actigraphy (Artemis II)
 					</button>
 				</div>
 
@@ -631,14 +656,14 @@
 							<div class="flex items-center justify-between text-xs font-mono">
 								<span class="text-cyan-400 font-bold uppercase tracking-wider flex items-center gap-1.5">
 									<i data-lucide="cpu" class="w-3.5 h-3.5"></i>
-									<span>Évaluation Bio-IA Embarquée</span>
+									<span>Onboard Bio-AI Evaluation</span>
 								</span>
 								<span class="text-slate-400">
-									Indice de Confiance : <strong id="sim-ai-confidence" class="text-emerald-400 font-bold">99.8%</strong>
+									Confidence Index: <strong id="sim-ai-confidence" class="text-emerald-400 font-bold">99.8%</strong>
 								</span>
 							</div>
 							<p id="sim-diag-desc" class="text-xs sm:text-sm font-mono text-slate-200 leading-relaxed">
-								Bio-IA : Stabilité cardiovasculaire et métabolique optimale. Aucun signal faible décelé.
+								Bio-AI: Optimal cardiovascular and metabolic stability. No weak signals detected.
 							</p>
 						</div>
 
@@ -646,14 +671,14 @@
 						<div id="sim-rec-box" class="p-4 rounded-xl border text-xs space-y-1.5 bg-emerald-500/10 border-emerald-500/30">
 							<div class="flex items-center justify-between">
 								<span id="sim-rec-title" class="font-mono font-bold text-emerald-300 text-xs uppercase flex items-center gap-1.5">
-									Protocole Médical Nominal
+									Nominal Medical Protocol
 								</span>
 								<span id="sim-rec-device" class="font-mono text-[10px] text-slate-400">
-									Maillot Astroskin &amp; Montre EmbracePlus
+									Astroskin Shirt &amp; EmbracePlus Watch
 								</span>
 							</div>
 							<p id="sim-rec-desc" class="text-slate-300 text-[11px] font-mono leading-relaxed">
-								Poursuite de la surveillance passive 24/7. Maintien des contre-mesures physiques standard (2h d'exercice quotidien sur tapis T2 et cycle ARED).
+								Continuous 24/7 passive monitoring. Standard physical countermeasures maintained (2h daily exercise on T2 treadmill and ARED cycle).
 							</p>
 						</div>
 
@@ -662,7 +687,7 @@
 							<div class="flex items-center justify-between text-xs font-mono">
 								<span class="text-emerald-400 font-bold flex items-center gap-2">
 									<span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-									<span>ECG DÉRIVATION II EN DIRECT (250 HZ)</span>
+									<span>LIVE LEAD II ECG (250 HZ)</span>
 								</span>
 								<span id="sim-live-bpm" class="text-emerald-300 font-bold">68 BPM</span>
 							</div>
@@ -676,7 +701,7 @@
 					<div class="lg:col-span-5 p-5 rounded-xl bg-white/5 border border-white/10 flex flex-col justify-between">
 						<div class="space-y-3">
 							<div class="text-xs font-mono font-bold text-white uppercase tracking-wider border-b border-white/5 pb-2 flex items-center justify-between">
-								<span>Flux des 6 Capteurs Spatiaux</span>
+								<span>Real-Time 6 Space Sensors Stream</span>
 								<span class="text-[10px] text-cyan-400">TÉLÉMÉTRIE LIVE</span>
 							</div>
 							<ul class="space-y-2.5 text-xs font-mono">
@@ -684,50 +709,50 @@
 									<span class="text-slate-300">1. Astroskin (ASC / ISS)</span>
 									<span class="flex items-center gap-2">
 										<span id="dot-astroskin" class="w-2 h-2 rounded-full bg-emerald-400"></span>
-										<span id="status-astroskin" class="font-bold text-emerald-400">Connecté (250 Hz)</span>
+										<span id="status-astroskin" class="font-bold text-emerald-400">Connected (250 Hz)</span>
 									</span>
 								</li>
 								<li class="flex items-center justify-between p-2 rounded-lg bg-black/20 border border-white/5">
 									<span class="text-slate-300">2. EmbracePlus (NASA/TRISH)</span>
 									<span class="flex items-center gap-2">
 										<span id="dot-embrace" class="w-2 h-2 rounded-full bg-emerald-400"></span>
-										<span id="status-embrace" class="font-bold text-emerald-400">Connecté (100 Hz)</span>
+										<span id="status-embrace" class="font-bold text-emerald-400">Connected (100 Hz)</span>
 									</span>
 								</li>
 								<li class="flex items-center justify-between p-2 rounded-lg bg-black/20 border border-white/5">
 									<span class="text-slate-300">3. Échographe REMS (NASA)</span>
 									<span class="flex items-center gap-2">
 										<span id="dot-echolight" class="w-2 h-2 rounded-full bg-emerald-400"></span>
-										<span id="status-echolight" class="font-bold text-emerald-400">Scan Hebdo Validé</span>
+										<span id="status-echolight" class="font-bold text-emerald-400">Weekly Scan Verified</span>
 									</span>
 								</li>
 								<li class="flex items-center justify-between p-2 rounded-lg bg-black/20 border border-white/5">
 									<span class="text-slate-300">4. Dosimètre (NASA HRP)</span>
 									<span class="flex items-center gap-2">
 										<span id="dot-dosimeter" class="w-2 h-2 rounded-full bg-emerald-400"></span>
-										<span id="status-dosimeter" class="font-bold text-emerald-400">Télémétrie Live</span>
+										<span id="status-dosimeter" class="font-bold text-emerald-400">Live Telemetry</span>
 									</span>
 								</li>
 								<li class="flex items-center justify-between p-2 rounded-lg bg-black/20 border border-white/5">
 									<span class="text-slate-300">5. Biocapteur Salivaire (ASI)</span>
 									<span class="flex items-center gap-2">
 										<span id="dot-saliva" class="w-2 h-2 rounded-full bg-emerald-400"></span>
-										<span id="status-saliva" class="font-bold text-emerald-400">Cartouche 04 prête</span>
+										<span id="status-saliva" class="font-bold text-emerald-400">Cartridge 04 Ready</span>
 									</span>
 								</li>
 								<li class="flex items-center justify-between p-2 rounded-lg bg-black/20 border border-white/5">
 									<span class="text-slate-300">6. Actigraphie (Artemis II)</span>
 									<span class="flex items-center gap-2">
 										<span id="dot-actigraphy" class="w-2 h-2 rounded-full bg-emerald-400"></span>
-										<span id="status-actigraphy" class="font-bold text-emerald-400">Actimétrie 3-Axes Live</span>
+										<span id="status-actigraphy" class="font-bold text-emerald-400">3-Axis Actigraphy Live</span>
 									</span>
 								</li>
 							</ul>
 						</div>
 
 						<div class="mt-4 pt-3 border-t border-white/5 text-[10px] font-mono text-slate-400 flex items-center justify-between">
-							<span>Chiffrement : AES-256 Mil-Spec</span>
-							<span class="text-emerald-400 font-bold">100% PAQUETS REÇUS</span>
+							<span>Encryption: AES-256 Mil-Spec</span>
+							<span class="text-emerald-400 font-bold">100% PACKETS RECEIVED</span>
 						</div>
 					</div>
 
@@ -742,9 +767,9 @@
 				<div class="flex items-center justify-between">
 					<h3 class="text-lg sm:text-xl font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2">
 						<i data-lucide="gauge" class="w-5 h-5 text-cyan-400"></i>
-						<span>Les 7 Indicateurs Fondamentaux de Santé Spatiale</span>
+						<span>The 7 Fundamental Space Health Indicators</span>
 					</h3>
-					<span class="text-xs font-mono text-slate-400 hidden sm:inline">Historique glissant 24h &amp; Indice de fiabilité source</span>
+					<span class="text-xs font-mono text-slate-400 hidden sm:inline">24h rolling history &amp; source trust index</span>
 				</div>
 
 				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
@@ -754,7 +779,7 @@
 						<div>
 							<div class="flex items-center justify-between text-xs font-mono">
 								<span class="text-slate-400 flex items-center gap-1.5 font-bold uppercase text-[11px]">
-									<i data-lucide="activity" class="w-3.5 h-3.5 text-emerald-400"></i> Pression Artérielle
+									<i data-lucide="activity" class="w-3.5 h-3.5 text-emerald-400"></i> Blood Pressure
 								</span>
 								<span id="badge-bp" class="text-[10px] font-mono font-bold text-emerald-400">NORMAL</span>
 							</div>
@@ -762,14 +787,14 @@
 								<span id="val-bp" class="text-2xl font-mono font-extrabold text-white">118/76</span>
 								<span class="text-xs font-mono text-slate-400">mmHg</span>
 							</div>
-							<p id="diag-bp" class="text-[10px] font-mono text-slate-300 mt-1 leading-snug">Normotension PTT continue</p>
+							<p id="diag-bp" class="text-[10px] font-mono text-slate-300 mt-1 leading-snug">Continuous PTT normotension</p>
 						</div>
 
 						<div class="mt-3 pt-2.5 border-t border-white/5">
 							<div id="spark-bp" class="h-7 w-full"></div>
 							<div class="mt-1 flex items-center justify-between text-[9px] font-mono text-slate-400">
-								<span>Fiabilité :</span>
-								<span id="trust-bp" class="text-emerald-400 font-bold">Élevée (99.8%) • Astroskin PTT</span>
+								<span>Reliability:</span>
+								<span id="trust-bp" class="text-emerald-400 font-bold">High (99.8%) • Astroskin PTT</span>
 							</div>
 						</div>
 					</div>
@@ -779,7 +804,7 @@
 						<div>
 							<div class="flex items-center justify-between text-xs font-mono">
 								<span class="text-slate-400 flex items-center gap-1.5 font-bold uppercase text-[11px]">
-									<i data-lucide="heart" class="w-3.5 h-3.5 text-red-400"></i> Rythme Cardiaque
+									<i data-lucide="heart" class="w-3.5 h-3.5 text-red-400"></i> Heart Rate
 								</span>
 								<span id="badge-bpm" class="text-[10px] font-mono font-bold text-emerald-400">NORMAL</span>
 							</div>
@@ -787,14 +812,14 @@
 								<span id="val-bpm" class="text-2xl font-mono font-extrabold text-white">68</span>
 								<span class="text-xs font-mono text-slate-400">BPM</span>
 							</div>
-							<p id="diag-bpm" class="text-[10px] font-mono text-slate-300 mt-1 leading-snug">Rythme sinusal régulier (65-72)</p>
+							<p id="diag-bpm" class="text-[10px] font-mono text-slate-300 mt-1 leading-snug">Regular sinus rhythm (65-72)</p>
 						</div>
 
 						<div class="mt-3 pt-2.5 border-t border-white/5">
 							<div id="spark-bpm" class="h-7 w-full"></div>
 							<div class="mt-1 flex items-center justify-between text-[9px] font-mono text-slate-400">
-								<span>Fiabilité :</span>
-								<span id="trust-bpm" class="text-emerald-400 font-bold">Élevée (99.9%) • ECG 3-Lead</span>
+								<span>Reliability:</span>
+								<span id="trust-bpm" class="text-emerald-400 font-bold">High (99.9%) • ECG 3-Lead</span>
 							</div>
 						</div>
 					</div>
@@ -804,21 +829,21 @@
 						<div>
 							<div class="flex items-center justify-between text-xs font-mono">
 								<span class="text-slate-400 flex items-center gap-1.5 font-bold uppercase text-[11px]">
-									<i data-lucide="droplet" class="w-3.5 h-3.5 text-cyan-400"></i> Glycémie Interstitielle
+									<i data-lucide="droplet" class="w-3.5 h-3.5 text-cyan-400"></i> Interstitial Glucose
 								</span>
 								<span id="badge-glycemia" class="text-[10px] font-mono font-bold text-emerald-400">NORMAL</span>
 							</div>
 							<div class="mt-2 flex items-baseline gap-2">
 								<span id="val-glycemia" class="text-2xl font-mono font-extrabold text-white">94 mg/dL</span>
 							</div>
-							<p id="diag-glycemia" class="text-[10px] font-mono text-slate-300 mt-1 leading-snug">Normoglycémie basale stable</p>
+							<p id="diag-glycemia" class="text-[10px] font-mono text-slate-300 mt-1 leading-snug">Stable basal normoglycemia</p>
 						</div>
 
 						<div class="mt-3 pt-2.5 border-t border-white/5">
 							<div id="spark-glycemia" class="h-7 w-full"></div>
 							<div class="mt-1 flex items-center justify-between text-[9px] font-mono text-slate-400">
-								<span>Fiabilité :</span>
-								<span id="trust-glycemia" class="text-cyan-400 font-bold">Élevée (98.5%) • Capteur interstitiel</span>
+								<span>Reliability:</span>
+								<span id="trust-glycemia" class="text-cyan-400 font-bold">High (98.5%) • Interstitial sensor</span>
 							</div>
 						</div>
 					</div>
@@ -828,21 +853,21 @@
 						<div>
 							<div class="flex items-center justify-between text-xs font-mono">
 								<span class="text-slate-400 flex items-center gap-1.5 font-bold uppercase text-[11px]">
-									<i data-lucide="thermometer" class="w-3.5 h-3.5 text-cyan-400"></i> Température Corporelle
+									<i data-lucide="thermometer" class="w-3.5 h-3.5 text-cyan-400"></i> Body Temperature
 								</span>
 								<span id="badge-bodytemp" class="text-[10px] font-mono font-bold text-emerald-400">NORMAL</span>
 							</div>
 							<div class="mt-2 flex items-baseline gap-2">
 								<span id="val-bodytemp" class="text-2xl font-mono font-extrabold text-white">36.8 °C</span>
 							</div>
-							<p id="diag-bodytemp" class="text-[10px] font-mono text-slate-300 mt-1 leading-snug">Thermorégulation optimale</p>
+							<p id="diag-bodytemp" class="text-[10px] font-mono text-slate-300 mt-1 leading-snug">Optimal thermoregulation</p>
 						</div>
 
 						<div class="mt-3 pt-2.5 border-t border-white/5">
 							<div id="spark-bodytemp" class="h-7 w-full"></div>
 							<div class="mt-1 flex items-center justify-between text-[9px] font-mono text-slate-400">
-								<span>Fiabilité :</span>
-								<span id="trust-bodytemp" class="text-cyan-400 font-bold">Élevée (99.2%) • EmbracePlus IR</span>
+								<span>Reliability:</span>
+								<span id="trust-bodytemp" class="text-cyan-400 font-bold">High (99.2%) • EmbracePlus IR</span>
 							</div>
 						</div>
 					</div>
@@ -852,21 +877,21 @@
 						<div>
 							<div class="flex items-center justify-between text-xs font-mono">
 								<span class="text-slate-400 flex items-center gap-1.5 font-bold uppercase text-[11px]">
-									<i data-lucide="moon" class="w-3.5 h-3.5 text-indigo-400"></i> Sommeil Actigraphique
+									<i data-lucide="moon" class="w-3.5 h-3.5 text-indigo-400"></i> Actigraphy Sleep
 								</span>
 								<span id="badge-sleep" class="text-[10px] font-mono font-bold text-emerald-400">OPTIMAL</span>
 							</div>
 							<div class="mt-2 flex items-baseline gap-2">
 								<span id="val-sleep" class="text-2xl font-mono font-extrabold text-white">7h 35m</span>
 							</div>
-							<p id="diag-sleep" class="text-[10px] font-mono text-slate-300 mt-1 leading-snug">Efficacité 89% • 4 cycles REM</p>
+							<p id="diag-sleep" class="text-[10px] font-mono text-slate-300 mt-1 leading-snug">Efficiency 89% • 4 REM cycles</p>
 						</div>
 
 						<div class="mt-3 pt-2.5 border-t border-white/5">
 							<div id="spark-sleep" class="h-7 w-full"></div>
 							<div class="mt-1 flex items-center justify-between text-[9px] font-mono text-slate-400">
-								<span>Fiabilité :</span>
-								<span id="trust-sleep" class="text-indigo-400 font-bold">Élevée (98.9%) • ActLumus / Actiwatch</span>
+								<span>Reliability:</span>
+								<span id="trust-sleep" class="text-indigo-400 font-bold">High (98.9%) • ActLumus / Actiwatch</span>
 							</div>
 						</div>
 					</div>
@@ -876,21 +901,21 @@
 						<div>
 							<div class="flex items-center justify-between text-xs font-mono">
 								<span class="text-slate-400 flex items-center gap-1.5 font-bold uppercase text-[11px]">
-									<i data-lucide="smile" class="w-3.5 h-3.5 text-purple-400"></i> Humeur &amp; Mental
+									<i data-lucide="smile" class="w-3.5 h-3.5 text-purple-400"></i> Mood &amp; Mental State
 								</span>
 								<span id="badge-mood" class="text-[10px] font-mono font-bold text-emerald-400">STABLE</span>
 							</div>
 							<div class="mt-2 flex items-baseline gap-2">
-								<span id="val-mood" class="text-xl font-mono font-extrabold text-white">Serein (8.8/10)</span>
+								<span id="val-mood" class="text-xl font-mono font-extrabold text-white">Calm (8.8/10)</span>
 							</div>
-							<p id="diag-mood" class="text-[10px] font-mono text-slate-300 mt-1 leading-snug">Stabilité thymique &amp; concentration</p>
+							<p id="diag-mood" class="text-[10px] font-mono text-slate-300 mt-1 leading-snug">Mood stability &amp; high focus</p>
 						</div>
 
 						<div class="mt-3 pt-2.5 border-t border-white/5">
 							<div id="spark-mood" class="h-7 w-full"></div>
 							<div class="mt-1 flex items-center justify-between text-[9px] font-mono text-slate-400">
-								<span>Fiabilité :</span>
-								<span id="trust-mood" class="text-purple-400 font-bold">Élevée (97.0%) • VFC &amp; Voix</span>
+								<span>Reliability:</span>
+								<span id="trust-mood" class="text-purple-400 font-bold">High (97.0%) • HRV &amp; Voice</span>
 							</div>
 						</div>
 					</div>
@@ -900,7 +925,7 @@
 						<div>
 							<div class="flex items-center justify-between text-xs font-mono">
 								<span class="text-cyan-400 flex items-center gap-1.5 font-bold uppercase text-[11px]">
-									<i data-lucide="utensils" class="w-3.5 h-3.5"></i> 7. Nutrition &amp; Hydratation
+									<i data-lucide="utensils" class="w-3.5 h-3.5"></i> 7. Nutrition &amp; Hydration
 								</span>
 								<span id="badge-nutrition" class="text-[10px] font-mono font-bold text-emerald-400">OPTIMAL</span>
 							</div>
@@ -908,14 +933,14 @@
 							<!-- Cumul Jour -->
 							<div class="grid grid-cols-2 gap-3 mt-2.5">
 								<div class="p-2.5 rounded-xl bg-black/30 border border-white/5">
-									<div class="text-[10px] font-mono text-slate-400 uppercase">Apport Calorique (Cible 2800)</div>
+									<div class="text-[10px] font-mono text-slate-400 uppercase">Caloric Intake (Target 2,800)</div>
 									<div id="val-nutrition-kcal" class="text-base sm:text-lg font-mono font-bold text-white mt-0.5">1950 / 2800 kcal</div>
 									<div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden mt-1.5">
 										<div id="bar-nutrition-kcal" class="bg-cyan-400 h-full rounded-full transition-all duration-500" style="width: 70%;"></div>
 									</div>
 								</div>
 								<div class="p-2.5 rounded-xl bg-black/30 border border-white/5">
-									<div class="text-[10px] font-mono text-slate-400 uppercase">Hydratation (Cible 2.5 L)</div>
+									<div class="text-[10px] font-mono text-slate-400 uppercase">Hydration (Target 2.5 L)</div>
 									<div id="val-nutrition-water" class="text-base sm:text-lg font-mono font-bold text-cyan-300 mt-0.5">1.8 / 2.5 L</div>
 									<div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden mt-1.5">
 										<div id="bar-nutrition-water" class="bg-blue-500 h-full rounded-full transition-all duration-500" style="width: 72%;"></div>
@@ -926,29 +951,29 @@
 							<!-- Sélecteur Rapide de Rations Spatiales -->
 							<div class="mt-3">
 								<div class="text-[10px] font-mono text-slate-400 uppercase mb-1.5 flex items-center justify-between">
-									<span>Ajouter une ration consommée :</span>
-									<span id="nutrition-feedback" class="text-emerald-400 font-bold transition-opacity duration-300 opacity-0">+Ration enregistrée</span>
+									<span>Add consumed space ration:</span>
+									<span id="nutrition-feedback" class="text-emerald-400 font-bold transition-opacity duration-300 opacity-0">+Ration logged</span>
 								</div>
 								<div class="grid grid-cols-2 sm:grid-cols-4 gap-1.5">
 									<button onclick="logRation('breakfast')" class="px-2 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-[10px] font-mono text-slate-300 text-center">
-										+ P. Déj (650 kcal)
+										+ Breakfast (650 kcal)
 									</button>
 									<button onclick="logRation('lunch')" class="px-2 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-[10px] font-mono text-slate-300 text-center">
-										+ Déjeuner (950 kcal)
+										+ Lunch (950 kcal)
 									</button>
 									<button onclick="logRation('dinner')" class="px-2 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-[10px] font-mono text-slate-300 text-center">
-										+ Dîner (850 kcal)
+										+ Dinner (850 kcal)
 									</button>
 									<button onclick="logRation('snack')" class="px-2 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-[10px] font-mono text-slate-300 text-center">
-										+ Collation (350 kcal)
+										+ Snack (350 kcal)
 									</button>
 								</div>
 							</div>
 						</div>
 
 						<div class="mt-3 pt-2 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
-							<span id="diag-nutrition" class="text-slate-300">70% de l'apport énergétique validé</span>
-							<span class="text-amber-400 font-semibold italic">● Saisie déclarative astronaute</span>
+							<span id="diag-nutrition" class="text-slate-300">70% of daily energy intake met</span>
+							<span class="text-amber-400 font-semibold italic">● Astronaut self-report entry</span>
 						</div>
 					</div>
 
@@ -957,15 +982,15 @@
 
 			<!-- ==============================================================
 			     SECTION 5 : MÉTRIQUES SPÉCIFIQUES D'ESPACE PROFOND
-			     (Densité Osseuse REMS, Radiations, Cortisol Salivaire)
+			     (REMS Bone Density, Radiations, Cortisol Salivaire)
 			     ============================================================== -->
 			<div class="reveal-on-scroll space-y-4">
 				<div class="flex items-center justify-between">
 					<h3 class="text-lg sm:text-xl font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2">
 						<i data-lucide="shield" class="w-5 h-5 text-indigo-400"></i>
-						<span>Métriques Spécifiques d'Espace Profond</span>
+						<span>Deep Space Specific Metrics</span>
 					</h3>
-					<span class="text-xs font-mono text-slate-400">Surveillance des risques extrêmes de longue durée</span>
+					<span class="text-xs font-mono text-slate-400">Monitoring extreme long-duration risks</span>
 				</div>
 
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -974,7 +999,7 @@
 					<div id="deep-metric-bone" class="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-3 transition-all">
 						<div class="flex items-center justify-between text-xs font-mono">
 							<span class="text-slate-300 font-bold uppercase flex items-center gap-1.5">
-								<i data-lucide="bone" class="w-4 h-4 text-blue-400"></i> Densité Osseuse REMS
+								<i data-lucide="bone" class="w-4 h-4 text-blue-400"></i> REMS Bone Density
 							</span>
 							<span id="badge-bone" class="text-[10px] font-mono font-bold text-emerald-400">OPTIMAL</span>
 						</div>
@@ -983,11 +1008,11 @@
 							<span id="val-boneloss" class="text-xs font-mono text-slate-400">(-0.1%/mois)</span>
 						</div>
 						<p id="diag-bone" class="text-xs font-mono text-slate-300 leading-relaxed">
-							Densité osseuse normale (REMS)
+							Normal bone mineral density (REMS)
 						</p>
 						<div class="pt-2 border-t border-white/5 text-[10px] font-mono text-slate-400 flex items-center justify-between">
-							<span>Source : Échographe Echolight</span>
-							<span class="text-blue-400 font-bold">Sans Radiation</span>
+							<span>Source: Echolight Ultrasound</span>
+							<span class="text-blue-400 font-bold">Non-Ionizing</span>
 						</div>
 					</div>
 
@@ -995,7 +1020,7 @@
 					<div id="deep-metric-rad" class="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-3 transition-all">
 						<div class="flex items-center justify-between text-xs font-mono">
 							<span class="text-slate-300 font-bold uppercase flex items-center gap-1.5">
-								<i data-lucide="radiation" class="w-4 h-4 text-orange-400"></i> Dosimétrie Rayonnement
+								<i data-lucide="radiation" class="w-4 h-4 text-orange-400"></i> Radiation Dosimetry
 							</span>
 							<span id="badge-rad" class="text-[10px] font-mono font-bold text-emerald-400">NOMINAL</span>
 						</div>
@@ -1004,11 +1029,11 @@
 							<span id="val-dosetotal" class="text-xs font-mono text-slate-400">(0.29 mSv)</span>
 						</div>
 						<p id="diag-rad" class="text-xs font-mono text-slate-300 leading-relaxed">
-							Flux standard sous ceinture Van Allen
+							Standard flux beneath Van Allen belts
 						</p>
 						<div class="pt-2 border-t border-white/5 text-[10px] font-mono text-slate-400 flex items-center justify-between">
-							<span>Source : Dosimètre HRP</span>
-							<span class="text-orange-400 font-bold">Temps Réel</span>
+							<span>Source: NASA HRP Dosimeter</span>
+							<span class="text-orange-400 font-bold">Real-Time</span>
 						</div>
 					</div>
 
@@ -1016,7 +1041,7 @@
 					<div id="deep-metric-stress" class="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-3 transition-all">
 						<div class="flex items-center justify-between text-xs font-mono">
 							<span class="text-slate-300 font-bold uppercase flex items-center gap-1.5">
-								<i data-lucide="flask-conical" class="w-4 h-4 text-purple-400"></i> Stress Salivaire &amp; EDA
+								<i data-lucide="flask-conical" class="w-4 h-4 text-purple-400"></i> Salivary Stress &amp; EDA
 							</span>
 							<span id="badge-stress" class="text-[10px] font-mono font-bold text-emerald-400">ÉQUILIBRE</span>
 						</div>
@@ -1025,11 +1050,11 @@
 							<span id="val-eda" class="text-xs font-mono text-slate-400">(1.8 µS)</span>
 						</div>
 						<p id="diag-cortisol" class="text-xs font-mono text-slate-300 leading-relaxed">
-							Équilibre circadien préservé
+							Circadian equilibrium preserved
 						</p>
 						<div class="pt-2 border-t border-white/5 text-[10px] font-mono text-slate-400 flex items-center justify-between">
-							<span>Source : Biocapteur ASI &amp; Montre</span>
-							<span class="text-purple-400 font-bold">Non Invasif</span>
+							<span>Source: ASI Biosensor &amp; Watch</span>
+							<span class="text-purple-400 font-bold">Non-Invasive</span>
 						</div>
 					</div>
 
@@ -1044,15 +1069,15 @@
 					<div>
 						<div class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-cyan-400 uppercase tracking-wider mb-1">
 							<i data-lucide="check-square" class="w-3.5 h-3.5"></i>
-							<span>Module 05 • Suivi de Constance &amp; Contre-Mesures</span>
+							<span>Module 05 • Consistency Tracking &amp; Countermeasures</span>
 						</div>
 						<h2 class="text-xl sm:text-2xl font-mono font-bold text-white">
-							Routine Quotidienne de Santé de l'Astronaute
+							Astronaut Daily Health Routine
 						</h2>
 					</div>
 					<div class="flex items-center gap-3">
 						<div class="px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 font-mono text-xs font-bold">
-							🔥 <span id="routine-streak">14 jours consécutifs</span>
+							🔥 <span id="routine-streak">14 consecutive days</span>
 						</div>
 						<div id="routine-points" class="px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-xs font-bold">
 							50 / 100 PTS
@@ -1066,7 +1091,7 @@
 						<div id="routine-progress-bar" class="bg-gradient-to-r from-cyan-400 to-emerald-400 h-full rounded-full transition-all duration-500" style="width: 50%;"></div>
 					</div>
 					<div id="routine-cheer-message" class="text-xs font-mono text-slate-300 mt-2">
-						Progression quotidienne : 2/4 tâches complétées. La constance et la rigueur protègent votre organisme en mission.
+						Daily progress: 2/4 tasks completed. Consistency and discipline protect your body on mission.
 					</div>
 				</div>
 
@@ -1078,7 +1103,7 @@
 						<label class="flex items-center gap-3 cursor-pointer select-none flex-1">
 							<input type="checkbox" id="chk-task1" onchange="toggleRoutineTask('task1')" class="w-4 h-4 rounded text-cyan-500 bg-slate-900 border-white/20 focus:ring-cyan-400">
 							<span id="lbl-task1" class="text-xs font-mono text-slate-200">
-								1. Mesurer la pression artérielle au réveil (Astroskin PTT)
+								1. Measure blood pressure upon waking (Astroskin PTT)
 							</span>
 						</label>
 						<span class="text-[10px] font-mono font-bold text-cyan-400 shrink-0">+25 PTS</span>
@@ -1089,7 +1114,7 @@
 						<label class="flex items-center gap-3 cursor-pointer select-none flex-1">
 							<input type="checkbox" id="chk-task2" onchange="toggleRoutineTask('task2')" class="w-4 h-4 rounded text-cyan-500 bg-slate-900 border-white/20 focus:ring-cyan-400">
 							<span id="lbl-task2" class="text-xs font-mono text-slate-200">
-								2. Séance d'exercice physique 2h (Tapis T2 ou Vélo CEVIS)
+								2. 2-Hour physical exercise session (T2 Treadmill or CEVIS Bike)
 							</span>
 						</label>
 						<span class="text-[10px] font-mono font-bold text-cyan-400 shrink-0">+25 PTS</span>
@@ -1100,7 +1125,7 @@
 						<label class="flex items-center gap-3 cursor-pointer select-none flex-1">
 							<input type="checkbox" id="chk-task3" onchange="toggleRoutineTask('task3')" class="w-4 h-4 rounded text-cyan-500 bg-slate-900 border-white/20 focus:ring-cyan-400">
 							<span id="lbl-task3" class="text-xs font-mono text-slate-200">
-								3. Auto-évaluation de l'humeur &amp; vigilance mentale (EVA)
+								3. Self-assessment of mood &amp; cognitive vigilance (EVA)
 							</span>
 						</label>
 						<span class="text-[10px] font-mono font-bold text-cyan-400 shrink-0">+25 PTS</span>
@@ -1111,7 +1136,7 @@
 						<label class="flex items-center gap-3 cursor-pointer select-none flex-1">
 							<input type="checkbox" id="chk-task4" onchange="toggleRoutineTask('task4')" class="w-4 h-4 rounded text-cyan-500 bg-slate-900 border-white/20 focus:ring-cyan-400">
 							<span id="lbl-task4" class="text-xs font-mono text-slate-200">
-								4. Vérifier la qualité du sommeil de la veille (Actigraphie ARCHeR)
+								4. Check previous night's sleep metrics (ARCHeR Actigraphy)
 							</span>
 						</label>
 						<span class="text-[10px] font-mono font-bold text-cyan-400 shrink-0">+25 PTS</span>
@@ -1122,21 +1147,21 @@
 				<!-- Badges de Constance Débloqués (Renforcement Positif Exclusif) -->
 				<div class="pt-4 border-t border-white/5">
 					<div class="text-xs font-mono text-slate-400 uppercase tracking-wider mb-2.5">
-						Badges de Constance Spatiale (Renforcement Positif) :
+						Spaceflight Consistency Badges (Positive Reinforcement):
 					</div>
 					<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
 						<div id="badge-7-days" class="p-3 rounded-xl border bg-emerald-500/10 border-emerald-500/30 text-emerald-300 text-xs flex items-center gap-2.5">
 							<i data-lucide="award" class="w-5 h-5 text-emerald-400 shrink-0"></i>
 							<div>
-								<div class="font-mono font-bold">Badge 7 Jours : Discipline Orbitale</div>
-								<div class="text-[10px] text-emerald-400/80">Validé • 7 jours consécutifs de contre-mesures respectées.</div>
+								<div class="font-mono font-bold">7-Day Badge: Orbital Discipline</div>
+								<div class="text-[10px] text-emerald-400/80">Earned • 7 consecutive days of completed countermeasures.</div>
 							</div>
 						</div>
 						<div id="badge-30-days" class="p-3 rounded-xl border bg-white/5 border-white/10 text-slate-400 text-xs flex items-center gap-2.5">
 							<i data-lucide="shield-check" class="w-5 h-5 text-slate-400 shrink-0"></i>
 							<div>
-								<div class="font-mono font-bold">Badge 30 Jours : Endurance Espace Profond</div>
-								<div class="text-[10px] text-slate-400">En cours (14/30 jours) • Poursuivez votre constance de mission !</div>
+								<div class="font-mono font-bold">30-Day Badge: Deep Space Endurance</div>
+								<div class="text-[10px] text-slate-400">In progress (14/30 days) • Keep up your mission discipline!</div>
 							</div>
 						</div>
 					</div>
@@ -1156,7 +1181,7 @@
 			<div class="flex items-center justify-between border-b border-white/10 pb-3">
 				<div class="flex items-center gap-2 font-mono text-sm font-bold text-white uppercase">
 					<i data-lucide="camera" class="w-4 h-4 text-cyan-400"></i>
-					<span>Scanner un Appareil Médical Externe</span>
+					<span>Scan External Medical Device</span>
 				</div>
 				<button id="close-camera-scanner-btn" class="p-1 rounded-lg text-slate-400 hover:text-white hover:bg-white/10">
 					<i data-lucide="x" class="w-5 h-5"></i>
@@ -1179,33 +1204,33 @@
 						<div class="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-cyan-300"></div>
 					</div>
 					<div class="text-[10px] font-mono text-cyan-300 mt-2 bg-black/60 px-2 py-0.5 rounded">
-						CADRE DE CAPTURE NUMÉRIQUE
+						DIGITAL CAPTURE FRAME
 					</div>
 				</div>
 			</div>
 
 			<p id="camera-status-text" class="text-xs font-mono text-slate-300 text-center">
-				Alignez l'écran digital de l'appareil dans le réticule de visée.
+				Align the device's digital display inside the crosshairs.
 			</p>
 
 			<!-- Bouton de Prise de Vue -->
 			<div class="flex justify-center">
 				<button id="capture-photo-btn" class="px-5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-mono text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-2 shadow-lg shadow-cyan-500/30">
 					<i data-lucide="scan-line" class="w-4 h-4"></i>
-					<span>Capturer &amp; Reconnaître l'Affichage</span>
+					<span>Capture &amp; Recognize Display</span>
 				</button>
 			</div>
 
 			<!-- Champ de Confirmation Explicite (Sécurité Clinique) -->
 			<div id="ocr-result-box" class="p-4 rounded-xl bg-cyan-950/30 border border-cyan-500/40 space-y-3 hidden">
 				<div class="flex items-center justify-between text-xs font-mono">
-					<span class="text-slate-300">Appareil Détecté : <strong id="ocr-device-detected" class="text-cyan-400">Tensiomètre de secours</strong></span>
-					<span class="text-emerald-400 font-bold">Confiance OCR : 98.4%</span>
+					<span class="text-slate-300">Detected Device: <strong id="ocr-device-detected" class="text-cyan-400">Backup Blood Pressure Monitor</strong></span>
+					<span class="text-emerald-400 font-bold">OCR Confidence: 98.4%</span>
 				</div>
 
 				<div class="space-y-1">
 					<label class="text-[10px] font-mono uppercase text-slate-400 block">
-						Valeur extraite (modifiez si nécessaire avant validation) :
+						Extracted Value (edit if necessary before confirmation):
 					</label>
 					<div class="flex items-center gap-2">
 						<input type="text" id="ocr-recognized-input" value="121/79" class="w-full px-3 py-2 rounded-lg bg-black/60 border border-cyan-500/40 text-white font-mono text-sm font-bold focus:outline-none focus:border-cyan-400">
@@ -1213,16 +1238,16 @@
 				</div>
 
 				<div class="text-[10px] font-mono text-amber-300 leading-snug">
-					⚠️ Règle de sécurité médicale : Ne jamais consigner une mesure sans confirmation humaine explicite de l'astronaute.
+					⚠️ Medical Safety Rule: Never commit a clinical value without explicit astronaut confirmation.
 				</div>
 
 				<div class="flex items-center justify-end gap-2 pt-1">
 					<button onclick="document.getElementById('camera-scanner-modal').classList.add('hidden'); stopCameraFeed();" class="px-3 py-1.5 rounded-lg text-xs font-mono text-slate-400 hover:text-white">
-						Annuler
+						Cancel
 					</button>
 					<button id="confirm-ocr-value-btn" class="px-4 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
 						<i data-lucide="check" class="w-3.5 h-3.5"></i>
-						<span>Confirmer &amp; Enregistrer</span>
+						<span>Confirm &amp; Record</span>
 					</button>
 				</div>
 			</div>
@@ -1246,16 +1271,16 @@
 						</span>
 					</div>
 					<p class="text-xs text-slate-400 leading-relaxed max-w-sm">
-						Cockpit autonome de surveillance clinique spatiale en microgravité et espace profond. Conçu pour le NASA Space Apps Challenge 2026.
+						Autonomous space clinical telemetry cockpit for microgravity and deep space operations. Built for the NASA Space Apps Challenge 2026.
 					</p>
 					<div class="flex items-center gap-2 text-[11px] text-slate-400">
 						<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-						<span>Plateforme Clinique Opérationnelle</span>
+						<span>Operational Clinical Platform</span>
 					</div>
 				</div>
 
 				<div class="md:col-span-4 text-left">
-					<h4 class="text-xs font-mono font-bold uppercase tracking-wider text-white mb-4">Navigation Rapide</h4>
+					<h4 class="text-xs font-mono font-bold uppercase tracking-wider text-white mb-4">Quick Navigation</h4>
 					<ul class="space-y-2 text-xs font-mono text-slate-400">
 						<li>
 							<a href="index.html#accueil" class="hover:text-cyan-300 transition-colors flex items-center gap-1.5">
@@ -1264,29 +1289,29 @@
 						</li>
 						<li>
 							<a href="index.html#equipements" class="hover:text-cyan-300 transition-colors flex items-center gap-1.5">
-								<i data-lucide="chevron-right" class="w-3.5 h-3.5 text-blue-500"></i> Les 6 Équipements Spatiaux
+								<i data-lucide="chevron-right" class="w-3.5 h-3.5 text-blue-500"></i> The 6 Space Devices
 							</a>
 						</li>
 						<li>
 							<a href="dashboard.html" class="hover:text-cyan-300 transition-colors flex items-center gap-1.5 text-cyan-400 font-bold">
-								<i data-lucide="chevron-right" class="w-3.5 h-3.5 text-cyan-400"></i> Tableau de bord complet
+								<i data-lucide="chevron-right" class="w-3.5 h-3.5 text-cyan-400"></i> Full Clinical Cockpit
 							</a>
 						</li>
 						<li>
 							<a href="index.html#donnees" class="hover:text-cyan-300 transition-colors flex items-center gap-1.5">
-								<i data-lucide="chevron-right" class="w-3.5 h-3.5 text-blue-500"></i> Données Ouvertes NASA
+								<i data-lucide="chevron-right" class="w-3.5 h-3.5 text-blue-500"></i> NASA Open Data
 							</a>
 						</li>
 						<li>
 							<a href="index.html#equipe" class="hover:text-cyan-300 transition-colors flex items-center gap-1.5">
-								<i data-lucide="chevron-right" class="w-3.5 h-3.5 text-blue-500"></i> Équipe 404
+								<i data-lucide="chevron-right" class="w-3.5 h-3.5 text-blue-500"></i> Team 404
 							</a>
 						</li>
 					</ul>
 				</div>
 
 				<div class="md:col-span-3 text-left">
-					<h4 class="text-xs font-mono font-bold uppercase tracking-wider text-white mb-4">Événement</h4>
+					<h4 class="text-xs font-mono font-bold uppercase tracking-wider text-white mb-4">Event</h4>
 					<div class="space-y-3 text-xs font-mono text-slate-400">
 						<div class="flex items-center gap-2">
 							<i data-lucide="globe" class="w-4 h-4 text-cyan-400 shrink-0"></i>
@@ -1297,7 +1322,7 @@
 							<span>NASA Space Apps Challenge</span>
 						</div>
 						<div class="p-3 rounded-lg bg-white/5 border border-white/5 text-[11px] text-slate-400">
-							Données de vol basées sur l'Agence Spatiale Canadienne (Astroskin ISS) et le TRISH / NASA (EmbracePlus &amp; Artemis).
+							Flight data based on the Canadian Space Agency (Astroskin ISS) and TRISH / NASA (EmbracePlus &amp; Artemis).
 						</div>
 					</div>
 				</div>
@@ -1306,10 +1331,10 @@
 
 			<div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-400 border-t border-white/5">
 				<div>
-					© 2026 Santellite • Équipe 404 Introuvable. Tous droits réservés.
+					© 2026 Santellite • Team 404 Introuvable. Tous droits réservés.
 				</div>
 				<div>
-					Développé pour la santé et la sécurité des équipages spatiaux.
+					Developed for astronaut crew health and deep space mission safety.
 				</div>
 			</div>
 		</div>
@@ -1326,5 +1351,58 @@
 			window.lucide.createIcons();
 		}
 	</script>
+
+	<!-- Google Translate Integration & Language Switcher -->
+	<script>
+		function googleTranslateElementInit() {
+			if (window.google && window.google.translate) {
+				new window.google.translate.TranslateElement({
+					pageLanguage: 'en',
+					includedLanguages: 'en,fr',
+					layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
+					autoDisplay: false
+				}, 'google_translate_element');
+			}
+		}
+
+		function updateLangSwitcherUI(lang) {
+			var btnEn = document.getElementById('lang-btn-en');
+			var btnFr = document.getElementById('lang-btn-fr');
+			if (!btnEn || !btnFr) return;
+			if (lang === 'fr') {
+				btnFr.className = 'px-2.5 py-1 rounded-full text-[11px] font-semibold transition-all flex items-center gap-1.5 bg-sky-400 text-slate-950 font-bold shadow-[0_0_12px_rgba(56,189,248,0.4)]';
+				btnEn.className = 'px-2.5 py-1 rounded-full text-[11px] font-semibold transition-all flex items-center gap-1.5 text-slate-400 hover:text-white';
+			} else {
+				btnEn.className = 'px-2.5 py-1 rounded-full text-[11px] font-semibold transition-all flex items-center gap-1.5 bg-white text-slate-950 font-bold shadow-[0_0_12px_rgba(255,255,255,0.25)]';
+				btnFr.className = 'px-2.5 py-1 rounded-full text-[11px] font-semibold transition-all flex items-center gap-1.5 text-slate-400 hover:text-white';
+			}
+		}
+
+		function changeAppLanguage(lang) {
+			var hostname = window.location.hostname;
+			var cookieVal = '/en/' + lang;
+			document.cookie = 'googtrans=' + cookieVal + '; path=/; domain=' + hostname;
+			document.cookie = 'googtrans=' + cookieVal + '; path=/;';
+			updateLangSwitcherUI(lang);
+			var select = document.querySelector('.goog-te-combo');
+			if (select) {
+				select.value = lang;
+				select.dispatchEvent(new Event('change'));
+			} else {
+				window.location.reload();
+			}
+		}
+
+		document.addEventListener('DOMContentLoaded', function() {
+			var match = document.cookie.match(/googtrans=\/en\/(fr|en)/);
+			if (match && match[1] === 'fr') {
+				updateLangSwitcherUI('fr');
+			} else {
+				updateLangSwitcherUI('en');
+			}
+		});
+	</script>
+	<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
+
 </body>
 </html>

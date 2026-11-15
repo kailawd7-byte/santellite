@@ -5,12 +5,12 @@ import { ArrowUpRight, Activity } from "lucide-react";
 
 export default function HeroWithVideo() {
   const partners = [
-    { label: "NASA Space Apps 2026", sub: "Challenge International" },
-    { label: "Libreville, Gabon", sub: "Site Local Officiel" },
-    { label: "Agence Spatiale Canadienne", sub: "Astroskin Flight Heritage" },
-    { label: "Empatica EmbracePlus", sub: "Recherche Spatiale NASA / TRISH" },
-    { label: "NASA Ames & Condor Inst.", sub: "Actigraphie ARCHeR Artemis II" },
-    { label: "NASA Human Research", sub: "Dosimétrie & Ultrasons REMS" },
+    { label: "NASA Space Apps 2026", sub: "Global Hackathon" },
+    { label: "Libreville, Gabon", sub: "Official Local Event" },
+    { label: "Canadian Space Agency", sub: "Astroskin Flight Heritage" },
+    { label: "Empatica EmbracePlus", sub: "NASA / TRISH Space Research" },
+    { label: "NASA Ames & Condor Inst.", sub: "ARCHeR Artemis II Actigraphy" },
+    { label: "NASA Human Research", sub: "Dosimetry & REMS Ultrasound" },
   ];
 
   return (
@@ -19,7 +19,7 @@ export default function HeroWithVideo() {
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <img
           src="/images/hero-earth-sunrise-space.webp"
-          alt="Vue orbitale haute définition de la Terre depuis l'espace au lever du soleil"
+          alt="High definition orbital sunrise over Earth from space"
           className="w-full h-full object-cover object-[center_35%] scale-105 transition-transform duration-1000 ease-out brightness-105 contrast-110"
         />
         {/* Soft, cinematic dark gradients for effortless WCAG AAA text legibility */}
@@ -44,15 +44,15 @@ export default function HeroWithVideo() {
 
         {/* Large Centered Headline with Apple-style metallic gradient */}
         <h1 className="reveal-on-scroll delay-100 text-4xl sm:text-6xl lg:text-7xl font-mono font-extrabold tracking-tight text-white leading-[1.08] uppercase mb-6 drop-shadow-md">
-          Surveillance Continue. <br />
+          Continuous Monitoring. <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-100 to-slate-400/80">
-            Santé Spatiale en Temps Réel.
+            Real-Time Space Health.
           </span>
         </h1>
 
         {/* Centered Subtitle */}
         <p className="reveal-on-scroll delay-200 max-w-3xl mx-auto text-base sm:text-lg text-slate-300/90 font-normal leading-relaxed mb-10">
-          Plateforme clinique autonome interconnectant <strong className="text-white font-semibold">6 dispositifs spatiaux de pointe</strong> (maillot biométrique <strong>Astroskin</strong>, montre médicale <strong>EmbracePlus</strong>, actigraphes spatiaux <strong>Actiwatch / ActLumus Artemis II</strong>, dosimètre <strong>HRP</strong>, échographe <strong>REMS</strong> et <strong>biocapteurs</strong>) pour surveiller la santé des astronautes 24/7 en microgravité et anticiper les urgences sans latence Terre.
+          Autonomous clinical platform interconnecting <strong className="text-white font-semibold">6 cutting-edge space devices</strong> (Astroskin biometric smart shirt, EmbracePlus medical watch, Actiwatch / ActLumus Artemis II space actigraphs, HRP radiation dosimeter, REMS ultrasound bone scanner, and saliva biosensors) to monitor astronaut health 24/7 in microgravity and anticipate medical emergencies with zero Earth latency.
         </p>
 
         {/* Apple-style Action Buttons */}
@@ -61,13 +61,13 @@ export default function HeroWithVideo() {
             href="/dashboard.html"
             className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-white hover:bg-slate-100 text-slate-950 font-mono text-xs sm:text-sm font-semibold uppercase tracking-wider transition-all shadow-[0_0_25px_rgba(255,255,255,0.2)] active:scale-95 flex items-center justify-center gap-2"
           >
-            Lancer le Tableau de Bord <ArrowUpRight className="w-4 h-4 text-slate-950" />
+            Launch Telemetry Dashboard <ArrowUpRight className="w-4 h-4 text-slate-950" />
           </a>
           <a
             href="#equipements"
             className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-white/[0.05] hover:bg-white/[0.1] text-white border border-white/[0.12] hover:border-white/[0.25] font-mono text-xs sm:text-sm font-semibold uppercase tracking-wider transition-all active:scale-95 flex items-center justify-center gap-2 backdrop-blur-md"
           >
-            Voir les 6 Équipements
+            Explore 6 Space Devices
           </a>
         </div>
       </div>
@@ -83,7 +83,7 @@ export default function HeroWithVideo() {
 
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 px-6">
             <div className="text-xs font-mono uppercase tracking-widest text-slate-400 shrink-0 font-semibold border-b md:border-b-0 md:border-r border-white/10 pb-2 md:pb-0 md:pr-6">
-              Standards Spatiaux
+              Spaceflight Standards
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 md:flex items-center justify-between gap-6 w-full text-center md:text-left">

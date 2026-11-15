@@ -7,23 +7,23 @@ export default function NasaChallengeSection() {
   const cards = [
     {
       id: "01",
-      title: "Tension Artérielle Sans Brassard",
-      desc: "Calcul continu de la pression artérielle par temps de transit de l'onde de pouls (PTT), sans réveiller l'astronaute avec un brassard pneumatique.",
+      title: "Cuffless Blood Pressure",
+      desc: "Continuous arterial pressure computation via Pulse Transit Time (PTT), eliminating the need to awaken astronauts with uncomfortable pneumatic cuffs.",
     },
     {
       id: "02",
-      title: "Électrocardiogramme Continu",
-      desc: "Analyse 3 dérivations en temps réel pour détecter les arythmies, la variabilité de la fréquence cardiaque (VFC) et le stress opérationnel.",
+      title: "Continuous 3-Lead ECG",
+      desc: "Real-time 3-lead electrocardiography to detect arrhythmias, heart rate variability (HRV), and operational stress during critical mission phases.",
     },
     {
       id: "03",
-      title: "Oxygénation & Thermorégulation",
-      desc: "Capteurs SpO2 et température cutanée en continu pour anticiper l'hypoxie lors des sorties extravéhiculaires (EVA) et les coups de chaleur.",
+      title: "Oxygenation & Thermoregulation",
+      desc: "Continuous SpO2 and skin temperature monitoring to anticipate hypoxia during extravehicular activity (EVA) and core heat exhaustion.",
     },
     {
       id: "04",
-      title: "Diagnostic Clinique Embarqué",
-      desc: "Algorithmes locaux capables de poser une alerte vitale immédiate, indépendamment du délai radio de communication avec la Terre.",
+      title: "Embedded Clinical Diagnosis",
+      desc: "Onboard algorithms capable of triggering immediate life-critical alerts independently of ground radio communication blackout with Earth.",
     },
   ];
 
@@ -35,32 +35,32 @@ export default function NasaChallengeSection() {
           {/* Left Column */}
           <div className="reveal-left lg:col-span-5 text-left">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-white/[0.05] text-slate-300 border border-white/[0.1] mb-5 backdrop-blur-md">
-              <span className="text-sky-400">✦</span> Le Défi NASA Space Apps
+              <span className="text-sky-400">✦</span> The NASA Space Apps Challenge
             </div>
             
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-mono font-extrabold text-white tracking-tight uppercase leading-[1.12] mb-6">
-              Microgravité Complexe. <br />
+              Complex Microgravity. <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-100 to-slate-400/80">
-                Surveillance Continue.
+                Continuous Monitoring.
               </span>
             </h2>
 
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-6 font-normal">
-              Dans l&apos;espace, l&apos;absence de gravité bouleverse la biologie humaine : redistribution des liquides céphaliques, déconditionnement cardiovasculaire, perte de masse osseuse et désynchronisation circadienne.
+              In space, the absence of gravity fundamentally disrupts human biology: cephalic fluid shift, cardiovascular deconditioning, bone mineral loss, and circadian rhythm desynchronization.
             </p>
             <p className="text-slate-400 text-sm sm:text-base leading-relaxed mb-8">
-              Lors d&apos;une mission vers Mars ou la Lune, l&apos;équipage ne peut pas attendre une réponse des médecins sur Terre en cas d&apos;urgence. Santellite connecte les équipements biomédicaux à une intelligence clinique autonome.
+              During deep-space voyages to the Moon or Mars, astronauts cannot wait up to 44 minutes for a medical decision from Earth ground control. Santellite connects flight-proven biometric devices to autonomous onboard clinical intelligence.
             </p>
 
             <a
               href="#equipements"
               className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white/[0.06] hover:bg-white/[0.12] border border-white/[0.15] hover:border-white/[0.3] text-white font-mono text-xs font-semibold uppercase tracking-wider transition-all active:scale-95 shadow-md"
             >
-              Découvrir les 6 Équipements <ArrowUpRight className="w-3.5 h-3.5 text-sky-400" />
+              Explore the 6 Devices <ArrowUpRight className="w-3.5 h-3.5 text-sky-400" />
             </a>
           </div>
 
-          {/* Right Column : 4 Sculpted Dark Glass Cards (High-End Luxury Style) */}
+          {/* Right Column : 4 Sculpted Dark Glass Cards */}
           <div className="reveal-right lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
             {cards.map((c) => (
               <div
