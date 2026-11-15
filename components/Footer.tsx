@@ -78,7 +78,7 @@ export default function Footer() {
                 <span>NASA Space Apps Challenge</span>
               </div>
               <div className="p-3 rounded-lg bg-white/5 border border-white/5 text-[11px] text-slate-400">
-                Basé sur les standards de vol spatiaux : CSA (Astroskin ISS), TRISH / NASA (EmbracePlus), et NASA Artemis II (SOMNOwatch).
+                Basé sur les standards de vol spatiaux : CSA (Astroskin ISS), TRISH / NASA (EmbracePlus), et NASA ARCHeR Artemis II (Actiwatch & ActLumus).
               </div>
             </div>
           </div>

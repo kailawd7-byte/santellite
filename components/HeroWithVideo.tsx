@@ -9,7 +9,7 @@ export default function HeroWithVideo() {
     { label: "Libreville, Gabon", sub: "Site Local Officiel" },
     { label: "Agence Spatiale Canadienne (ASC)", sub: "Astroskin Flight Heritage" },
     { label: "Empatica EmbracePlus", sub: "Recherche Spatiale NASA / TRISH" },
-    { label: "NASA Artemis II", sub: "Actigraphie SOMNOwatch plus" },
+    { label: "NASA Ames & Condor Inst.", sub: "Actigraphie ARCHeR Artemis II" },
     { label: "NASA Human Research Program", sub: "Dosimétrie & Ultrasons REMS" },
   ];
 
@@ -52,7 +52,7 @@ export default function HeroWithVideo() {
 
         {/* Centered Subtitle */}
         <p className="max-w-3xl mx-auto text-base sm:text-lg text-slate-200/90 font-normal leading-relaxed mb-10">
-          Plateforme clinique autonome interconnectant <strong className="text-cyan-300 font-semibold">6 dispositifs spatiaux de pointe</strong> (maillot biométrique <strong>Astroskin</strong>, montres médicales <strong>EmbracePlus</strong> & <strong>SOMNOwatch Artemis</strong>, dosimètre <strong>HRP</strong>, échographe <strong>REMS</strong> et <strong>biocapteurs</strong>) pour surveiller la santé des astronautes 24/7 en microgravité et anticiper les urgences sans latence Terre.
+          Plateforme clinique autonome interconnectant <strong className="text-cyan-300 font-semibold">6 dispositifs spatiaux de pointe</strong> (maillot biométrique <strong>Astroskin</strong>, montre médicale <strong>EmbracePlus</strong>, actigraphes spatiaux <strong>Actiwatch / ActLumus Artemis II</strong>, dosimètre <strong>HRP</strong>, échographe <strong>REMS</strong> et <strong>biocapteurs</strong>) pour surveiller la santé des astronautes 24/7 en microgravité et anticiper les urgences sans latence Terre.
         </p>
 
         {/* Two Action Buttons (Mockup: Dark Button + White Button) */}

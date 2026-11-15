@@ -128,6 +128,30 @@ function switchAstroskinImage(mode) {
 	}
 }
 
+function switchActigraphyImage(mode) {
+	var img = document.getElementById("actigraphy-main-img");
+	var badge = document.getElementById("actigraphy-badge");
+	var btnSol = document.getElementById("actigraphy-btn-sol");
+	var btnVol = document.getElementById("actigraphy-btn-vol");
+
+	if (!img || !badge || !btnSol || !btnVol) return;
+
+	if (mode === "sol") {
+		img.src = "./images/actiwatch-spectrum-pro.jpg";
+		badge.innerHTML = '<i data-lucide="flask-conical" class="w-3.5 h-3.5 text-purple-400"></i><span>● Référence Sol • Actiwatch Spectrum Plus (NASA Ames)</span>';
+		btnSol.className = "px-4 py-2 rounded-lg text-xs font-mono font-semibold transition-all border bg-indigo-600 text-white border-indigo-500 shadow-md";
+		btnVol.className = "px-4 py-2 rounded-lg text-xs font-mono font-semibold transition-all border bg-white/5 text-slate-300 border-white/10 hover:bg-white/10";
+	} else {
+		img.src = "./images/somnowatch-artemis-actigraphy.jpg";
+		badge.innerHTML = '<i data-lucide="rocket" class="w-3.5 h-3.5 text-cyan-400"></i><span>● En Vol Orion • ActLumus / Artemis II</span>';
+		btnVol.className = "px-4 py-2 rounded-lg text-xs font-mono font-semibold transition-all border bg-indigo-600 text-white border-indigo-500 shadow-md";
+		btnSol.className = "px-4 py-2 rounded-lg text-xs font-mono font-semibold transition-all border bg-white/5 text-slate-300 border-white/10 hover:bg-white/10";
+	}
+	if (window.lucide && typeof window.lucide.createIcons === "function") {
+		window.lucide.createIcons();
+	}
+}
+
 /* ==========================================================================
    SIMULATEUR TÉLÉMÉTRIQUE NASA IA — 6 CAPTEURS SPATIAUX (6 SCÉNARIOS)
    ========================================================================== */
@@ -1008,6 +1032,7 @@ function initECGWave() {
 window.switchProductTab = switchProductTab;
 window.switchAstroskinImage = switchAstroskinImage;
 window.switchEmbracePlusImage = switchEmbracePlusImage;
+window.switchActigraphyImage = switchActigraphyImage;
 window.applySimScenario = applySimScenario;
 window.triggerShockTest = triggerShockTest;
 

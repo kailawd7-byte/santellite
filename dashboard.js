@@ -548,16 +548,16 @@ var simData = {
 	actigraphy: {
 		name: "Équipage Artemis II • Mission Circumlunaire",
 		missionStatus: "• SOL 08 • MISSION ARTEMIS II • ESPACE PROFOND",
-		badgeDevice: "6. Montre d'Actigraphie SOMNOwatch plus (Artemis II)",
+		badgeDevice: "6. Actigraphie Spatiale ARCHeR (ActLumus / Orion)",
 		statusText: "Alerte : Dérèglement Circadien",
 		statusColor: "text-indigo-400 bg-indigo-500/15 border-indigo-500/40",
 		dotColor: "bg-indigo-400",
 		aiConfidence: "98.7%",
-		aiDiagnosis: "Bio-IA : Désynchronisation circadienne détectée. L'actimètre enregistre une baisse d'exposition lumineuse diurne et une fragmentation du sommeil paradoxal.",
+		aiDiagnosis: "Bio-IA : Désynchronisation circadienne détectée. L'actimètre ActLumus enregistre une baisse d'exposition lumineuse diurne et une accélérométrie poignet fragmentée (32 Hz) en phase de sommeil.",
 
-		recTitle: "Protocole de Resynchronisation Circadienne (Artemis)",
+		recTitle: "Protocole de Resynchronisation Circadienne (ARCHeR)",
 		recDesc: "Activation de la luminothérapie bleue/blanche enrichie (10 000 Lux) dans le cockpit d'Orion pendant 45 minutes pour stimuler la mélanopsine rétinienne. Verrouillage du module de sommeil avec occultation totale.",
-		recDevice: "Montre d'Actigraphie SOMNOwatch plus (NASA Artemis HRP)",
+		recDevice: "Actigraphe Spatial ActLumus (Condor Inst. / NASA Ames)",
 		recBoxClass: "bg-indigo-500/10 border-indigo-500/40",
 
 		bp: "122/80",

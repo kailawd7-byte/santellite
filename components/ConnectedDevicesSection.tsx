@@ -24,6 +24,8 @@ import {
   Sun,
   Footprints,
   Moon,
+  FlaskConical,
+  Rocket,
 } from "lucide-react";
 
 export default function ConnectedDevicesSection() {
@@ -33,6 +35,7 @@ export default function ConnectedDevicesSection() {
 
   const [astroskinImgMode, setAstroskinImgMode] = useState<"iss" | "diagram">("iss");
   const [embraceImgMode, setEmbraceImgMode] = useState<"front" | "sensors">("front");
+  const [actigraphyImgMode, setActigraphyImgMode] = useState<"sol" | "vol">("sol");
 
   const products = [
     { id: "astroskin", label: "1. Maillot Astroskin", icon: Shield, color: "text-blue-500" },
@@ -40,7 +43,7 @@ export default function ConnectedDevicesSection() {
     { id: "echolight", label: "3. Échographe REMS", icon: Bone, color: "text-emerald-400" },
     { id: "dosimeter", label: "4. Dosimètre Radiations", icon: AlertTriangle, color: "text-amber-400" },
     { id: "saliva", label: "5. Biocapteur Salivaire", icon: Droplets, color: "text-purple-400" },
-    { id: "actigraphy", label: "6. Montre d'Actigraphie", icon: Moon, color: "text-indigo-400" },
+    { id: "actigraphy", label: "6. Actigraphie Spatiale", icon: Moon, color: "text-indigo-400" },
   ];
 
   return (
@@ -628,23 +631,59 @@ export default function ConnectedDevicesSection() {
           </div>
         )}
 
-        {/* ================= 6. MONTRE D'ACTIGRAPHIE ARTEMIS (SOMNOWATCH PLUS) ================= */}
+        {/* ================= 6. ACTIGRAPHIE SPATIALE : DU LABORATOIRE AU VOL ARTEMIS II ================= */}
         {activeProduct === "actigraphy" && (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#070d1a] border border-white/10 rounded-3xl p-6 sm:p-10 shadow-2xl">
-            {/* Left: Image */}
+            {/* Left: Image with Toggle Sol / Vol */}
             <div className="lg:col-span-6 flex flex-col gap-4">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-black/60 border border-white/10 group shadow-xl">
                 <Image
-                  src="/images/somnowatch-artemis-actigraphy.jpg"
-                  alt="Montre d'actigraphie spatiale SOMNOwatch plus utilisée par la NASA pour Artemis II"
+                  src={
+                    actigraphyImgMode === "sol"
+                      ? "/images/actiwatch-spectrum-pro.jpg"
+                      : "/images/somnowatch-artemis-actigraphy.jpg"
+                  }
+                  alt={
+                    actigraphyImgMode === "sol"
+                      ? "Actiwatch Spectrum PRO par Philips Respironics - Référence au sol NASA Ames"
+                      : "Actigraphe de vol spatiale Artemis II"
+                  }
                   fill
                   className="object-contain p-2 group-hover:scale-105 transition-transform duration-300"
                   priority
                 />
                 <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/15 text-[11px] font-mono text-indigo-300 flex items-center gap-1.5">
                   <Moon className="w-3.5 h-3.5 text-indigo-400" />
-                  <span>● Port Réel Artemis II • SOMNOwatch plus</span>
+                  <span>
+                    {actigraphyImgMode === "sol"
+                      ? "● Référence Sol • Actiwatch Spectrum Plus (NASA Ames)"
+                      : "● En Vol Orion • ActLumus / Artemis II"}
+                  </span>
                 </div>
+              </div>
+
+              {/* View Switch Buttons */}
+              <div className="flex gap-2">
+                <button
+                  onClick={() => setActigraphyImgMode("sol")}
+                  className={`px-4 py-2 rounded-lg text-xs font-mono font-semibold transition-all border ${
+                    actigraphyImgMode === "sol"
+                      ? "bg-indigo-600 text-white border-indigo-500 shadow-md shadow-indigo-600/30"
+                      : "bg-white/5 text-slate-300 border-white/10 hover:bg-white/10"
+                  }`}
+                >
+                  Vue 1 : Actiwatch (Sol)
+                </button>
+                <button
+                  onClick={() => setActigraphyImgMode("vol")}
+                  className={`px-4 py-2 rounded-lg text-xs font-mono font-semibold transition-all border ${
+                    actigraphyImgMode === "vol"
+                      ? "bg-indigo-600 text-white border-indigo-500 shadow-md shadow-indigo-600/30"
+                      : "bg-white/5 text-slate-300 border-white/10 hover:bg-white/10"
+                  }`}
+                >
+                  Vue 2 : En Vol (Artemis II)
+                </button>
               </div>
             </div>
 
@@ -652,13 +691,13 @@ export default function ConnectedDevicesSection() {
             <div className="lg:col-span-6 text-left space-y-6">
               <div>
                 <span className="text-xs font-mono text-indigo-400 font-bold uppercase tracking-widest">
-                  NASA • PROGRAMME ARTEMIS
+                  NASA AMES RESEARCH CENTER · CONDOR INSTRUMENTS (BRÉSIL)
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-mono font-bold text-white uppercase mt-1">
-                  Montre d&apos;Actigraphie (SOMNOwatch plus)
+                  Actigraphie Spatiale : Du Laboratoire au Vol Artemis II
                 </h3>
                 <p className="text-slate-300 text-sm sm:text-base leading-relaxed mt-3">
-                  Appareil porté au poignet, déjà utilisé par la NASA pour certains astronautes de la mission Artemis II. Il mesure en continu les mouvements, les habitudes de sommeil et l&apos;exposition à la lumière, afin de comprendre comment le corps s&apos;adapte au cycle jour-nuit perturbé des missions spatiales.
+                  Ces appareils ressemblent à des montres numériques, mais n&apos;affichent pas toujours l&apos;heure, afin de ne pas biaiser les études sur la perception du temps en mission. Deux générations d&apos;actigraphes se succèdent dans le protocole ARCHeR (Artemis Research for Crew Health and Readiness) : l&apos;historique Actiwatch Spectrum Plus de Philips pour établir les données de référence au sol, et l&apos;ActLumus de la startup brésilienne Condor Instruments, embarqué en vol à bord de la capsule Orion depuis l&apos;arrêt de la gamme Philips.
                 </p>
               </div>
 
@@ -666,41 +705,41 @@ export default function ConnectedDevicesSection() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                 <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
                   <div className="flex items-center gap-2 text-indigo-300 font-mono text-xs font-bold uppercase mb-1">
-                    <Moon className="w-4 h-4 text-indigo-400" />
-                    Suivi du Sommeil
+                    <FlaskConical className="w-4 h-4 text-purple-400" />
+                    Référence au Sol : Actiwatch
                   </div>
                   <p className="text-xs text-slate-400 leading-snug">
-                    Détection des phases de sommeil et des réveils à partir des mouvements du poignet.
+                    Utilisé au Fatigue Countermeasures Laboratory du NASA Ames Research Center pour établir les données de référence avant le vol (étude Artemis Sleep Countermeasures).
+                  </p>
+                </div>
+
+                <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
+                  <div className="flex items-center gap-2 text-indigo-300 font-mono text-xs font-bold uppercase mb-1">
+                    <Rocket className="w-4 h-4 text-cyan-400" />
+                    En Vol : ActLumus
+                  </div>
+                  <p className="text-xs text-slate-400 leading-snug">
+                    Suite à l&apos;arrêt de la gamme Actiwatch par Philips, la NASA a adopté cet actigraphe brésilien pour le suivi continu de l&apos;équipage à bord d&apos;Orion pendant Artemis II.
+                  </p>
+                </div>
+
+                <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
+                  <div className="flex items-center gap-2 text-indigo-300 font-mono text-xs font-bold uppercase mb-1">
+                    <Activity className="w-4 h-4 text-emerald-400" />
+                    Accélérométrie Haute Précision
+                  </div>
+                  <p className="text-xs text-slate-400 leading-snug">
+                    Micro-mouvements du poignet enregistrés à environ 32 Hz, pour distinguer éveil, agitation et sommeil profond.
                   </p>
                 </div>
 
                 <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
                   <div className="flex items-center gap-2 text-indigo-300 font-mono text-xs font-bold uppercase mb-1">
                     <Sun className="w-4 h-4 text-amber-400" />
-                    Exposition à la Lumière
+                    Photodétecteurs Ambiants
                   </div>
                   <p className="text-xs text-slate-400 leading-snug">
-                    Mesure de la lumière reçue, un facteur clé du dérèglement du rythme biologique.
-                  </p>
-                </div>
-
-                <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
-                  <div className="flex items-center gap-2 text-indigo-300 font-mono text-xs font-bold uppercase mb-1">
-                    <Footprints className="w-4 h-4 text-emerald-400" />
-                    Activité et Mouvement
-                  </div>
-                  <p className="text-xs text-slate-400 leading-snug">
-                    Accéléromètre longue durée pour suivre le niveau d&apos;activité au fil de la mission.
-                  </p>
-                </div>
-
-                <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
-                  <div className="flex items-center gap-2 text-indigo-300 font-mono text-xs font-bold uppercase mb-1">
-                    <Clock className="w-4 h-4 text-cyan-400" />
-                    Port Continu Léger
-                  </div>
-                  <p className="text-xs text-slate-400 leading-snug">
-                    Boîtier compact, conçu pour ne pas gêner le sommeil ni les tâches quotidiennes.
+                    Mesure de l&apos;intensité et du spectre de la lumière (bleue, rouge, verte) pour évaluer son effet sur le rythme circadien, en l&apos;absence d&apos;alternance jour-nuit naturelle.
                   </p>
                 </div>
               </div>

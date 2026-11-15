@@ -260,7 +260,7 @@
 
 				<!-- Sous-titre centré -->
 				<p class="max-w-3xl mx-auto text-base sm:text-lg text-slate-200/90 font-normal leading-relaxed mb-10">
-					Plateforme clinique autonome interconnectant <strong class="text-cyan-300 font-semibold">6 dispositifs spatiaux de pointe</strong> (maillot biométrique <strong>Astroskin</strong>, montres médicales <strong>EmbracePlus</strong> & <strong>SOMNOwatch Artemis</strong>, dosimètre <strong>HRP</strong>, échographe <strong>REMS</strong> et <strong>biocapteurs</strong>) pour surveiller la santé des astronautes 24/7 en microgravité et anticiper les urgences sans latence Terre.
+					Plateforme clinique autonome interconnectant <strong class="text-cyan-300 font-semibold">6 dispositifs spatiaux de pointe</strong> (maillot biométrique <strong>Astroskin</strong>, montre médicale <strong>EmbracePlus</strong>, actigraphes spatiaux <strong>Actiwatch / ActLumus Artemis II</strong>, dosimètre <strong>HRP</strong>, échographe <strong>REMS</strong> et <strong>biocapteurs</strong>) pour surveiller la santé des astronautes 24/7 en microgravité et anticiper les urgences sans latence Terre.
 				</p>
 
 				<!-- Deux boutons côte à côte (Bouton sombre + Bouton blanc) -->
@@ -306,8 +306,8 @@
 								<span class="text-[10px] font-mono text-slate-400 uppercase">Recherche Spatiale NASA / TRISH</span>
 							</div>
 							<div class="flex flex-col">
-								<span class="text-xs sm:text-sm font-mono font-bold text-slate-200 tracking-wide uppercase">NASA Artemis II</span>
-								<span class="text-[10px] font-mono text-slate-400 uppercase">Actigraphie SOMNOwatch</span>
+								<span class="text-xs sm:text-sm font-mono font-bold text-slate-200 tracking-wide uppercase">NASA Ames &amp; Condor Inst.</span>
+								<span class="text-[10px] font-mono text-slate-400 uppercase">Actigraphie ARCHeR Artemis II</span>
 							</div>
 							<div class="flex flex-col">
 								<span class="text-xs sm:text-sm font-mono font-bold text-slate-200 tracking-wide uppercase">NASA Human Research</span>
@@ -446,7 +446,7 @@
 						</button>
 						<button id="tab-btn-actigraphy" onclick="switchProductTab('actigraphy')" class="px-4 py-2.5 rounded-xl font-mono text-xs sm:text-sm font-semibold uppercase tracking-wider transition-all flex items-center gap-2 border bg-white/5 text-slate-300 border-white/10 hover:border-white/30 hover:bg-white/10">
 							<i data-lucide="moon" class="w-4 h-4 text-indigo-400"></i>
-							<span>6. Montre d'Actigraphie</span>
+							<span>6. Actigraphie Spatiale</span>
 						</button>
 					</div>
 				</div>
@@ -853,16 +853,26 @@
 					</div>
 				</div>
 
-				<!-- ================= 6. MONTRE D'ACTIGRAPHIE ARTEMIS (SOMNOWATCH PLUS) ================= -->
+				<!-- ================= 6. ACTIGRAPHIE SPATIALE : DU LABORATOIRE AU VOL ARTEMIS II ================= -->
 				<div id="product-pane-actigraphy" class="hidden grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#070d1a] border border-white/10 rounded-3xl p-6 sm:p-10 shadow-2xl">
-					<!-- Left: Image -->
+					<!-- Left: Image with Toggle Sol / Vol -->
 					<div class="lg:col-span-6 flex flex-col gap-4">
 						<div class="relative aspect-[4/3] rounded-2xl overflow-hidden bg-black/60 border border-white/10 group shadow-xl">
-							<img src="./images/somnowatch-artemis-actigraphy.jpg" alt="Montre d'actigraphie spatiale SOMNOwatch plus utilisée par la NASA pour Artemis II" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300">
-							<div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/15 text-[11px] font-mono text-indigo-300 flex items-center gap-1.5">
-								<i data-lucide="moon" class="w-3.5 h-3.5 text-indigo-400"></i>
-								<span>● Port Réel Artemis II • SOMNOwatch plus</span>
+							<img id="actigraphy-main-img" src="./images/actiwatch-spectrum-pro.jpg" alt="Actiwatch Spectrum PRO par Philips Respironics - Données de référence au sol NASA Ames" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300">
+							<div id="actigraphy-badge" class="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/15 text-[11px] font-mono text-indigo-300 flex items-center gap-1.5">
+								<i data-lucide="flask-conical" class="w-3.5 h-3.5 text-purple-400"></i>
+								<span>● Référence Sol • Actiwatch Spectrum Plus (NASA Ames)</span>
 							</div>
+						</div>
+
+						<!-- Boutons de bascule de vue -->
+						<div class="flex gap-2">
+							<button id="actigraphy-btn-sol" onclick="switchActigraphyImage('sol')" class="px-4 py-2 rounded-lg text-xs font-mono font-semibold transition-all border bg-indigo-600 text-white border-indigo-500 shadow-md">
+								Vue 1 : Actiwatch (Sol)
+							</button>
+							<button id="actigraphy-btn-vol" onclick="switchActigraphyImage('vol')" class="px-4 py-2 rounded-lg text-xs font-mono font-semibold transition-all border bg-white/5 text-slate-300 border-white/10 hover:bg-white/10">
+								Vue 2 : En Vol (Artemis II)
+							</button>
 						</div>
 					</div>
 
@@ -870,61 +880,61 @@
 					<div class="lg:col-span-6 text-left space-y-6">
 						<div>
 							<span class="text-xs font-mono text-indigo-400 font-bold uppercase tracking-widest">
-								NASA • PROGRAMME ARTEMIS
+								NASA AMES RESEARCH CENTER · CONDOR INSTRUMENTS (BRÉSIL)
 							</span>
 							<h3 class="text-2xl sm:text-3xl font-mono font-bold text-white uppercase mt-1">
-								Montre d'Actigraphie (SOMNOwatch plus)
+								Actigraphie Spatiale : Du Laboratoire au Vol Artemis II
 							</h3>
 							<p class="text-slate-300 text-sm sm:text-base leading-relaxed mt-3">
-								Appareil porté au poignet, déjà utilisé par la NASA pour certains astronautes de la mission Artemis II. Il mesure en continu les mouvements, les habitudes de sommeil et l'exposition à la lumière, afin de comprendre comment le corps s'adapte au cycle jour-nuit perturbé des missions spatiales.
+								Ces appareils ressemblent à des montres numériques, mais n&apos;affichent pas toujours l&apos;heure, afin de ne pas biaiser les études sur la perception du temps en mission. Deux générations d&apos;actigraphes se succèdent dans le protocole ARCHeR (Artemis Research for Crew Health and Readiness) : l&apos;historique Actiwatch Spectrum Plus de Philips pour établir les données de référence au sol, et l&apos;ActLumus de la startup brésilienne Condor Instruments, embarqué en vol à bord de la capsule Orion depuis l&apos;arrêt de la gamme Philips.
 							</p>
 						</div>
 
 						<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
 							<div class="p-3.5 rounded-xl bg-white/5 border border-white/5">
 								<div class="flex items-center gap-2 text-indigo-300 font-mono text-xs font-bold uppercase mb-1">
-									<i data-lucide="moon" class="w-4 h-4 text-indigo-400"></i>
-									Suivi du Sommeil
+									<i data-lucide="flask-conical" class="w-4 h-4 text-purple-400"></i>
+									Référence au Sol : Actiwatch
 								</div>
 								<p class="text-xs text-slate-400 leading-snug">
-									Détection des phases de sommeil et des réveils à partir des mouvements du poignet.
+									Utilisé au Fatigue Countermeasures Laboratory du NASA Ames Research Center pour établir les données de référence avant le vol (étude Artemis Sleep Countermeasures).
+								</p>
+							</div>
+
+							<div class="p-3.5 rounded-xl bg-white/5 border border-white/5">
+								<div class="flex items-center gap-2 text-indigo-300 font-mono text-xs font-bold uppercase mb-1">
+									<i data-lucide="rocket" class="w-4 h-4 text-cyan-400"></i>
+									En Vol : ActLumus
+								</div>
+								<p class="text-xs text-slate-400 leading-snug">
+									Suite à l&apos;arrêt de la gamme Actiwatch par Philips, la NASA a adopté cet actigraphe brésilien pour le suivi continu de l&apos;équipage à bord d&apos;Orion pendant Artemis II.
+								</p>
+							</div>
+
+							<div class="p-3.5 rounded-xl bg-white/5 border border-white/5">
+								<div class="flex items-center gap-2 text-indigo-300 font-mono text-xs font-bold uppercase mb-1">
+									<i data-lucide="activity" class="w-4 h-4 text-emerald-400"></i>
+									Accélérométrie Haute Précision
+								</div>
+								<p class="text-xs text-slate-400 leading-snug">
+									Micro-mouvements du poignet enregistrés à environ 32 Hz, pour distinguer éveil, agitation et sommeil profond.
 								</p>
 							</div>
 
 							<div class="p-3.5 rounded-xl bg-white/5 border border-white/5">
 								<div class="flex items-center gap-2 text-indigo-300 font-mono text-xs font-bold uppercase mb-1">
 									<i data-lucide="sun" class="w-4 h-4 text-amber-400"></i>
-									Exposition à la Lumière
+									Photodétecteurs Ambiants
 								</div>
 								<p class="text-xs text-slate-400 leading-snug">
-									Mesure de la lumière reçue, un facteur clé du dérèglement du rythme biologique.
-								</p>
-							</div>
-
-							<div class="p-3.5 rounded-xl bg-white/5 border border-white/5">
-								<div class="flex items-center gap-2 text-indigo-300 font-mono text-xs font-bold uppercase mb-1">
-									<i data-lucide="footprints" class="w-4 h-4 text-emerald-400"></i>
-									Activité et Mouvement
-								</div>
-								<p class="text-xs text-slate-400 leading-snug">
-									Accéléromètre longue durée pour suivre le niveau d'activité au fil de la mission.
-								</p>
-							</div>
-
-							<div class="p-3.5 rounded-xl bg-white/5 border border-white/5">
-								<div class="flex items-center gap-2 text-indigo-300 font-mono text-xs font-bold uppercase mb-1">
-									<i data-lucide="clock" class="w-4 h-4 text-cyan-400"></i>
-									Port Continu Léger
-								</div>
-								<p class="text-xs text-slate-400 leading-snug">
-									Boîtier compact, conçu pour ne pas gêner le sommeil ni les tâches quotidiennes.
+									Mesure de l&apos;intensité et du spectre de la lumière (bleue, rouge, verte) pour évaluer son effet sur le rythme circadien, en l&apos;absence d&apos;alternance jour-nuit naturelle.
 								</p>
 							</div>
 						</div>
 
 						<div class="pt-2">
 							<a href="#simulateur" onclick="applySimScenario('actigraphy')" class="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-indigo-300 hover:text-white transition-colors group cursor-pointer">
-								<span>Visualiser la télémétrie de l'actigraphie dans le simulateur</span>
+								<span>Visualiser la télémétrie de l&apos;actigraphie dans le simulateur</span>
 								<i data-lucide="chevron-right" class="w-4 h-4 text-indigo-400 group-hover:translate-x-1 transition-transform"></i>
 							</a>
 						</div>
@@ -1009,16 +1019,26 @@
 					</div>
 				</div>
 
-				<!-- ================= 6. MONTRE D'ACTIGRAPHIE ARTEMIS (SOMNOWATCH PLUS) ================= -->
+				<!-- ================= 6. ACTIGRAPHIE SPATIALE : DU LABORATOIRE AU VOL ARTEMIS II ================= -->
 				<div id="product-pane-actigraphy" class="hidden grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#070d1a] border border-white/10 rounded-3xl p-6 sm:p-10 shadow-2xl">
-					<!-- Left: Image -->
+					<!-- Left: Image with Toggle Sol / Vol -->
 					<div class="lg:col-span-6 flex flex-col gap-4">
 						<div class="relative aspect-[4/3] rounded-2xl overflow-hidden bg-black/60 border border-white/10 group shadow-xl">
-							<img src="./images/somnowatch-artemis-actigraphy.jpg" alt="Montre d'actigraphie spatiale SOMNOwatch plus utilisée par la NASA pour Artemis II" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300">
-							<div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/15 text-[11px] font-mono text-indigo-300 flex items-center gap-1.5">
-								<i data-lucide="moon" class="w-3.5 h-3.5 text-indigo-400"></i>
-								<span>● Port Réel Artemis II • SOMNOwatch plus</span>
+							<img id="actigraphy-main-img" src="./images/actiwatch-spectrum-pro.jpg" alt="Actiwatch Spectrum PRO par Philips Respironics - Données de référence au sol NASA Ames" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300">
+							<div id="actigraphy-badge" class="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/15 text-[11px] font-mono text-indigo-300 flex items-center gap-1.5">
+								<i data-lucide="flask-conical" class="w-3.5 h-3.5 text-purple-400"></i>
+								<span>● Référence Sol • Actiwatch Spectrum Plus (NASA Ames)</span>
 							</div>
+						</div>
+
+						<!-- Boutons de bascule de vue -->
+						<div class="flex gap-2">
+							<button id="actigraphy-btn-sol" onclick="switchActigraphyImage('sol')" class="px-4 py-2 rounded-lg text-xs font-mono font-semibold transition-all border bg-indigo-600 text-white border-indigo-500 shadow-md">
+								Vue 1 : Actiwatch (Sol)
+							</button>
+							<button id="actigraphy-btn-vol" onclick="switchActigraphyImage('vol')" class="px-4 py-2 rounded-lg text-xs font-mono font-semibold transition-all border bg-white/5 text-slate-300 border-white/10 hover:bg-white/10">
+								Vue 2 : En Vol (Artemis II)
+							</button>
 						</div>
 					</div>
 
@@ -1026,61 +1046,61 @@
 					<div class="lg:col-span-6 text-left space-y-6">
 						<div>
 							<span class="text-xs font-mono text-indigo-400 font-bold uppercase tracking-widest">
-								NASA • PROGRAMME ARTEMIS
+								NASA AMES RESEARCH CENTER · CONDOR INSTRUMENTS (BRÉSIL)
 							</span>
 							<h3 class="text-2xl sm:text-3xl font-mono font-bold text-white uppercase mt-1">
-								Montre d'Actigraphie (SOMNOwatch plus)
+								Actigraphie Spatiale : Du Laboratoire au Vol Artemis II
 							</h3>
 							<p class="text-slate-300 text-sm sm:text-base leading-relaxed mt-3">
-								Appareil porté au poignet, déjà utilisé par la NASA pour certains astronautes de la mission Artemis II. Il mesure en continu les mouvements, les habitudes de sommeil et l'exposition à la lumière, afin de comprendre comment le corps s'adapte au cycle jour-nuit perturbé des missions spatiales.
+								Ces appareils ressemblent à des montres numériques, mais n&apos;affichent pas toujours l&apos;heure, afin de ne pas biaiser les études sur la perception du temps en mission. Deux générations d&apos;actigraphes se succèdent dans le protocole ARCHeR (Artemis Research for Crew Health and Readiness) : l&apos;historique Actiwatch Spectrum Plus de Philips pour établir les données de référence au sol, et l&apos;ActLumus de la startup brésilienne Condor Instruments, embarqué en vol à bord de la capsule Orion depuis l&apos;arrêt de la gamme Philips.
 							</p>
 						</div>
 
 						<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
 							<div class="p-3.5 rounded-xl bg-white/5 border border-white/5">
 								<div class="flex items-center gap-2 text-indigo-300 font-mono text-xs font-bold uppercase mb-1">
-									<i data-lucide="moon" class="w-4 h-4 text-indigo-400"></i>
-									Suivi du Sommeil
+									<i data-lucide="flask-conical" class="w-4 h-4 text-purple-400"></i>
+									Référence au Sol : Actiwatch
 								</div>
 								<p class="text-xs text-slate-400 leading-snug">
-									Détection des phases de sommeil et des réveils à partir des mouvements du poignet.
+									Utilisé au Fatigue Countermeasures Laboratory du NASA Ames Research Center pour établir les données de référence avant le vol (étude Artemis Sleep Countermeasures).
+								</p>
+							</div>
+
+							<div class="p-3.5 rounded-xl bg-white/5 border border-white/5">
+								<div class="flex items-center gap-2 text-indigo-300 font-mono text-xs font-bold uppercase mb-1">
+									<i data-lucide="rocket" class="w-4 h-4 text-cyan-400"></i>
+									En Vol : ActLumus
+								</div>
+								<p class="text-xs text-slate-400 leading-snug">
+									Suite à l&apos;arrêt de la gamme Actiwatch par Philips, la NASA a adopté cet actigraphe brésilien pour le suivi continu de l&apos;équipage à bord d&apos;Orion pendant Artemis II.
+								</p>
+							</div>
+
+							<div class="p-3.5 rounded-xl bg-white/5 border border-white/5">
+								<div class="flex items-center gap-2 text-indigo-300 font-mono text-xs font-bold uppercase mb-1">
+									<i data-lucide="activity" class="w-4 h-4 text-emerald-400"></i>
+									Accélérométrie Haute Précision
+								</div>
+								<p class="text-xs text-slate-400 leading-snug">
+									Micro-mouvements du poignet enregistrés à environ 32 Hz, pour distinguer éveil, agitation et sommeil profond.
 								</p>
 							</div>
 
 							<div class="p-3.5 rounded-xl bg-white/5 border border-white/5">
 								<div class="flex items-center gap-2 text-indigo-300 font-mono text-xs font-bold uppercase mb-1">
 									<i data-lucide="sun" class="w-4 h-4 text-amber-400"></i>
-									Exposition à la Lumière
+									Photodétecteurs Ambiants
 								</div>
 								<p class="text-xs text-slate-400 leading-snug">
-									Mesure de la lumière reçue, un facteur clé du dérèglement du rythme biologique.
-								</p>
-							</div>
-
-							<div class="p-3.5 rounded-xl bg-white/5 border border-white/5">
-								<div class="flex items-center gap-2 text-indigo-300 font-mono text-xs font-bold uppercase mb-1">
-									<i data-lucide="footprints" class="w-4 h-4 text-emerald-400"></i>
-									Activité et Mouvement
-								</div>
-								<p class="text-xs text-slate-400 leading-snug">
-									Accéléromètre longue durée pour suivre le niveau d'activité au fil de la mission.
-								</p>
-							</div>
-
-							<div class="p-3.5 rounded-xl bg-white/5 border border-white/5">
-								<div class="flex items-center gap-2 text-indigo-300 font-mono text-xs font-bold uppercase mb-1">
-									<i data-lucide="clock" class="w-4 h-4 text-cyan-400"></i>
-									Port Continu Léger
-								</div>
-								<p class="text-xs text-slate-400 leading-snug">
-									Boîtier compact, conçu pour ne pas gêner le sommeil ni les tâches quotidiennes.
+									Mesure de l&apos;intensité et du spectre de la lumière (bleue, rouge, verte) pour évaluer son effet sur le rythme circadien, en l&apos;absence d&apos;alternance jour-nuit naturelle.
 								</p>
 							</div>
 						</div>
 
 						<div class="pt-2">
 							<a href="#simulateur" onclick="applySimScenario('actigraphy')" class="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-indigo-300 hover:text-white transition-colors group cursor-pointer">
-								<span>Visualiser la télémétrie de l'actigraphie dans le simulateur</span>
+								<span>Visualiser la télémétrie de l&apos;actigraphie dans le simulateur</span>
 								<i data-lucide="chevron-right" class="w-4 h-4 text-indigo-400 group-hover:translate-x-1 transition-transform"></i>
 							</a>
 						</div>
@@ -1387,7 +1407,7 @@
 							<span>NASA Space Apps Challenge</span>
 						</div>
 						<div class="p-3 rounded-lg bg-white/5 border border-white/5 text-[11px] text-slate-400">
-							Basé sur les standards de vol spatiaux : CSA (Astroskin ISS), TRISH / NASA (EmbracePlus), et NASA Artemis II (SOMNOwatch).
+							Basé sur les standards de vol spatiaux : CSA (Astroskin ISS), TRISH / NASA (EmbracePlus), et NASA ARCHeR Artemis II (Actiwatch &amp; ActLumus).
 						</div>
 					</div>
 				</div>
