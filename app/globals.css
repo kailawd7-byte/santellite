@@ -218,3 +218,30 @@ main > section {
   -webkit-backdrop-filter: blur(12px) !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
 }
+
+/* Panneaux d'information & Popovers à contraste maximal (100% opaque, fond noir spatial pur, net et lisible) */
+.sensor-hover-panel,
+.info-popover {
+  background-color: #030712 !important;
+  background: #030712 !important;
+  border: 2px solid #00E5FF !important;
+  box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.98), 0 0 30px rgba(0, 229, 255, 0.35) !important;
+  color: #ffffff !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.group\/sensor:hover .sensor-hover-panel {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+.sensor-hover-panel *,
+.info-popover * {
+  text-shadow: none !important;
+}
+.info-popover .text-slate-300,
+.info-popover .text-slate-200,
+.sensor-hover-panel .text-slate-300,
+.sensor-hover-panel .text-slate-200,
+.sensor-hover-panel .text-slate-100 {
+  color: #f8fafc !important;
+}
