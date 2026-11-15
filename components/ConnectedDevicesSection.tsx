@@ -670,7 +670,7 @@ export default function ConnectedDevicesSection() {
                 <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-indigo-300 font-mono text-xs font-bold uppercase mb-1">
                     <FlaskConical className="w-4 h-4 text-purple-400" />
-                    Référence au Sol : Actiwatch
+                    Référence au sol : Actiwatch Spectrum Plus
                   </div>
                   <p className="text-xs text-slate-400 leading-snug">
                     Utilisé au Fatigue Countermeasures Laboratory du NASA Ames Research Center pour établir les données de référence avant le vol (étude Artemis Sleep Countermeasures).
@@ -680,7 +680,7 @@ export default function ConnectedDevicesSection() {
                 <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-indigo-300 font-mono text-xs font-bold uppercase mb-1">
                     <Rocket className="w-4 h-4 text-cyan-400" />
-                    En Vol : ActLumus
+                    En vol : ActLumus (Condor Instruments)
                   </div>
                   <p className="text-xs text-slate-400 leading-snug">
                     Suite à l&apos;arrêt de la gamme Actiwatch par Philips, la NASA a adopté cet actigraphe brésilien pour le suivi continu de l&apos;équipage à bord d&apos;Orion pendant Artemis II.
