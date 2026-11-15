@@ -52,7 +52,7 @@ export default function HeroWithVideo() {
 
         {/* Centered Subtitle */}
         <p className="reveal-on-scroll delay-200 max-w-3xl mx-auto text-base sm:text-lg text-slate-300/90 font-normal leading-relaxed mb-10">
-          Plateforme clinique autonome interconnectant <strong className="text-white font-semibold">6 dispositifs spatiaux de pointe</strong> (maillot biométrique <strong>Astroskin</strong>, montre médicale <strong>EmbracePlus</strong>, actigraphes spatiaux <strong>Actiwatch / ActLumus Artemis II</strong>, dosimètre <strong>HRP</strong>, échographe <strong>REMS</strong> et <strong>biocapteurs</strong>) pour surveiller la santé des astronautes 24/7 en microgravité et anticiper les urgences sans latence Terre.
+          Plateforme clinique autonome interconnectant <strong className="text-white font-semibold">6 dispositifs spatiaux de pointe</strong> (maillot biométrique <strong>Astroskin</strong>, montre médicale <strong>EmbracePlus</strong>, bracelet spatial <strong>ARCHeR</strong>, dosimètre <strong>HRP</strong>, échographe <strong>REMS</strong> et <strong>biocapteurs</strong>) pour surveiller la santé des astronautes 24/7 en microgravité et anticiper les urgences sans latence Terre.
         </p>
 
         {/* Apple-style Action Buttons */}

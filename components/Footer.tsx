@@ -19,7 +19,7 @@ export default function Footer() {
             </a>
             <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-md font-mono">
               Projet présenté au NASA Space Apps Challenge 2026 par l&apos;Équipe 404 Introuvable (Libreville, Gabon). 
-              Plateforme clinique de surveillance continue interconnectant 6 dispositifs médicaux spatiaux (Astroskin, EmbracePlus, ActLumus Artemis II, dosimètre HRP, échographe REMS, biocapteurs) pour la santé des équipages spatiaux.
+              Plateforme clinique de surveillance continue interconnectant 6 dispositifs médicaux spatiaux (Astroskin, EmbracePlus, bracelet ARCHeR, dosimètre HRP, échographe REMS, biocapteurs) pour la santé des équipages spatiaux.
             </p>
           </div>
 
@@ -78,7 +78,7 @@ export default function Footer() {
                 <span>NASA Space Apps Challenge</span>
               </div>
               <div className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.06] text-[11px] text-slate-400">
-                Basé sur les standards de vol spatiaux réels : CSA (Astroskin ISS), TRISH / NASA (EmbracePlus), et NASA ARCHeR Artemis II (Actiwatch & ActLumus).
+                Basé sur les standards de vol spatiaux réels : CSA (Astroskin ISS), TRISH / NASA (EmbracePlus), et NASA ARCHeR (Bracelet spatial actigraphique).
               </div>
             </div>
           </div>

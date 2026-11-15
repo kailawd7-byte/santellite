@@ -498,7 +498,7 @@
 						</button>
 						<button id="tab-btn-actigraphy" onclick="switchProductTab('actigraphy')" class="px-4 py-2.5 rounded-xl font-mono text-xs sm:text-sm font-semibold uppercase tracking-wider transition-all flex items-center gap-2 border bg-white/5 text-slate-300 border-white/10 hover:border-white/30 hover:bg-white/10">
 							<i data-lucide="moon" class="w-4 h-4 text-indigo-400"></i>
-							<span>6. Actigraphie Spatiale</span>
+							<span>6. Bracelet ARCHeR</span>
 						</button>
 					</div>
 				</div>
@@ -960,15 +960,15 @@
 					</div>
 				</div>
 
-				<!-- ================= 6. ACTIGRAPHIE SPATIALE : DU LABORATOIRE AU VOL ARTEMIS II ================= -->
+				<!-- ================= 6. BRACELET ACTIGRAPHIQUE SPATIAL ARCHER ================= -->
 				<div id="product-pane-actigraphy" class="hidden grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#0B0F1A]/85 border border-white/[0.08] rounded-3xl p-6 sm:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-xl relative overflow-hidden">
-					<!-- Left: Image Actiwatch (Référence Sol) -->
+					<!-- Left: Image Bracelet ARCHeR -->
 					<div class="lg:col-span-6 flex flex-col gap-4">
 						<div class="relative aspect-[4/3] rounded-2xl overflow-hidden bg-black/60 border border-white/10 group shadow-xl">
-							<img id="actigraphy-main-img" src="./images/actiwatch-spectrum-pro.jpg" alt="Actiwatch Spectrum PRO par Philips Respironics - Données de référence au sol NASA Ames" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300">
+							<img id="actigraphy-main-img" src="./images/archer-actigraphy-bracelet.webp" alt="Bracelet actigraphique spatial conçu pour le projet ARCHeR - Sommeil, fréquence cardiaque, stress et mouvements" class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-300">
 							<div id="actigraphy-badge" class="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/15 text-[11px] font-mono text-indigo-300 flex items-center gap-1.5">
-								<i data-lucide="flask-conical" class="w-3.5 h-3.5 text-purple-400"></i>
-								<span>● Référence Sol • Actiwatch Spectrum Plus (NASA Ames)</span>
+								<i data-lucide="moon" class="w-3.5 h-3.5 text-indigo-400"></i>
+								<span>● Capteur Portable • Bracelet ARCHeR (Artemis Research)</span>
 							</div>
 						</div>
 					</div>
@@ -977,11 +977,11 @@
 					<div class="lg:col-span-6 text-left space-y-6">
 						<div>
 							<span class="text-xs font-mono text-indigo-400 font-bold uppercase tracking-widest">
-								NASA AMES RESEARCH CENTER · CONDOR INSTRUMENTS (BRÉSIL)
+								NASA AMES RESEARCH CENTER · PROTOCOLE ARCHER
 							</span>
 							<div class="flex items-center justify-between gap-3 mt-1 relative">
 								<h3 class="text-2xl sm:text-3xl font-mono font-bold text-white uppercase">
-									Actigraphie Spatiale : Du Laboratoire au Vol Artemis II
+									Bracelet Actigraphique Spatial ARCHeR
 								</h3>
 								<div class="relative">
 									<button type="button" onclick="toggleInfoPopover('pop-prod-actigraphy', this)" aria-expanded="false" aria-label="Informations sur cet équipement" class="p-1 rounded-lg text-slate-400 hover:text-cyan-400 transition-colors">
@@ -989,43 +989,53 @@
 									</button>
 									<div id="pop-prod-actigraphy" class="info-popover hidden absolute right-0 top-full mt-2 w-72 sm:w-80 p-3.5 rounded-2xl bg-[#0B0F1A]/95 border border-cyan-500/30 backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.7)] z-50 text-left text-xs font-mono">
 										<span class="text-cyan-400 font-bold uppercase block text-[10px] tracking-wider mb-1">Ce qui est analysé</span>
-										<span class="text-slate-200 leading-relaxed block">Mouvement du poignet (environ 32 Hz), spectre de lumière ambiante, et température cutanée sur les modèles récents.</span>
+										<span class="text-slate-200 leading-relaxed block">Ce bracelet, conçu pour le projet ARCHeR, permet d'analyser des données telles que le sommeil, la fréquence cardiaque, le niveau de stress et les mouvements, grâce à des capteurs intégrés.</span>
 									</div>
 								</div>
 							</div>
 							<p class="text-slate-300 text-sm sm:text-base leading-relaxed mt-3">
-								Ces appareils ressemblent à des montres numériques, mais n&apos;affichent pas toujours l&apos;heure, afin de ne pas biaiser les études sur la perception du temps en mission. Deux générations d&apos;actigraphes se succèdent dans le protocole ARCHeR (Artemis Research for Crew Health and Readiness) : l&apos;historique Actiwatch Spectrum Plus de Philips pour établir les données de référence au sol, et l&apos;ActLumus de la startup brésilienne Condor Instruments, embarqué en vol à bord de la capsule Orion depuis l&apos;arrêt de la gamme Philips.
+								Ce bracelet, conçu pour le projet ARCHeR, permet d&apos;analyser des données telles que le sommeil, la fréquence cardiaque, le niveau de stress et les mouvements, grâce à des capteurs intégrés.
 							</p>
 						</div>
 
 						<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
 							<div class="p-3.5 rounded-xl bg-white/5 border border-white/5">
 								<div class="flex items-center gap-2 text-indigo-300 font-mono text-xs font-bold uppercase mb-1">
-									<i data-lucide="flask-conical" class="w-4 h-4 text-purple-400"></i>
-									Référence au sol : Actiwatch Spectrum Plus
+									<i data-lucide="moon" class="w-4 h-4 text-indigo-400"></i>
+									Sommeil &amp; Cycles Circadiens
 								</div>
 								<p class="text-xs text-slate-400 leading-snug">
-									Utilisé au Fatigue Countermeasures Laboratory du NASA Ames Research Center pour établir les données de référence avant le vol (étude Artemis Sleep Countermeasures).
+									Suivi continu de l&apos;efficacité du sommeil, de l&apos;endormissement et des phases REM en microgravité.
 								</p>
 							</div>
 
 							<div class="p-3.5 rounded-xl bg-white/5 border border-white/5">
 								<div class="flex items-center gap-2 text-indigo-300 font-mono text-xs font-bold uppercase mb-1">
-									<i data-lucide="rocket" class="w-4 h-4 text-cyan-400"></i>
-									En vol : ActLumus (Condor Instruments)
+									<i data-lucide="heart" class="w-4 h-4 text-red-400"></i>
+									Fréquence Cardiaque &amp; VFC
 								</div>
 								<p class="text-xs text-slate-400 leading-snug">
-									Suite à l&apos;arrêt de la gamme Actiwatch par Philips, la NASA a adopté cet actigraphe brésilien pour le suivi continu de l&apos;équipage à bord d&apos;Orion pendant Artemis II.
+									Capteurs optiques mesurant le pouls en continu et la variabilité de la fréquence cardiaque au repos.
+								</p>
+							</div>
+
+							<div class="p-3.5 rounded-xl bg-white/5 border border-white/5">
+								<div class="flex items-center gap-2 text-indigo-300 font-mono text-xs font-bold uppercase mb-1">
+									<i data-lucide="zap" class="w-4 h-4 text-amber-400"></i>
+									Niveau de Stress &amp; Réponse EDA
+								</div>
+								<p class="text-xs text-slate-400 leading-snug">
+									Évaluation de la charge émotionnelle et du stress neurologique pendant les phases critiques de mission.
 								</p>
 							</div>
 
 							<div class="p-3.5 rounded-xl bg-white/5 border border-white/5">
 								<div class="flex items-center gap-2 text-indigo-300 font-mono text-xs font-bold uppercase mb-1">
 									<i data-lucide="activity" class="w-4 h-4 text-emerald-400"></i>
-									Accélérométrie Haute Précision
+									Mouvements &amp; Accélérométrie
 								</div>
 								<p class="text-xs text-slate-400 leading-snug">
-									Micro-mouvements du poignet enregistrés à environ 32 Hz, pour distinguer éveil, agitation et sommeil profond.
+									Capteurs inertiels triaxiaux enregistrant l&apos;agitation motrice et la dépense énergétique journalière.
 								</p>
 							</div>
 

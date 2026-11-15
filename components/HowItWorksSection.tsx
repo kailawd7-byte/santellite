@@ -8,7 +8,7 @@ export default function HowItWorksSection() {
     {
       step: "01",
       title: "Captation Non-Invasive Continue",
-      desc: "L'écosystème de 6 capteurs (textiles Astroskin, montres EmbracePlus et ActLumus, dosimètre cosmique, échographe osseux et biocapteurs) mesure 24/7 l'ensemble des constantes vitales sans gêne opérationnelle.",
+      desc: "L'écosystème de 6 capteurs (textiles Astroskin, montres EmbracePlus, bracelets ARCHeR, dosimètre cosmique, échographe osseux et biocapteurs) mesure 24/7 l'ensemble des constantes vitales sans gêne opérationnelle.",
       icon: Radio,
       badge: "Entrée Télémétrique",
     },

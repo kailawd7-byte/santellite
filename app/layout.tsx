@@ -3,8 +3,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Santellite : VitaOrbit — Surveillance Médicale Spatiale & IoT Temps Réel | NASA Space Apps 2026",
-  description: "Plateforme clinique de télémétrie autonome et surveillance continue interconnectant 6 dispositifs médicaux spatiaux (Astroskin, EmbracePlus, Actiwatch / ActLumus Artemis II, dosimètre, échographe osseux, biocapteurs) pour astronautes.",
-  keywords: ["NASA Space Apps", "Santellite", "VitaOrbit", "Astronaut Health", "IoT Médical", "Télémétrie Spatiale", "Astroskin", "EmbracePlus", "Actiwatch", "ActLumus", "Artemis II"],
+  description: "Plateforme clinique de télémétrie autonome et surveillance continue interconnectant 6 dispositifs médicaux spatiaux (Astroskin, EmbracePlus, bracelet ARCHeR, dosimètre, échographe osseux, biocapteurs) pour astronautes.",
+  keywords: ["NASA Space Apps", "Santellite", "VitaOrbit", "Astronaut Health", "IoT Médical", "Télémétrie Spatiale", "Astroskin", "EmbracePlus", "ARCHeR", "Artemis II"],
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
