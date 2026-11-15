@@ -1,0 +1,10 @@
+{
+  "css.lint.unknownAtRules": "ignore",
+  "css.lint.validProperties": [
+    "-webkit-backdrop-filter",
+    "-webkit-font-smoothing"
+  ],
+  "files.associations": {
+    "*.css": "tailwindcss"
+  }
+}
