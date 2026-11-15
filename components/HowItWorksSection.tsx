@@ -8,7 +8,7 @@ export default function HowItWorksSection() {
     {
       step: "01",
       title: "Captation Non-Invasive Continue",
-      desc: "L'écosystème de 6 capteurs (textiles Astroskin, montres EmbracePlus et SOMNOwatch, dosimètre cosmique, échographe osseux et biocapteurs) mesure 24/7 l'ensemble des constantes vitales sans gêne opérationnelle.",
+      desc: "L'écosystème de 6 capteurs (textiles Astroskin, montres EmbracePlus et ActLumus, dosimètre cosmique, échographe osseux et biocapteurs) mesure 24/7 l'ensemble des constantes vitales sans gêne opérationnelle.",
       icon: Radio,
       badge: "Entrée Télémétrique",
     },
@@ -29,52 +29,56 @@ export default function HowItWorksSection() {
   ];
 
   return (
-    <section id="architecture" className="py-24 bg-[#060911] relative overflow-hidden border-b border-white/5">
+    <section id="architecture" className="py-24 bg-[#070A12] relative overflow-hidden border-b border-white/[0.06]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header (Matching Mockup 'From Code to Cloud') */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-white/10 text-slate-300 border border-white/10 mb-3">
+        {/* Section Header */}
+        <div className="reveal-on-scroll text-center max-w-3xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-white/[0.05] text-slate-300 border border-white/[0.1] mb-4 backdrop-blur-md">
             <span>•</span> Architecture Médicale Embarquée
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-mono font-extrabold text-white tracking-tight uppercase leading-[1.12]">
             Du Capteur Corporel <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-white">
+            <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-100 to-slate-400/80">
               Au Diagnostic Vital.
             </span>
           </h2>
-          <p className="text-slate-300 mt-4 text-sm sm:text-base leading-relaxed">
+          <p className="text-slate-400 mt-4 text-sm sm:text-base leading-relaxed">
             Trois étapes automatisées pour transformer les signaux physiologiques bruts en décisions cliniques rapides, sans dépendre du délai radio avec la Terre.
           </p>
         </div>
 
-        {/* 3 Stacked Cards (Matching the 3 isometric layers from mockup) */}
-        <div className="max-w-4xl mx-auto space-y-6">
+        {/* 3 Pipeline Cards (Linear-style) */}
+        <div className="max-w-4xl mx-auto space-y-5">
           {steps.map((s, idx) => {
             const Icon = s.icon;
+            const delayClass = idx === 0 ? "delay-100" : idx === 1 ? "delay-200" : "delay-300";
             return (
               <div
                 key={s.step}
-                className="p-6 sm:p-8 rounded-2xl bg-[#090e1a] border border-white/10 hover:border-blue-500/40 transition-all flex flex-col md:flex-row items-start md:items-center justify-between gap-6 group shadow-lg"
+                className={`reveal-on-scroll ${delayClass} relative p-6 sm:p-8 rounded-2xl bg-[#0B0F1A]/80 border border-white/[0.08] hover:border-white/[0.22] hover:bg-[#101524]/90 transition-all duration-300 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 group shadow-[0_10px_30px_rgba(0,0,0,0.3)] overflow-hidden`}
               >
+                {/* Top hairline highlight */}
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none"></div>
+
                 <div className="flex items-center gap-4">
-                  <span className="font-mono text-2xl sm:text-3xl font-extrabold text-blue-500 group-hover:text-cyan-400 transition-colors shrink-0">
+                  <span className="font-mono text-2xl sm:text-3xl font-extrabold text-slate-500 group-hover:text-white transition-colors shrink-0">
                     {s.step}
                   </span>
-                  <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-cyan-400 shrink-0">
-                    <Icon className="w-6 h-6" />
+                  <div className="w-12 h-12 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-slate-200 group-hover:bg-white/[0.08] group-hover:text-white transition-all shrink-0">
+                    <Icon className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-slate-400 block mb-1">
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-slate-500 block mb-1">
                       {s.badge}
                     </span>
-                    <h3 className="text-lg sm:text-xl font-mono font-bold text-white uppercase group-hover:text-cyan-300 transition-colors">
+                    <h3 className="text-lg sm:text-xl font-mono font-bold text-white uppercase group-hover:text-slate-100 transition-colors">
                       {s.title}
                     </h3>
                   </div>
                 </div>
 
-                <p className="text-slate-300 text-xs sm:text-sm leading-relaxed md:max-w-md text-left">
+                <p className="text-slate-400 text-xs sm:text-sm leading-relaxed md:max-w-md text-left font-normal">
                   {s.desc}
                 </p>
               </div>

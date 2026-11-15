@@ -13,50 +13,44 @@ html {
 }
 
 body {
-  background-color: #060911;
+  background-color: #06080F;
   color: #f1f5f9;
   font-family: var(--font-sans);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Custom space grid background */
+/* Subtle luxury space grid pattern */
 .space-grid-pattern {
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 40px 40px;
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
 
-.hud-grid-pattern {
-  background-image: 
-    radial-gradient(circle at center, rgba(0, 229, 255, 0.08) 1px, transparent 1px),
-    linear-gradient(to right, rgba(0, 229, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 229, 255, 0.03) 1px, transparent 1px);
-  background-size: 24px 24px;
-}
-
-/* Glowing card effect */
+/* Apple / Linear style frosted glass surfaces */
 .glass-panel {
-  background: rgba(14, 21, 36, 0.65);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(11, 15, 25, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
 }
 
 .glass-panel:hover {
-  border-color: rgba(2, 132, 199, 0.4);
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(14, 20, 34, 0.82);
 }
 
 .glass-hud {
-  background: rgba(6, 13, 26, 0.75);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(0, 229, 255, 0.2);
-  box-shadow: 0 0 35px rgba(0, 229, 255, 0.06), inset 0 0 15px rgba(0, 229, 255, 0.03);
+  background: rgba(8, 12, 22, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
 }
 
-/* 3D Card Perspective Utilities */
+/* Perspective & 3D Utilities */
 .perspective-1000 {
   perspective: 1000px;
 }
@@ -69,7 +63,7 @@ body {
   backface-visibility: hidden;
 }
 
-/* Scanline Animation Effect */
+/* Subtle scanline overlay for medical telemetry */
 .scanline-overlay {
   position: relative;
   overflow: hidden;
@@ -79,15 +73,15 @@ body {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; height: 100%;
-  background: linear-gradient(to bottom, transparent 50%, rgba(0, 229, 255, 0.02) 51%, transparent 52%);
-  background-size: 100% 6px;
+  background: linear-gradient(to bottom, transparent 50%, rgba(255, 255, 255, 0.015) 51%, transparent 52%);
+  background-size: 100% 4px;
   pointer-events: none;
 }
 
 /* Defibrillation Shock wave animation */
 @keyframes electricShock {
   0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.9); border-color: #ef4444; }
-  50% { box-shadow: 0 0 40px 15px rgba(0, 229, 255, 0.8); border-color: #00e5ff; }
+  50% { box-shadow: 0 0 30px 10px rgba(56, 189, 248, 0.7); border-color: #38bdf8; }
   100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); border-color: #ef4444; }
 }
 
@@ -95,43 +89,44 @@ body {
   animation: electricShock 0.8s ease-out infinite;
 }
 
-/* Custom scrollbar */
+/* Minimalist luxury scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #090d16;
+  background: #06080F;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e2b4a;
-  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #0284c7;
+  background: rgba(255, 255, 255, 0.28);
 }
 
 /* ==============================================================
-   ANIMATIONS AU SCROLL DYNAMIQUES (APPARITION & DISPARITION)
+   BIDIRECTIONAL SCROLL ANIMATIONS (UP & DOWN)
+   Silky Apple-style spring easing (cubic-bezier(0.16, 1, 0.3, 1))
    ============================================================== */
 .reveal-on-scroll {
   opacity: 0;
-  transform: translateY(32px) scale(0.975);
-  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
 .reveal-on-scroll.is-visible {
   opacity: 1 !important;
-  transform: translateY(0) scale(1) !important;
+  transform: translateY(0) !important;
 }
 
 .reveal-left {
   opacity: 0;
   transform: translateX(-32px);
-  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
@@ -143,7 +138,7 @@ body {
 .reveal-right {
   opacity: 0;
   transform: translateX(32px);
-  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
@@ -152,20 +147,37 @@ body {
   transform: translateX(0) !important;
 }
 
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.96) translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-scale.is-visible {
+  opacity: 1 !important;
+  transform: scale(1) translateY(0) !important;
+}
+
 .delay-100 { transition-delay: 100ms; }
+.delay-150 { transition-delay: 150ms; }
 .delay-200 { transition-delay: 200ms; }
 .delay-300 { transition-delay: 300ms; }
 .delay-400 { transition-delay: 400ms; }
 .delay-500 { transition-delay: 500ms; }
 
+/* Sticky Navbar subtle blur states */
 #site-header.header-scrolled {
-  background: rgba(5, 7, 13, 0.96) !important;
-  border-bottom-color: rgba(0, 229, 255, 0.25) !important;
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8), 0 0 20px -5px rgba(0, 229, 255, 0.15) !important;
+  background: rgba(6, 8, 15, 0.85) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7) !important;
 }
 
 #site-header.header-top {
-  background: rgba(5, 7, 13, 0.65) !important;
-  backdrop-filter: blur(14px) !important;
-  -webkit-backdrop-filter: blur(14px) !important;
+  background: rgba(6, 8, 15, 0.4) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
 }

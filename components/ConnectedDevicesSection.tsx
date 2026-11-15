@@ -47,27 +47,27 @@ export default function ConnectedDevicesSection() {
   ];
 
   return (
-    <section id="equipements" className="py-24 bg-[#05070D] relative overflow-hidden border-b border-white/5">
+    <section id="equipements" className="py-24 bg-[#06080F] relative overflow-hidden border-b border-white/[0.06]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 mb-3">
-            <Radio className="w-3.5 h-3.5 animate-pulse text-cyan-400" />
+        <div className="reveal-on-scroll text-center max-w-3xl mx-auto mb-14">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-white/[0.05] text-slate-300 border border-white/[0.1] mb-4 backdrop-blur-md">
+            <Radio className="w-3.5 h-3.5 animate-pulse text-emerald-400" />
             Équipements Éprouvés & Connectés
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-mono font-extrabold text-white tracking-tight uppercase leading-[1.12]">
             Capteurs Portables Spatiaux. <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-sky-300 to-blue-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-100 to-slate-400/80">
               Télémétrie Médicale Continue.
             </span>
           </h2>
-          <p className="text-slate-300 mt-4 text-sm sm:text-base leading-relaxed">
+          <p className="text-slate-400 mt-4 text-sm sm:text-base leading-relaxed">
             Pour assurer la santé de l&apos;équipage en mission de longue durée, Santellite centralise la télémétrie de <strong>6 dispositifs médicaux spatiaux réels</strong> : suivi cardiovasculaire continu, densité osseuse, dosimétrie et biomarqueurs salivaires.
           </p>
 
-          {/* Product Switcher Pills (5 products) */}
-          <div className="flex flex-wrap items-center justify-center gap-2.5 mt-8">
+          {/* Product Switcher Segmented Control (Apple / Linear style) */}
+          <div className="inline-flex flex-wrap items-center justify-center gap-1.5 p-1.5 rounded-2xl bg-white/[0.03] border border-white/[0.08] backdrop-blur-xl mt-8">
             {products.map((p) => {
               const Icon = p.icon;
               const isActive = activeProduct === p.id;
@@ -75,13 +75,13 @@ export default function ConnectedDevicesSection() {
                 <button
                   key={p.id}
                   onClick={() => setActiveProduct(p.id as any)}
-                  className={`px-4 py-2.5 rounded-xl font-mono text-xs sm:text-sm font-semibold uppercase tracking-wider transition-all flex items-center gap-2 border ${
+                  className={`px-3.5 py-2 rounded-xl font-mono text-xs font-semibold uppercase tracking-wider transition-all flex items-center gap-2 ${
                     isActive
-                      ? "bg-white text-slate-950 border-white shadow-xl scale-105"
-                      : "bg-white/5 text-slate-300 border-white/10 hover:border-white/30 hover:bg-white/10"
+                      ? "bg-white text-slate-950 shadow-md shadow-black/20"
+                      : "text-slate-400 hover:text-white hover:bg-white/[0.05]"
                   }`}
                 >
-                  <Icon className={`w-4 h-4 ${isActive ? "text-slate-900" : p.color}`} />
+                  <Icon className={`w-3.5 h-3.5 ${isActive ? "text-slate-950" : "text-slate-400"}`} />
                   <span>{p.label}</span>
                 </button>
               );
@@ -91,7 +91,7 @@ export default function ConnectedDevicesSection() {
 
         {/* ================= 1. ASTROSKIN BIO-VEST ================= */}
         {activeProduct === "astroskin" && (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#070d1a] border border-white/10 rounded-3xl p-6 sm:p-10 shadow-2xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#0B0F1A]/85 border border-white/[0.08] rounded-3xl p-6 sm:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-xl relative overflow-hidden">
             {/* Left: Images with toggle */}
             <div className="lg:col-span-6 flex flex-col gap-4">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-black/60 border border-white/10 group shadow-xl">
@@ -156,7 +156,7 @@ export default function ConnectedDevicesSection() {
 
               {/* Sensor Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
+                <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-cyan-300 font-mono text-xs font-bold uppercase mb-1">
                     <Activity className="w-4 h-4 text-cyan-400" />
                     Pression Artérielle Continue
@@ -166,7 +166,7 @@ export default function ConnectedDevicesSection() {
                   </p>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
+                <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-cyan-300 font-mono text-xs font-bold uppercase mb-1">
                     <Heart className="w-4 h-4 text-red-400" />
                     Électrocardiogramme 3 Dérivations
@@ -176,7 +176,7 @@ export default function ConnectedDevicesSection() {
                   </p>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
+                <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-cyan-300 font-mono text-xs font-bold uppercase mb-1">
                     <CheckCircle2 className="w-4 h-4 text-emerald-400" />
                     Pléthysmographie Respiratoire
@@ -186,7 +186,7 @@ export default function ConnectedDevicesSection() {
                   </p>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
+                <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-cyan-300 font-mono text-xs font-bold uppercase mb-1">
                     <CheckCircle2 className="w-4 h-4 text-blue-400" />
                     SpO2 & Température Cutanée
@@ -217,7 +217,7 @@ export default function ConnectedDevicesSection() {
 
         {/* ================= 2. EMBRACEPLUS BY EMPATICA ================= */}
         {activeProduct === "embraceplus" && (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#070d1a] border border-white/10 rounded-3xl p-6 sm:p-10 shadow-2xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#0B0F1A]/85 border border-white/[0.08] rounded-3xl p-6 sm:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-xl relative overflow-hidden">
             {/* Left: Images with toggle */}
             <div className="lg:col-span-6 flex flex-col gap-4">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-black/60 border border-white/10 group shadow-xl">
@@ -281,7 +281,7 @@ export default function ConnectedDevicesSection() {
 
               {/* Sensor Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
+                <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-cyan-300 font-mono text-xs font-bold uppercase mb-1">
                     <Zap className="w-4 h-4 text-amber-400" />
                     Capteur EDA Ventral (Activité Électrodermale)
@@ -291,7 +291,7 @@ export default function ConnectedDevicesSection() {
                   </p>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
+                <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-cyan-300 font-mono text-xs font-bold uppercase mb-1">
                     <Heart className="w-4 h-4 text-red-400" />
                     Capteur PPG Optique Haute Fréquence
@@ -301,7 +301,7 @@ export default function ConnectedDevicesSection() {
                   </p>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
+                <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-cyan-300 font-mono text-xs font-bold uppercase mb-1">
                     <Thermometer className="w-4 h-4 text-cyan-400" />
                     Sonde de Température Cutanée Continue
@@ -311,7 +311,7 @@ export default function ConnectedDevicesSection() {
                   </p>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
+                <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-cyan-300 font-mono text-xs font-bold uppercase mb-1">
                     <Activity className="w-4 h-4 text-emerald-400" />
                     Accéléromètre & Gyroscope 3D (IP67)
@@ -342,7 +342,7 @@ export default function ConnectedDevicesSection() {
 
         {/* ================= 3. ECHOLIGHT (TECHNOLOGIE REMS) ================= */}
         {activeProduct === "echolight" && (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#070d1a] border border-white/10 rounded-3xl p-6 sm:p-10 shadow-2xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#0B0F1A]/85 border border-white/[0.08] rounded-3xl p-6 sm:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-xl relative overflow-hidden">
             {/* Left: Image */}
             <div className="lg:col-span-6 flex flex-col gap-4">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-black/60 border border-white/10 group shadow-xl">
@@ -378,7 +378,7 @@ export default function ConnectedDevicesSection() {
 
               {/* Sensor Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
+                <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-emerald-300 font-mono text-xs font-bold uppercase mb-1">
                     <Bone className="w-4 h-4 text-emerald-400" />
                     Densité Osseuse Sans Radiation
@@ -388,7 +388,7 @@ export default function ConnectedDevicesSection() {
                   </p>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
+                <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-emerald-300 font-mono text-xs font-bold uppercase mb-1">
                     <Clock className="w-4 h-4 text-cyan-400" />
                     Scan Rapide
@@ -398,7 +398,7 @@ export default function ConnectedDevicesSection() {
                   </p>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
+                <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-emerald-300 font-mono text-xs font-bold uppercase mb-1">
                     <Calendar className="w-4 h-4 text-blue-400" />
                     Mesure Périodique
@@ -408,7 +408,7 @@ export default function ConnectedDevicesSection() {
                   </p>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
+                <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-emerald-300 font-mono text-xs font-bold uppercase mb-1">
                     <TrendingDown className="w-4 h-4 text-amber-400" />
                     Suivi de la Perte Osseuse
@@ -439,7 +439,7 @@ export default function ConnectedDevicesSection() {
 
         {/* ================= 4. DOSIMÈTRE PERSONNEL DE RADIATIONS ================= */}
         {activeProduct === "dosimeter" && (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#070d1a] border border-white/10 rounded-3xl p-6 sm:p-10 shadow-2xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#0B0F1A]/85 border border-white/[0.08] rounded-3xl p-6 sm:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-xl relative overflow-hidden">
             {/* Left: Image */}
             <div className="lg:col-span-6 flex flex-col gap-4">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-black/60 border border-white/10 group shadow-xl">
@@ -475,7 +475,7 @@ export default function ConnectedDevicesSection() {
 
               {/* Sensor Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
+                <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-amber-300 font-mono text-xs font-bold uppercase mb-1">
                     <Shield className="w-4 h-4 text-amber-400" />
                     Dose Cumulée en Temps Réel
@@ -485,7 +485,7 @@ export default function ConnectedDevicesSection() {
                   </p>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
+                <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-amber-300 font-mono text-xs font-bold uppercase mb-1">
                     <AlertTriangle className="w-4 h-4 text-red-400" />
                     Seuils d&apos;Alerte Personnalisés
@@ -495,7 +495,7 @@ export default function ConnectedDevicesSection() {
                   </p>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
+                <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-amber-300 font-mono text-xs font-bold uppercase mb-1">
                     <Clock className="w-4 h-4 text-cyan-400" />
                     Historique par Période
@@ -505,7 +505,7 @@ export default function ConnectedDevicesSection() {
                   </p>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
+                <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-amber-300 font-mono text-xs font-bold uppercase mb-1">
                     <Wifi className="w-4 h-4 text-emerald-400" />
                     Export des Données
@@ -536,7 +536,7 @@ export default function ConnectedDevicesSection() {
 
         {/* ================= 5. BIOCAPTEUR SALIVAIRE DE STRESS ET D'IMMUNITÉ ================= */}
         {activeProduct === "saliva" && (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#070d1a] border border-white/10 rounded-3xl p-6 sm:p-10 shadow-2xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#0B0F1A]/85 border border-white/[0.08] rounded-3xl p-6 sm:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-xl relative overflow-hidden">
             {/* Left: Image */}
             <div className="lg:col-span-6 flex flex-col gap-4">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-black/60 border border-white/10 group shadow-xl">
@@ -572,7 +572,7 @@ export default function ConnectedDevicesSection() {
 
               {/* Sensor Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
+                <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-purple-300 font-mono text-xs font-bold uppercase mb-1">
                     <Droplets className="w-4 h-4 text-purple-400" />
                     Analyse Salivaire Non Invasive
@@ -582,7 +582,7 @@ export default function ConnectedDevicesSection() {
                   </p>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
+                <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-purple-300 font-mono text-xs font-bold uppercase mb-1">
                     <Dna className="w-4 h-4 text-cyan-400" />
                     Cortisol et DHEA-S
@@ -592,7 +592,7 @@ export default function ConnectedDevicesSection() {
                   </p>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
+                <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-purple-300 font-mono text-xs font-bold uppercase mb-1">
                     <Layers className="w-4 h-4 text-emerald-400" />
                     Cartouches à Usage Unique
@@ -602,7 +602,7 @@ export default function ConnectedDevicesSection() {
                   </p>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
+                <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-purple-300 font-mono text-xs font-bold uppercase mb-1">
                     <Usb className="w-4 h-4 text-blue-400" />
                     Connexion Filaire au Logiciel
@@ -633,7 +633,7 @@ export default function ConnectedDevicesSection() {
 
         {/* ================= 6. ACTIGRAPHIE SPATIALE : DU LABORATOIRE AU VOL ARTEMIS II ================= */}
         {activeProduct === "actigraphy" && (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#070d1a] border border-white/10 rounded-3xl p-6 sm:p-10 shadow-2xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#0B0F1A]/85 border border-white/[0.08] rounded-3xl p-6 sm:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-xl relative overflow-hidden">
             {/* Left: Image with Toggle Sol / Vol */}
             <div className="lg:col-span-6 flex flex-col gap-4">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-black/60 border border-white/10 group shadow-xl">
@@ -703,7 +703,7 @@ export default function ConnectedDevicesSection() {
 
               {/* 4 Feature Points as given by user */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
+                <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-indigo-300 font-mono text-xs font-bold uppercase mb-1">
                     <FlaskConical className="w-4 h-4 text-purple-400" />
                     Référence au Sol : Actiwatch
@@ -713,7 +713,7 @@ export default function ConnectedDevicesSection() {
                   </p>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
+                <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-indigo-300 font-mono text-xs font-bold uppercase mb-1">
                     <Rocket className="w-4 h-4 text-cyan-400" />
                     En Vol : ActLumus
@@ -723,7 +723,7 @@ export default function ConnectedDevicesSection() {
                   </p>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
+                <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-indigo-300 font-mono text-xs font-bold uppercase mb-1">
                     <Activity className="w-4 h-4 text-emerald-400" />
                     Accélérométrie Haute Précision
@@ -733,7 +733,7 @@ export default function ConnectedDevicesSection() {
                   </p>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
+                <div className="p-3.5 rounded-xl bg-white/[0.025] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
                   <div className="flex items-center gap-2 text-indigo-300 font-mono text-xs font-bold uppercase mb-1">
                     <Sun className="w-4 h-4 text-amber-400" />
                     Photodétecteurs Ambiants

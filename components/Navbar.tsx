@@ -17,7 +17,7 @@ export default function Navbar() {
 
   const navLinks = [
     { label: "Le Défi NASA", href: "#defi" },
-    { label: "Équipements", href: "#equipements" },
+    { label: "6 Équipements", href: "#equipements" },
     { label: "Architecture", href: "#architecture" },
     { label: "Tableau de bord", href: "/dashboard.html", highlight: true },
     { label: "Aperçu IA", href: "#simulateur" },
@@ -27,23 +27,24 @@ export default function Navbar() {
 
   return (
     <header
+      id="site-header"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#05070D]/90 backdrop-blur-md border-b border-white/10 shadow-lg shadow-black/50 py-3"
-          : "bg-transparent border-b border-white/5 py-4"
+          ? "bg-[#06080F]/85 backdrop-blur-2xl border-b border-white/[0.08] shadow-[0_10px_30px_-10px_rgba(0,0,0,0.7)] py-3"
+          : "bg-transparent border-b border-white/[0.04] py-4"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Logo Kubeva-style */}
-        <a href="#accueil" className="flex items-center gap-2.5 group">
-          <div className="w-9 h-9 rounded-lg bg-gradient-to-tr from-blue-600 via-blue-500 to-cyan-400 flex items-center justify-center text-white shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform">
-            <Orbit className="w-5 h-5 text-white" />
+        {/* Logo */}
+        <a href="#accueil" className="flex items-center gap-3 group">
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-b from-white to-slate-300 flex items-center justify-center text-slate-950 shadow-md group-hover:scale-105 transition-transform">
+            <Orbit className="w-4 h-4 text-slate-950" />
           </div>
           <div className="flex flex-col">
-            <span className="font-extrabold text-lg tracking-tight text-white flex items-center gap-1 font-mono">
-              Santellite<span className="text-cyan-400">.</span>
+            <span className="font-bold text-base tracking-tight text-white flex items-center gap-1 font-mono">
+              Santellite<span className="text-sky-400">.</span>
             </span>
-            <span className="text-[9px] font-mono tracking-widest text-slate-400 uppercase -mt-1">
+            <span className="text-[9px] font-mono tracking-widest text-slate-400 uppercase -mt-0.5">
               NASA Space Apps 2026
             </span>
           </div>
@@ -57,25 +58,26 @@ export default function Navbar() {
               href={link.href}
               className={`text-xs font-mono uppercase tracking-wider transition-colors flex items-center gap-1.5 ${
                 link.highlight
-                  ? "text-cyan-400 font-bold hover:text-cyan-300"
-                  : "text-slate-300 hover:text-white"
+                  ? "text-white font-semibold hover:text-sky-300"
+                  : "text-slate-400 hover:text-white"
               }`}
             >
               {link.highlight && (
-                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
               )}
               {link.label}
             </a>
           ))}
         </nav>
 
-        {/* Action Button right (matching GET STARTED ↗ from mockup) */}
+        {/* Action Button right (Apple-style luminous white pill) */}
         <div className="hidden lg:flex items-center">
           <a
             href="/dashboard.html"
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-mono text-xs font-semibold uppercase tracking-wider transition-all shadow-md shadow-blue-600/30 hover:shadow-blue-500/50"
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white hover:bg-slate-100 text-slate-950 font-mono text-xs font-semibold uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(255,255,255,0.15)] active:scale-95"
           >
-            Tableau de bord <ArrowUpRight className="w-3.5 h-3.5" />
+            <span>Tableau de bord</span>
+            <ArrowUpRight className="w-3.5 h-3.5" />
           </a>
         </div>
 
@@ -91,16 +93,21 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {isOpen && (
-        <div className="lg:hidden bg-[#05070D]/95 border-b border-white/10 px-4 pt-3 pb-6 space-y-3 backdrop-blur-xl">
+        <div className="lg:hidden bg-[#06080F]/95 border-b border-white/10 px-4 pt-3 pb-6 space-y-3 backdrop-blur-2xl">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
               onClick={() => setIsOpen(false)}
               className={`block py-2 text-sm font-mono uppercase tracking-wider transition-colors ${
-                link.highlight ? "text-cyan-400 font-bold" : "text-slate-300 hover:text-cyan-400"
+                link.highlight
+                  ? "text-white font-bold flex items-center gap-2"
+                  : "text-slate-400 hover:text-white"
               }`}
             >
+              {link.highlight && (
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              )}
               {link.label}
             </a>
           ))}
@@ -108,9 +115,10 @@ export default function Navbar() {
             <a
               href="/dashboard.html"
               onClick={() => setIsOpen(false)}
-              className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-mono text-xs font-semibold uppercase tracking-wider transition-all"
+              className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full bg-white text-slate-950 font-mono text-xs font-semibold uppercase tracking-wider shadow-md"
             >
-              Tableau de bord <ArrowUpRight className="w-3.5 h-3.5" />
+              <span>Ouvrir Tableau de bord</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
           </div>
         </div>

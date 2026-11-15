@@ -1043,7 +1043,7 @@ window.triggerShockTest = triggerShockTest;
    ========================================================================== */
 
 function initScrollReveal() {
-	var elements = document.querySelectorAll(".reveal-on-scroll, .reveal-left, .reveal-right");
+	var elements = document.querySelectorAll(".reveal-on-scroll, .reveal-left, .reveal-right, .reveal-scale");
 	if (!elements || elements.length === 0) return;
 
 	if ("IntersectionObserver" in window) {

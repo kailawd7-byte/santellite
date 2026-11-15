@@ -20,49 +20,55 @@ export default function TeamSection() {
   ];
 
   return (
-    <section id="equipe" className="py-20 bg-[#05070D] relative border-b border-white/5">
+    <section id="equipe" className="py-24 bg-[#06080F] relative border-b border-white/[0.06]">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         
         {/* Simple Badge */}
-        <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-mono font-semibold bg-white/10 text-slate-300 border border-white/10 mb-4">
-          <Users className="w-3.5 h-3.5 text-cyan-400" />
+        <div className="reveal-on-scroll inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-mono font-medium bg-white/[0.05] text-slate-300 border border-white/[0.1] mb-4 backdrop-blur-md">
+          <Users className="w-3.5 h-3.5 text-slate-300" />
           <span>Équipe Projet</span>
         </div>
 
         {/* Clean Title */}
-        <h2 className="text-3xl sm:text-4xl font-mono font-extrabold text-white tracking-tight uppercase mb-4">
+        <h2 className="reveal-on-scroll delay-100 text-3xl sm:text-4xl font-mono font-extrabold text-white tracking-tight uppercase mb-4 leading-[1.15]">
           Équipe 404 Introuvable
         </h2>
         
-        <p className="text-slate-400 text-sm sm:text-base font-mono max-w-2xl mx-auto mb-12">
+        <p className="reveal-on-scroll delay-200 text-slate-400 text-sm sm:text-base font-mono max-w-2xl mx-auto mb-12">
           Participants au NASA Space Apps Challenge 2026 • Événement de Libreville (Gabon)
         </p>
 
-        {/* Clean, Simple 3-Column Card Grid with ONLY the names as requested */}
+        {/* 3-Column Card Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
-          {members.map((m) => (
-            <div
-              key={m.name}
-              className="p-6 rounded-2xl bg-[#090e1a] border border-white/10 hover:border-cyan-400/40 transition-all flex flex-col items-center text-center shadow-lg group"
-            >
-              <div className="w-16 h-16 rounded-xl bg-gradient-to-tr from-blue-600 to-cyan-500 flex items-center justify-center text-white font-mono font-bold text-xl shadow-md group-hover:scale-105 transition-transform mb-4">
-                {m.initials}
+          {members.map((m, idx) => {
+            const delayClass = idx === 0 ? "delay-100" : idx === 1 ? "delay-200" : "delay-300";
+            return (
+              <div
+                key={m.name}
+                className={`reveal-on-scroll ${delayClass} relative p-7 rounded-2xl bg-[#0B0F1A]/80 border border-white/[0.08] hover:border-white/[0.22] hover:bg-[#101524]/90 transition-all duration-300 flex flex-col items-center text-center shadow-[0_10px_30px_rgba(0,0,0,0.3)] group overflow-hidden`}
+              >
+                {/* Top hairline highlight */}
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none"></div>
+
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-b from-white to-slate-300 flex items-center justify-center text-slate-950 font-mono font-bold text-lg shadow-md group-hover:scale-105 transition-transform mb-4">
+                  {m.initials}
+                </div>
+                
+                <h3 className="font-mono text-base font-bold text-white tracking-tight leading-snug">
+                  {m.name}
+                </h3>
+                
+                <span className="text-[11px] font-mono text-slate-400 mt-2 uppercase tracking-wider">
+                  Participant
+                </span>
               </div>
-              
-              <h3 className="font-mono text-base font-bold text-white tracking-tight leading-snug">
-                {m.name}
-              </h3>
-              
-              <span className="text-[11px] font-mono text-slate-400 mt-2 uppercase tracking-wider">
-                Participant
-              </span>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Simple footer note */}
-        <div className="inline-flex items-center gap-2 text-xs font-mono text-slate-400">
-          <Heart className="w-3.5 h-3.5 text-red-500 fill-red-500" />
+        <div className="reveal-on-scroll delay-300 inline-flex items-center gap-2 text-xs font-mono text-slate-400">
+          <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500" />
           <span>Projet conçu avec passion pour le bien-être des explorateurs spatiaux</span>
         </div>
 

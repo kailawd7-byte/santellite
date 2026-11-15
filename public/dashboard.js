@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	initRoutine();
 	initNutrition();
 	initCameraScanner();
+	initScrollReveal();
 
 	// Environnement par défaut : Vaisseau en transit
 	applyEnvironment("transit");
@@ -799,9 +800,9 @@ function applyEnvironment(envKey) {
 		var btn = document.getElementById("env-btn-" + k);
 		if (btn) {
 			if (k === envKey) {
-				btn.className = "px-4 py-2.5 rounded-xl font-mono text-xs font-bold transition-all border bg-cyan-500 text-slate-950 border-cyan-400 shadow-lg shadow-cyan-500/25 scale-105 flex items-center gap-2";
+				btn.className = "px-4 py-2.5 rounded-xl font-mono text-xs font-bold transition-all border bg-white text-slate-950 border-white shadow-lg shadow-black/30 flex items-center gap-2";
 			} else {
-				btn.className = "px-4 py-2.5 rounded-xl font-mono text-xs font-semibold transition-all border bg-white/5 text-slate-300 border-white/10 hover:border-cyan-500/30 hover:bg-white/10 flex items-center gap-2";
+				btn.className = "px-4 py-2.5 rounded-xl font-mono text-xs font-semibold transition-all border bg-white/[0.03] text-slate-400 border-white/[0.08] hover:border-white/[0.18] hover:bg-white/[0.06] hover:text-white flex items-center gap-2";
 			}
 		}
 	});
@@ -896,9 +897,9 @@ function selectBodyZone(zoneKey) {
 		}
 		if (btnElem) {
 			if (k === zoneKey) {
-				btnElem.className = "w-full text-left p-2.5 rounded-xl border bg-cyan-500/20 border-cyan-400 text-white font-mono text-xs font-semibold flex items-center justify-between";
+				btnElem.className = "w-full text-left p-2.5 rounded-xl border bg-white text-slate-950 border-white font-mono text-xs font-bold flex items-center justify-between shadow-sm";
 			} else {
-				btnElem.className = "w-full text-left p-2.5 rounded-xl border bg-white/5 border-white/10 hover:border-white/20 text-slate-300 font-mono text-xs font-semibold flex items-center justify-between";
+				btnElem.className = "w-full text-left p-2.5 rounded-xl border bg-white/[0.03] border-white/[0.06] hover:border-white/[0.15] text-slate-400 hover:text-white font-mono text-xs font-semibold flex items-center justify-between transition-colors";
 			}
 		}
 	});
@@ -983,9 +984,9 @@ function applySimScenario(key) {
 		var btn = document.getElementById("sim-btn-" + k);
 		if (btn) {
 			if (k === key) {
-				btn.className = "sim-pill px-3.5 py-2.5 rounded-xl text-xs font-mono font-semibold transition-all border bg-cyan-500 text-slate-950 border-cyan-400 shadow-lg shadow-cyan-500/25 scale-105";
+				btn.className = "sim-pill px-3.5 py-2.5 rounded-xl text-xs font-mono font-bold transition-all border bg-white text-slate-950 border-white shadow-lg shadow-black/30";
 			} else {
-				btn.className = "sim-pill px-3.5 py-2.5 rounded-xl text-xs font-mono font-semibold transition-all border bg-slate-900/80 text-slate-300 border-white/10 hover:border-cyan-500/40";
+				btn.className = "sim-pill px-3.5 py-2.5 rounded-xl text-xs font-mono font-semibold transition-all border bg-white/[0.03] text-slate-400 border-white/[0.08] hover:border-white/[0.18] hover:bg-white/[0.06] hover:text-white";
 			}
 		}
 	});
@@ -1665,7 +1666,43 @@ function initECGWave() {
 	draw();
 }
 
+/* ==========================================================================
+   ANIMATIONS AU SCROLL BIDIRECTIONNELLES (DASHBOARD)
+   ========================================================================== */
+function initScrollReveal() {
+	var elements = document.querySelectorAll(".reveal-on-scroll, .reveal-left, .reveal-right, .reveal-scale");
+	if (!elements || elements.length === 0) return;
+
+	if ("IntersectionObserver" in window) {
+		var observer = new IntersectionObserver(
+			function (entries) {
+				entries.forEach(function (entry) {
+					if (entry.isIntersecting) {
+						entry.target.classList.add("is-visible");
+					} else {
+						// Disparition dynamique pour re-déclencher l'animation au scroll bidirectionnel
+						entry.target.classList.remove("is-visible");
+					}
+				});
+			},
+			{
+				threshold: 0.1,
+				rootMargin: "0px 0px -40px 0px"
+			}
+		);
+
+		elements.forEach(function (el) {
+			observer.observe(el);
+		});
+	} else {
+		elements.forEach(function (el) {
+			el.classList.add("is-visible");
+		});
+	}
+}
+
 // Exports globaux pour les attributs inline onclick
+window.initScrollReveal = initScrollReveal;
 window.applySimScenario = applySimScenario;
 window.applyEnvironment = applyEnvironment;
 window.selectBodyZone = selectBodyZone;
