@@ -8,7 +8,7 @@ export default function HowItWorksSection() {
     {
       step: "01",
       title: "Captation Non-Invasive Continue",
-      desc: "Les capteurs textiles du maillot Astroskin et les capteurs optiques et électrodermaux (EDA) de la montre EmbracePlus mesurent 24/7 la tension artérielle, l'ECG, le stress et la SpO2 sans gêne opérationnelle.",
+      desc: "L'écosystème de 6 capteurs (textiles Astroskin, montres EmbracePlus et SOMNOwatch, dosimètre cosmique, échographe osseux et biocapteurs) mesure 24/7 l'ensemble des constantes vitales sans gêne opérationnelle.",
       icon: Radio,
       badge: "Entrée Télémétrique",
     },

@@ -8,8 +8,9 @@ export default function HeroWithVideo() {
     { label: "NASA Space Apps 2026", sub: "Challenge International" },
     { label: "Libreville, Gabon", sub: "Site Local Officiel" },
     { label: "Agence Spatiale Canadienne (ASC)", sub: "Astroskin Flight Heritage" },
-    { label: "Carré Technologies", sub: "Capteurs Biomédicaux" },
     { label: "Empatica EmbracePlus", sub: "Recherche Spatiale NASA / TRISH" },
+    { label: "NASA Artemis II", sub: "Actigraphie SOMNOwatch plus" },
+    { label: "NASA Human Research Program", sub: "Dosimétrie & Ultrasons REMS" },
   ];
 
   return (
@@ -50,8 +51,8 @@ export default function HeroWithVideo() {
         </h1>
 
         {/* Centered Subtitle */}
-        <p className="max-w-2xl mx-auto text-base sm:text-lg text-slate-200/90 font-normal leading-relaxed mb-10">
-          Plateforme médicale autonome connectée au maillot biométrique <strong>Astroskin</strong> et à la montre spatiale <strong>EmbracePlus</strong> pour surveiller la santé des astronautes 24/7 en microgravité et anticiper les urgences sans latence Terre.
+        <p className="max-w-3xl mx-auto text-base sm:text-lg text-slate-200/90 font-normal leading-relaxed mb-10">
+          Plateforme clinique autonome interconnectant <strong className="text-cyan-300 font-semibold">6 dispositifs spatiaux de pointe</strong> (maillot biométrique <strong>Astroskin</strong>, montres médicales <strong>EmbracePlus</strong> & <strong>SOMNOwatch Artemis</strong>, dosimètre <strong>HRP</strong>, échographe <strong>REMS</strong> et <strong>biocapteurs</strong>) pour surveiller la santé des astronautes 24/7 en microgravité et anticiper les urgences sans latence Terre.
         </p>
 
         {/* Two Action Buttons (Mockup: Dark Button + White Button) */}

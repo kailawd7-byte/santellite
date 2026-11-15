@@ -19,7 +19,7 @@ export default function Footer() {
             </a>
             <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-md font-mono">
               Projet présenté au NASA Space Apps Challenge 2026 par l&apos;Équipe 404 Introuvable (Libreville, Gabon). 
-              Plateforme clinique de surveillance continue par capteurs connectés (Astroskin et EmbracePlus) pour la santé des astronautes.
+              Plateforme clinique de surveillance continue interconnectant 6 dispositifs médicaux spatiaux (Astroskin, EmbracePlus, SOMNOwatch Artemis II, dosimètre HRP, échographe REMS, biocapteurs) pour la santé des astronautes.
             </p>
           </div>
 
@@ -78,7 +78,7 @@ export default function Footer() {
                 <span>NASA Space Apps Challenge</span>
               </div>
               <div className="p-3 rounded-lg bg-white/5 border border-white/5 text-[11px] text-slate-400">
-                Basé sur les standards de vol de l&apos;Agence Spatiale Canadienne (Astroskin ISS) et du TRISH / NASA (EmbracePlus).
+                Basé sur les standards de vol spatiaux : CSA (Astroskin ISS), TRISH / NASA (EmbracePlus), et NASA Artemis II (SOMNOwatch).
               </div>
             </div>
           </div>
